@@ -5,13 +5,12 @@
 //  Created by Austin Adam on 2/4/20.
 //  Copyright © 2020 MAAD Hungry. All rights reserved.
 //
-
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
         
-     œ   // Layers of images
+        // Layers of images
         
         ZStack {
             
@@ -23,7 +22,6 @@ struct ContentView: View {
                 Image("sglogo").resizable().aspectRatio(contentMode:.fit)
                 
                     // divides (creates space between images)
-
                     Spacer().frame(height: 100)
                 
                // fat food background image
