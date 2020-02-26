@@ -5,7 +5,6 @@
 //  Created by Austin Adam on 2/4/20.
 //  Copyright © 2020 MAAD Hungry. All rights reserved.
 //
-
 import SwiftUI
 
 struct ContentView: View {
@@ -23,10 +22,9 @@ struct ContentView: View {
                 Image("sglogo").resizable().aspectRatio(contentMode:.fit)
                 
                     // divides (creates space between images)
-
                     Spacer().frame(height: 100)
                 
-               // fat food background image
+               // fast food background image
                 Image("burger").resizable().aspectRatio(contentMode:.fit)
                     
                     Spacer().frame(height: 100)

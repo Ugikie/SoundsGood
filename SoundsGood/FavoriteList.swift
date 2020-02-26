@@ -9,28 +9,36 @@
 import SwiftUI
 
 struct FavoriteList: View {
+    
+    let FoodList = List.parsFoodList()
+    
+    
     var body: some View {
-       
-        // List of food
         
-        VStack {
-            
-            // for loop
-            
-            HStack {
-                
-                // Picture
+        
+        NavigationView {
                 
                 VStack {
                     
-                }
+                    HStack (alignment: .top) {
+                        
+                        Image("pizza").resizable().frame(width: 120, height: 120)
+                            
+                        
+                        
+                            VStack {
+                                
+                                Text("Pizza").font(.title).fontWeight(.medium)
+                            
+                                Text("Pizza").font(.title).fontWeight(.medium)
+                                
+                                
+                            }
+                        
+                    }
+                    
+                    }.navigationBarTitle(Text("Favorite List"))
                 
-            }
-            
-            
-            
-            
-            
         }
     }
 }

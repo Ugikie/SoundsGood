@@ -19,7 +19,7 @@ struct AppView: View {
                           Text("Main")
                       }
 
-                  Text("Favorites")
+                  FavoriteList()
                         .tabItem {
                             Image(systemName: "1.square.fill")
                             Text("Favorites")
