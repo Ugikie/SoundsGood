@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  SoundsGood
 //
-//  Created by Liat Yeyni on 2/4/20.
+//  Created by Austin Adam on 2/4/20.
 //  Copyright © 2020 MAAD Hungry. All rights reserved.
 //
 
