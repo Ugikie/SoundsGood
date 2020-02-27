@@ -14,7 +14,12 @@
 		8416DAA423EA046A00F638BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8416DAA223EA046A00F638BF /* LaunchScreen.storyboard */; };
 		D72FE0E02404B6870083002A /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72FE0DF2404B6870083002A /* AppView.swift */; };
 		D7412011240642800087E1F3 /* FavoriteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7412010240642800087E1F3 /* FavoriteList.swift */; };
-		D741201324065B8E0087E1F3 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = D741201224065B8E0087E1F3 /* List.swift */; };
+		D7412016240763110087E1F3 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7412015240763110087E1F3 /* Data.swift */; };
+		D741201A240763970087E1F3 /* foodData.json in Resources */ = {isa = PBXBuildFile; fileRef = D7412019240763970087E1F3 /* foodData.json */; };
+		D741201C240763E30087E1F3 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = D741201B240763E30087E1F3 /* Food.swift */; };
+		D741201E240766290087E1F3 /* FoodDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D741201D240766290087E1F3 /* FoodDetail.swift */; };
+		D74120202407670C0087E1F3 /* FoodRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D741201F2407670C0087E1F3 /* FoodRow.swift */; };
+		D7412026240768080087E1F3 /* pizza.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D7412023240768080087E1F3 /* pizza.jpg */; };
 		D74DB9F424046C40001B885B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D74DB9F324046C40001B885B /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +33,12 @@
 		8416DAA523EA046A00F638BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D72FE0DF2404B6870083002A /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		D7412010240642800087E1F3 /* FavoriteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteList.swift; sourceTree = "<group>"; };
-		D741201224065B8E0087E1F3 /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
+		D7412015240763110087E1F3 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		D7412019240763970087E1F3 /* foodData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = foodData.json; path = ../../../foodData.json; sourceTree = "<group>"; };
+		D741201B240763E30087E1F3 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
+		D741201D240766290087E1F3 /* FoodDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetail.swift; sourceTree = "<group>"; };
+		D741201F2407670C0087E1F3 /* FoodRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodRow.swift; sourceTree = "<group>"; };
+		D7412023240768080087E1F3 /* pizza.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = pizza.jpg; path = "../../../images SG/pizza.jpg"; sourceTree = "<group>"; };
 		D74DB9F324046C40001B885B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,15 +72,18 @@
 		8416DA9623EA046900F638BF /* SoundsGood */ = {
 			isa = PBXGroup;
 			children = (
+				D7412014240762C40087E1F3 /* Models */,
 				8416DA9723EA046900F638BF /* AppDelegate.swift */,
 				8416DA9923EA046900F638BF /* SceneDelegate.swift */,
 				8416DA9B23EA046900F638BF /* ContentView.swift */,
 				D72FE0DF2404B6870083002A /* AppView.swift */,
 				D7412010240642800087E1F3 /* FavoriteList.swift */,
-				D741201224065B8E0087E1F3 /* List.swift */,
+				D741201F2407670C0087E1F3 /* FoodRow.swift */,
+				D741201D240766290087E1F3 /* FoodDetail.swift */,
 				D74DB9F324046C40001B885B /* Assets.xcassets */,
 				8416DAA223EA046A00F638BF /* LaunchScreen.storyboard */,
 				8416DAA523EA046A00F638BF /* Info.plist */,
+				D7412017240763340087E1F3 /* Resorces */,
 				8416DA9F23EA046A00F638BF /* Preview Content */,
 			);
 			path = SoundsGood;
@@ -82,6 +95,24 @@
 				8416DAA023EA046A00F638BF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D7412014240762C40087E1F3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D7412015240763110087E1F3 /* Data.swift */,
+				D741201B240763E30087E1F3 /* Food.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D7412017240763340087E1F3 /* Resorces */ = {
+			isa = PBXGroup;
+			children = (
+				D7412023240768080087E1F3 /* pizza.jpg */,
+				D7412019240763970087E1F3 /* foodData.json */,
+			);
+			path = Resorces;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,7 +175,9 @@
 			files = (
 				8416DAA423EA046A00F638BF /* LaunchScreen.storyboard in Resources */,
 				D74DB9F424046C40001B885B /* Assets.xcassets in Resources */,
+				D7412026240768080087E1F3 /* pizza.jpg in Resources */,
 				8416DAA123EA046A00F638BF /* Preview Assets.xcassets in Resources */,
+				D741201A240763970087E1F3 /* foodData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,12 +188,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7412016240763110087E1F3 /* Data.swift in Sources */,
 				D7412011240642800087E1F3 /* FavoriteList.swift in Sources */,
 				D72FE0E02404B6870083002A /* AppView.swift in Sources */,
 				8416DA9823EA046900F638BF /* AppDelegate.swift in Sources */,
 				8416DA9A23EA046900F638BF /* SceneDelegate.swift in Sources */,
+				D741201C240763E30087E1F3 /* Food.swift in Sources */,
 				8416DA9C23EA046900F638BF /* ContentView.swift in Sources */,
-				D741201324065B8E0087E1F3 /* List.swift in Sources */,
+				D74120202407670C0087E1F3 /* FoodRow.swift in Sources */,
+				D741201E240766290087E1F3 /* FoodDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

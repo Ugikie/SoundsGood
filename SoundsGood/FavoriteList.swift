@@ -1,44 +1,21 @@
-//
-//  FavoriteList.swift
-//  SoundsGood
-//
-//  Created by Max Bogatyrev on 2/25/20.
-//  Copyright © 2020 MAAD Hungry. All rights reserved.
-//
+/*
+See LICENSE folder for this sample’s licensing information.
+
+Abstract:
+A view showing a list of landmarks.
+*/
 
 import SwiftUI
 
 struct FavoriteList: View {
-    
-    let FoodList = List.parsFoodList()
-    
-    
     var body: some View {
-        
-        
         NavigationView {
-                
-                VStack {
-                    
-                    HStack (alignment: .top) {
-                        
-                        Image("pizza").resizable().frame(width: 120, height: 120)
-                            
-                        
-                        
-                            VStack {
-                                
-                                Text("Pizza").font(.title).fontWeight(.medium)
-                            
-                                Text("Pizza").font(.title).fontWeight(.medium)
-                                
-                                
-                            }
-                        
-                    }
-                    
-                    }.navigationBarTitle(Text("Favorite List"))
-                
+            List(foodData) { food in
+                NavigationLink(destination: FoodDetail(food: food)) {
+                    FoodRow(food: food)
+                }
+            }
+            .navigationBarTitle(Text("My Favorite Meals"))
         }
     }
 }
