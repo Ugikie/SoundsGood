@@ -2,7 +2,7 @@
 See LICENSE folder for this sample’s licensing information.
 
 Abstract:
-A single row to be displayed in a list of landmarks.
+A single row to be displayed in a list of food.
 */
 
 import SwiftUI
@@ -14,7 +14,7 @@ struct FoodRow: View {
         HStack {
             food.image
                     .resizable()
-                    .frame(width: 150, height: 150)
+                    .frame(width: 100, height: 100)
             Text(food.FOOD)
             Spacer()
         }
