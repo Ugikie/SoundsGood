@@ -15,12 +15,12 @@
 		D72FE0E02404B6870083002A /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72FE0DF2404B6870083002A /* AppView.swift */; };
 		D7412011240642800087E1F3 /* FavoriteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7412010240642800087E1F3 /* FavoriteList.swift */; };
 		D7412016240763110087E1F3 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7412015240763110087E1F3 /* Data.swift */; };
-		D741201A240763970087E1F3 /* foodData.json in Resources */ = {isa = PBXBuildFile; fileRef = D7412019240763970087E1F3 /* foodData.json */; };
 		D741201C240763E30087E1F3 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = D741201B240763E30087E1F3 /* Food.swift */; };
 		D741201E240766290087E1F3 /* FoodDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D741201D240766290087E1F3 /* FoodDetail.swift */; };
 		D74120202407670C0087E1F3 /* FoodRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D741201F2407670C0087E1F3 /* FoodRow.swift */; };
 		D7412026240768080087E1F3 /* pizza.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D7412023240768080087E1F3 /* pizza.jpg */; };
 		D74DB9F424046C40001B885B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D74DB9F324046C40001B885B /* Assets.xcassets */; };
+		D7D7667724084D5E00E321BA /* foodData.json in Resources */ = {isa = PBXBuildFile; fileRef = D7D7667624084D5E00E321BA /* foodData.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,12 +34,12 @@
 		D72FE0DF2404B6870083002A /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		D7412010240642800087E1F3 /* FavoriteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteList.swift; sourceTree = "<group>"; };
 		D7412015240763110087E1F3 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
-		D7412019240763970087E1F3 /* foodData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = foodData.json; path = ../../../foodData.json; sourceTree = "<group>"; };
 		D741201B240763E30087E1F3 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		D741201D240766290087E1F3 /* FoodDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetail.swift; sourceTree = "<group>"; };
 		D741201F2407670C0087E1F3 /* FoodRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodRow.swift; sourceTree = "<group>"; };
 		D7412023240768080087E1F3 /* pizza.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = pizza.jpg; path = "../../../images SG/pizza.jpg"; sourceTree = "<group>"; };
 		D74DB9F324046C40001B885B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D7D7667624084D5E00E321BA /* foodData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = foodData.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,8 +109,8 @@
 		D7412017240763340087E1F3 /* Resorces */ = {
 			isa = PBXGroup;
 			children = (
+				D7D7667624084D5E00E321BA /* foodData.json */,
 				D7412023240768080087E1F3 /* pizza.jpg */,
-				D7412019240763970087E1F3 /* foodData.json */,
 			);
 			path = Resorces;
 			sourceTree = "<group>";
@@ -177,7 +177,7 @@
 				D74DB9F424046C40001B885B /* Assets.xcassets in Resources */,
 				D7412026240768080087E1F3 /* pizza.jpg in Resources */,
 				8416DAA123EA046A00F638BF /* Preview Assets.xcassets in Resources */,
-				D741201A240763970087E1F3 /* foodData.json in Resources */,
+				D7D7667724084D5E00E321BA /* foodData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
