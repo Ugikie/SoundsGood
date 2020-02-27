@@ -13,6 +13,8 @@ struct Food: Hashable, Codable, Identifiable{
     var FOOD: String
     var id: Int // required to be
     var Origin: String
+    
+    //Begin Tags
     var Breakfast: Int
     var Lunch: Int
     var Dinner: Int
@@ -28,6 +30,18 @@ struct Food: Hashable, Codable, Identifiable{
     var Hot: Int
     var Cold: Int
     var Room_Temp: Int
+    
+    
+    
+    
+    
+    
+    
+    //End Tags
+    
+    
+    
+    
     fileprivate var imageName: String
 
 }

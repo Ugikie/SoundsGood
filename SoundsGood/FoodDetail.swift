@@ -32,6 +32,7 @@ struct FoodDetail: View {
                 
                 HStack() {
                     
+                    
                     if food.Breakfast == 1 {
                         Text("Breakfast").font(.subheadline).foregroundColor(.white).padding(.all,5).padding([.leading, .trailing], 10).background(Color.green).cornerRadius(30)
                     }
