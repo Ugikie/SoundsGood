@@ -1,6 +1,6 @@
 [
     {
-      "FOOD": "TEST: Chicken Nuggets/Tenders",
+      "FoodName": "TEST: Chicken Nuggets/Tenders",
       "id": 1999,
       "Origin": "United States",
       "Breakfast": 1,
@@ -21,7 +21,7 @@
       "imageName": "pizza"
     },
   {
-    "FOOD": "Chicken Nuggets/Tenders",
+    "FoodName": "Chicken Nuggets/Tenders",
     "id": 1001,
     "Origin": "United States",
     "Breakfast": 0,
@@ -42,7 +42,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Omlete",
+    "FoodName": "Omlete",
     "id": 1002,
     "Origin": "persia",
     "Breakfast": 1,
@@ -63,7 +63,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Macaroni and Cheese",
+    "FoodName": "Macaroni and Cheese",
     "id": 1003,
     "Origin": "Italy",
     "Breakfast": 0,
@@ -84,7 +84,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Fried Rice",
+    "FoodName": "Fried Rice",
     "id": 1004,
     "Origin": "china",
     "Breakfast": 1,
@@ -105,7 +105,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Egg Rolls",
+    "FoodName": "Egg Rolls",
     "id": 1005,
     "Origin": "United States",
     "Breakfast": 1,
@@ -126,7 +126,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Dumplings",
+    "FoodName": "Dumplings",
     "id": 1006,
     "Origin": "china",
     "Breakfast": 0,
@@ -147,7 +147,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "SUnited Stateshi",
+    "FoodName": "SUnited Stateshi",
     "id": 1007,
     "Origin": "japan",
     "Breakfast": 0,
@@ -168,7 +168,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "empanadas",
+    "FoodName": "empanadas",
     "id": 1008,
     "Origin": "spain",
     "Breakfast": 1,
@@ -189,7 +189,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Tacos",
+    "FoodName": "Tacos",
     "id": 1009,
     "Origin": "mexico",
     "Breakfast": 0,
@@ -210,7 +210,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Burritos",
+    "FoodName": "Burritos",
     "id": 1010,
     "Origin": "mexico",
     "Breakfast": 1,
@@ -231,7 +231,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Nachos",
+    "FoodName": "Nachos",
     "id": 1011,
     "Origin": "mexico",
     "Breakfast": 0,
@@ -252,7 +252,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Pizza",
+    "FoodName": "Pizza",
     "id": 1012,
     "Origin": "italy",
     "Breakfast": 0,
@@ -273,7 +273,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Burgers",
+    "FoodName": "Burgers",
     "id": 1013,
     "Origin": "germany/United States",
     "Breakfast": 0,
@@ -294,7 +294,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Sandwich",
+    "FoodName": "Sandwich",
     "id": 1014,
     "Origin": "england",
     "Breakfast": 1,
@@ -315,7 +315,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Grilled Cheese",
+    "FoodName": "Grilled Cheese",
     "id": 1015,
     "Origin": "United States",
     "Breakfast": 0,
@@ -336,7 +336,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Peanut butter Jelly Sandwich",
+    "FoodName": "Peanut butter Jelly Sandwich",
     "id": 1016,
     "Origin": "United States",
     "Breakfast": 0,
@@ -357,7 +357,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Bagel",
+    "FoodName": "Bagel",
     "id": 1017,
     "Origin": "poland",
     "Breakfast": 1,
@@ -378,7 +378,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Pancakes/Waffles",
+    "FoodName": "Pancakes/Waffles",
     "id": 1018,
     "Origin": "unknown",
     "Breakfast": 1,
@@ -399,7 +399,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "French Toast",
+    "FoodName": "French Toast",
     "id": 1019,
     "Origin": "unknown",
     "Breakfast": 1,
@@ -420,7 +420,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Cereal",
+    "FoodName": "Cereal",
     "id": 1020,
     "Origin": "United States",
     "Breakfast": 1,
@@ -441,7 +441,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Oatmeal",
+    "FoodName": "Oatmeal",
     "id": 1021,
     "Origin": "unknown",
     "Breakfast": 1,
@@ -462,7 +462,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Potato Chips",
+    "FoodName": "Potato Chips",
     "id": 1022,
     "Origin": "United States",
     "Breakfast": 0,
@@ -483,7 +483,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Tortilla chips",
+    "FoodName": "Tortilla chips",
     "id": 1023,
     "Origin": "United States",
     "Breakfast": 0,
@@ -504,7 +504,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Popcorn",
+    "FoodName": "Popcorn",
     "id": 1024,
     "Origin": "unknown",
     "Breakfast": 0,
@@ -525,7 +525,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Pretzels",
+    "FoodName": "Pretzels",
     "id": 1025,
     "Origin": "germany",
     "Breakfast": 0,
@@ -546,7 +546,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Crackers",
+    "FoodName": "Crackers",
     "id": 1026,
     "Origin": "United States",
     "Breakfast": 0,
@@ -567,7 +567,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Cake",
+    "FoodName": "Cake",
     "id": 1027,
     "Origin": "unknown",
     "Breakfast": 0,
@@ -588,7 +588,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Pie",
+    "FoodName": "Pie",
     "id": 1028,
     "Origin": "england",
     "Breakfast": 0,
@@ -609,7 +609,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Cookies",
+    "FoodName": "Cookies",
     "id": 1029,
     "Origin": "persia",
     "Breakfast": 0,
@@ -630,7 +630,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Brownies",
+    "FoodName": "Brownies",
     "id": 1030,
     "Origin": "United States",
     "Breakfast": 0,
@@ -651,7 +651,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Doughnuts",
+    "FoodName": "Doughnuts",
     "id": 1031,
     "Origin": "netherlands",
     "Breakfast": 1,
@@ -672,7 +672,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "French Fries",
+    "FoodName": "French Fries",
     "id": 1033,
     "Origin": "france",
     "Breakfast": 0,
@@ -693,7 +693,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Muffins",
+    "FoodName": "Muffins",
     "id": 1034,
     "Origin": "england",
     "Breakfast": 1,
@@ -714,7 +714,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "cheese cake",
+    "FoodName": "cheese cake",
     "id": 1035,
     "Origin": "unknown",
     "Breakfast": 0,
@@ -735,7 +735,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Enchiladas",
+    "FoodName": "Enchiladas",
     "id": 1036,
     "Origin": "mexico",
     "Breakfast": 0,
@@ -756,7 +756,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Steak",
+    "FoodName": "Steak",
     "id": 1037,
     "Origin": "unknown",
     "Breakfast": 0,
@@ -777,7 +777,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Fried Chicken",
+    "FoodName": "Fried Chicken",
     "id": 1038,
     "Origin": "unknown",
     "Breakfast": 0,
@@ -798,7 +798,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Grilled Chicken",
+    "FoodName": "Grilled Chicken",
     "id": 1039,
     "Origin": "unknown",
     "Breakfast": 0,
@@ -819,7 +819,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Ribs",
+    "FoodName": "Ribs",
     "id": 1040,
     "Origin": "unknown",
     "Breakfast": 0,
@@ -840,7 +840,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Hot Dog",
+    "FoodName": "Hot Dog",
     "id": 1041,
     "Origin": "germany",
     "Breakfast": 0,
@@ -861,7 +861,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Lasagna",
+    "FoodName": "Lasagna",
     "id": 1042,
     "Origin": "italy",
     "Breakfast": 0,
@@ -882,7 +882,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Pudding",
+    "FoodName": "Pudding",
     "id": 1043,
     "Origin": "england",
     "Breakfast": 0,
@@ -903,7 +903,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Onion Rings",
+    "FoodName": "Onion Rings",
     "id": 1044,
     "Origin": "United States",
     "Breakfast": 0,
@@ -924,7 +924,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Tamales",
+    "FoodName": "Tamales",
     "id": 1045,
     "Origin": "unknown",
     "Breakfast": 0,
@@ -945,7 +945,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Fajitas",
+    "FoodName": "Fajitas",
     "id": 1046,
     "Origin": "mexico/United States",
     "Breakfast": 0,
@@ -966,7 +966,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Taquitos",
+    "FoodName": "Taquitos",
     "id": 1047,
     "Origin": "mexico",
     "Breakfast": 0,
@@ -987,7 +987,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Soup",
+    "FoodName": "Soup",
     "id": 1048,
     "Origin": "unknown",
     "Breakfast": 0,
@@ -1008,7 +1008,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Pasta",
+    "FoodName": "Pasta",
     "id": 1049,
     "Origin": "italy",
     "Breakfast": 0,
@@ -1029,7 +1029,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Gelato",
+    "FoodName": "Gelato",
     "id": 1050,
     "Origin": "italy",
     "Breakfast": 0,
@@ -1050,7 +1050,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Chow mein",
+    "FoodName": "Chow mein",
     "id": 1051,
     "Origin": "china",
     "Breakfast": 1,
@@ -1071,7 +1071,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Kung Pao Chicken",
+    "FoodName": "Kung Pao Chicken",
     "id": 1052,
     "Origin": "china",
     "Breakfast": 0,
@@ -1092,7 +1092,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Orange Chicken",
+    "FoodName": "Orange Chicken",
     "id": 1053,
     "Origin": "United States",
     "Breakfast": 0,
@@ -1113,7 +1113,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Wontons",
+    "FoodName": "Wontons",
     "id": 1054,
     "Origin": "china",
     "Breakfast": 0,
@@ -1134,7 +1134,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Egg Drop Soup",
+    "FoodName": "Egg Drop Soup",
     "id": 1055,
     "Origin": "china",
     "Breakfast": 1,
@@ -1155,7 +1155,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Beef and Broccoli",
+    "FoodName": "Beef and Broccoli",
     "id": 1056,
     "Origin": "china",
     "Breakfast": 0,
@@ -1176,7 +1176,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Ramen",
+    "FoodName": "Ramen",
     "id": 1057,
     "Origin": "china",
     "Breakfast": 0,
@@ -1197,7 +1197,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Baklava",
+    "FoodName": "Baklava",
     "id": 1058,
     "Origin": "unknown",
     "Breakfast": 0,
@@ -1218,7 +1218,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Stuffed Grape Leaves",
+    "FoodName": "Stuffed Grape Leaves",
     "id": 1059,
     "Origin": "turkey",
     "Breakfast": 0,
@@ -1239,7 +1239,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Gyro",
+    "FoodName": "Gyro",
     "id": 1060,
     "Origin": "greece",
     "Breakfast": 0,
@@ -1260,7 +1260,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Meatballs",
+    "FoodName": "Meatballs",
     "id": 1061,
     "Origin": "persia",
     "Breakfast": 0,
@@ -1281,7 +1281,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Oysters",
+    "FoodName": "Oysters",
     "id": 1062,
     "Origin": "unknown",
     "Breakfast": 0,
@@ -1302,7 +1302,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Shrimp Cocktail",
+    "FoodName": "Shrimp Cocktail",
     "id": 1063,
     "Origin": "United States",
     "Breakfast": 0,
@@ -1323,7 +1323,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Quiche",
+    "FoodName": "Quiche",
     "id": 1065,
     "Origin": "france",
     "Breakfast": 1,
@@ -1344,7 +1344,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Ratatouille",
+    "FoodName": "Ratatouille",
     "id": 1066,
     "Origin": "france",
     "Breakfast": 0,
@@ -1365,7 +1365,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Croissant",
+    "FoodName": "Croissant",
     "id": 1067,
     "Origin": "aUnited Statestria",
     "Breakfast": 1,
@@ -1386,7 +1386,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Macarons",
+    "FoodName": "Macarons",
     "id": 1068,
     "Origin": "italy",
     "Breakfast": 0,
@@ -1407,7 +1407,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Creme brulee",
+    "FoodName": "Creme brulee",
     "id": 1069,
     "Origin": "france",
     "Breakfast": 0,
@@ -1428,7 +1428,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Pad thai",
+    "FoodName": "Pad thai",
     "id": 1070,
     "Origin": "thailand",
     "Breakfast": 0,
@@ -1449,7 +1449,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Paella",
+    "FoodName": "Paella",
     "id": 1071,
     "Origin": "spain",
     "Breakfast": 0,
@@ -1470,7 +1470,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Samosas",
+    "FoodName": "Samosas",
     "id": 1072,
     "Origin": "unknown",
     "Breakfast": 0,
@@ -1491,7 +1491,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Naan",
+    "FoodName": "Naan",
     "id": 1073,
     "Origin": "unknown",
     "Breakfast": 0,
@@ -1512,7 +1512,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Tandoori Chicken",
+    "FoodName": "Tandoori Chicken",
     "id": 1074,
     "Origin": "india",
     "Breakfast": 0,
@@ -1533,7 +1533,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "HummUnited States",
+    "FoodName": "HummUnited States",
     "id": 1075,
     "Origin": "egypt",
     "Breakfast": 0,
@@ -1554,7 +1554,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Salad",
+    "FoodName": "Salad",
     "id": 1076,
     "Origin": "unknown",
     "Breakfast": 0,
@@ -1575,7 +1575,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Falafel",
+    "FoodName": "Falafel",
     "id": 1077,
     "Origin": "egypt",
     "Breakfast": 0,
@@ -1596,7 +1596,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "String Cheese",
+    "FoodName": "String Cheese",
     "id": 1078,
     "Origin": "United States",
     "Breakfast": 0,
@@ -1617,7 +1617,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Pizza Rolls",
+    "FoodName": "Pizza Rolls",
     "id": 1079,
     "Origin": "United States",
     "Breakfast": 0,
@@ -1638,7 +1638,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Rice Crispies",
+    "FoodName": "Rice Crispies",
     "id": 1080,
     "Origin": "United States",
     "Breakfast": 0,
@@ -1659,7 +1659,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Corn Nuts",
+    "FoodName": "Corn Nuts",
     "id": 1081,
     "Origin": "United States",
     "Breakfast": 0,
@@ -1680,7 +1680,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Gummy Bears/Worms",
+    "FoodName": "Gummy Bears/Worms",
     "id": 1082,
     "Origin": "germany",
     "Breakfast": 0,
@@ -1701,7 +1701,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Licorice",
+    "FoodName": "Licorice",
     "id": 1083,
     "Origin": "unknown",
     "Breakfast": 0,
@@ -1722,7 +1722,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Chocolate Bar",
+    "FoodName": "Chocolate Bar",
     "id": 1084,
     "Origin": "unknown",
     "Breakfast": 0,
@@ -1743,7 +1743,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Oreos",
+    "FoodName": "Oreos",
     "id": 1085,
     "Origin": "United States",
     "Breakfast": 0,
@@ -1764,7 +1764,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Jelly Beans",
+    "FoodName": "Jelly Beans",
     "id": 1086,
     "Origin": "United States",
     "Breakfast": 0,
@@ -1785,7 +1785,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Skittles",
+    "FoodName": "Skittles",
     "id": 1087,
     "Origin": "United States",
     "Breakfast": 0,
@@ -1806,7 +1806,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Sour patch kids",
+    "FoodName": "Sour patch kids",
     "id": 1088,
     "Origin": "canada",
     "Breakfast": 0,
@@ -1827,7 +1827,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Chips Ahoy (duplicate of cookie)",
+    "FoodName": "Chips Ahoy (duplicate of cookie)",
     "id": 1089,
     "Origin": "United States",
     "Breakfast": 0,
@@ -1848,7 +1848,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Beef Jerky",
+    "FoodName": "Beef Jerky",
     "id": 1090,
     "Origin": "unkown",
     "Breakfast": 0,
@@ -1869,7 +1869,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Doritios",
+    "FoodName": "Doritios",
     "id": 1091,
     "Origin": "United States",
     "Breakfast": 0,
@@ -1890,7 +1890,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Cinnamon Rolls",
+    "FoodName": "Cinnamon Rolls",
     "id": 1092,
     "Origin": "sweden",
     "Breakfast": 1,
@@ -1911,7 +1911,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Eclair",
+    "FoodName": "Eclair",
     "id": 1093,
     "Origin": "france",
     "Breakfast": 0,
@@ -1932,7 +1932,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Danishes",
+    "FoodName": "Danishes",
     "id": 1094,
     "Origin": "aUnited Statestria",
     "Breakfast": 1,
@@ -1953,7 +1953,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Cannolis",
+    "FoodName": "Cannolis",
     "id": 1095,
     "Origin": "italy",
     "Breakfast": 1,
@@ -1974,7 +1974,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Churros",
+    "FoodName": "Churros",
     "id": 1096,
     "Origin": "spain",
     "Breakfast": 0,
@@ -1995,7 +1995,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Pecan Pie",
+    "FoodName": "Pecan Pie",
     "id": 1097,
     "Origin": "United States",
     "Breakfast": 0,
@@ -2016,7 +2016,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Apple Pie",
+    "FoodName": "Apple Pie",
     "id": 1098,
     "Origin": "england",
     "Breakfast": 0,
@@ -2037,7 +2037,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Cherry Pie",
+    "FoodName": "Cherry Pie",
     "id": 1099,
     "Origin": "england",
     "Breakfast": 0,
@@ -2058,7 +2058,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Banana Bread",
+    "FoodName": "Banana Bread",
     "id": 1100,
     "Origin": "unknown",
     "Breakfast": 1,
@@ -2079,7 +2079,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Fruit Tart",
+    "FoodName": "Fruit Tart",
     "id": 1101,
     "Origin": "france",
     "Breakfast": 1,
@@ -2100,7 +2100,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Pumpkin Pie",
+    "FoodName": "Pumpkin Pie",
     "id": 1102,
     "Origin": "United States",
     "Breakfast": 0,
@@ -2121,7 +2121,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Chicken Noodle Soup",
+    "FoodName": "Chicken Noodle Soup",
     "id": 1103,
     "Origin": "unknown",
     "Breakfast": 0,
@@ -2142,7 +2142,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Tomato Soup",
+    "FoodName": "Tomato Soup",
     "id": 1104,
     "Origin": "spain",
     "Breakfast": 0,
@@ -2163,7 +2163,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Clam Chowder",
+    "FoodName": "Clam Chowder",
     "id": 1105,
     "Origin": "france",
     "Breakfast": 0,
@@ -2184,7 +2184,7 @@
     "imageName": "pizza"
   },
   {
-    "FOOD": "Spicy tortilla Soup",
+    "FoodName": "Spicy tortilla Soup",
     "id": 1106,
     "Origin": "mexico",
     "Breakfast": 0,
