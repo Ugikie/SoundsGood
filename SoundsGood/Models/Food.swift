@@ -10,7 +10,7 @@ import CoreLocation
 
 struct Food: Hashable, Codable, Identifiable{
     
-    var FOOD: String
+    var FoodName: String
     var id: Int // required to be
     var Origin: String
     

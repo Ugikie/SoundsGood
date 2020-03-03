@@ -15,7 +15,7 @@ struct FoodDetail: View {
 
             VStack() {
                 
-            Text(food.FOOD)
+            Text(food.FoodName)
                     .font(.title).foregroundColor(.white).padding(.all,5).padding([.leading, .trailing], 30).background(Color.red).cornerRadius(50)
                 
                 Spacer().frame(height: 40)
@@ -89,7 +89,7 @@ struct FoodDetail: View {
 
             Spacer()
         }
-        .navigationBarTitle(Text(food.FOOD), displayMode: .inline)
+        .navigationBarTitle(Text(food.FoodName), displayMode: .inline)
     }
 }
 
