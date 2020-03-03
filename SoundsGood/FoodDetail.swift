@@ -18,7 +18,6 @@ struct FoodDetail: View {
             Text(food.FOOD)
                     .font(.title).foregroundColor(.white).padding(.all,5).padding([.leading, .trailing], 30).background(Color.red).cornerRadius(50)
                 
-                
                 Spacer().frame(height: 40)
             Text("Tags:").font(.subheadline).foregroundColor(.white).padding(.all,5).padding([.leading, .trailing], 10).background(Color.gray).cornerRadius(30)
                 

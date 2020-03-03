@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+
+    
     var body: some View {
         
         // Layers of images
@@ -32,7 +34,7 @@ struct ContentView: View {
                 // Main button!
                 
                 Button(action: {
-                    
+                    print("hey")
                 }) {
                     Text("LET'S GO").font(.title).fontWeight(.semibold).bold().foregroundColor(.white).padding(.all,20).padding([.leading, .trailing], 20).background(Color.green).cornerRadius(50)
                 }

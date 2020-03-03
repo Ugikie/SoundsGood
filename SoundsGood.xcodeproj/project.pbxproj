@@ -21,6 +21,8 @@
 		D7412026240768080087E1F3 /* pizza.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D7412023240768080087E1F3 /* pizza.jpg */; };
 		D74DB9F424046C40001B885B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D74DB9F324046C40001B885B /* Assets.xcassets */; };
 		D7D7667724084D5E00E321BA /* foodData.json in Resources */ = {isa = PBXBuildFile; fileRef = D7D7667624084D5E00E321BA /* foodData.json */; };
+		D7D766792408528C00E321BA /* ButtonAction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D766782408528C00E321BA /* ButtonAction.storyboard */; };
+		D7D7667B240881E700E321BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D7667A240881E700E321BA /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		D7412023240768080087E1F3 /* pizza.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = pizza.jpg; path = "../../../images SG/pizza.jpg"; sourceTree = "<group>"; };
 		D74DB9F324046C40001B885B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7D7667624084D5E00E321BA /* foodData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = foodData.json; sourceTree = "<group>"; };
+		D7D766782408528C00E321BA /* ButtonAction.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ButtonAction.storyboard; sourceTree = "<group>"; };
+		D7D7667A240881E700E321BA /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,8 @@
 				D741201F2407670C0087E1F3 /* FoodRow.swift */,
 				D741201D240766290087E1F3 /* FoodDetail.swift */,
 				D74DB9F324046C40001B885B /* Assets.xcassets */,
+				D7D7667A240881E700E321BA /* Main.storyboard */,
+				D7D766782408528C00E321BA /* ButtonAction.storyboard */,
 				8416DAA223EA046A00F638BF /* LaunchScreen.storyboard */,
 				8416DAA523EA046A00F638BF /* Info.plist */,
 				D7412017240763340087E1F3 /* Resorces */,
@@ -173,10 +179,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7D7667B240881E700E321BA /* Main.storyboard in Resources */,
 				8416DAA423EA046A00F638BF /* LaunchScreen.storyboard in Resources */,
 				D74DB9F424046C40001B885B /* Assets.xcassets in Resources */,
 				D7412026240768080087E1F3 /* pizza.jpg in Resources */,
 				8416DAA123EA046A00F638BF /* Preview Assets.xcassets in Resources */,
+				D7D766792408528C00E321BA /* ButtonAction.storyboard in Resources */,
 				D7D7667724084D5E00E321BA /* foodData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
