@@ -31,16 +31,7 @@ struct Food: Hashable, Codable, Identifiable{
     var Cold: Int
     var Room_Temp: Int
     
-    
-    
-    
-    
-    
-    
-    //End Tags
-    
-    
-    
+    //End Tags    
     
     fileprivate var imageName: String
 

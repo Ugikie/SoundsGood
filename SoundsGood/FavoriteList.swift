@@ -10,9 +10,9 @@ import SwiftUI
 struct FavoriteList: View {
     var body: some View {
         NavigationView {
-            List(foodData) { food in
-                NavigationLink(destination: FoodDetail(food: food)) {
-                    FoodRow(food: food)
+            List(foodData) { foodlist in
+                NavigationLink(destination: FoodDetail(food: foodlist)) {
+                    FoodRow(food: foodlist)
                 }
             }
             .navigationBarTitle(Text("My Favorite Meals"))
