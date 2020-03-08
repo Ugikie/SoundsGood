@@ -14,6 +14,8 @@ struct ContentView: View {
         
         // Layers of images
         
+        NavigationView {
+
         ZStack {
             
            // Background Here
@@ -33,18 +35,20 @@ struct ContentView: View {
                 
                 // Main button!
                 
-                Button(action: {
-                    print("hey")
-                }) {
+                
+                // favorite list for testing
+                
+                
+                    NavigationLink(destination: Questions())
+                    {
+                
                     Text("LET'S GO").font(.title).fontWeight(.semibold).bold().foregroundColor(.white).padding(.all,20).padding([.leading, .trailing], 20).background(Color.green).cornerRadius(50)
-                }
+                    }
                 
             }
-            
         }
-        
     }
-    
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {

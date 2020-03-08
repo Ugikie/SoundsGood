@@ -9,8 +9,7 @@ import SwiftUI
 struct FoodDetail: View {
     var food: Food
     
-    
-    
+    // for test and demo. later gonna use database
     var tags = ["Breakfast", "Lunch", "Dinner", "Dessert", "Snack", "Vegetarian", "Doughy", "Chewy", "Crunchy", "Sweet", "Sour", "Savory", "Hot", "Cold", "Room_Temp"]
     
     

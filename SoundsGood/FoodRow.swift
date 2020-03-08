@@ -26,6 +26,7 @@ struct FoodRow_Previews: PreviewProvider {
         Group {
             FoodRow(food: foodData[0])
             FoodRow(food: foodData[1])
+            FoodRow(food: foodData[2])
         }
         .previewLayout(.fixed(width: 300, height: 70))
     }
