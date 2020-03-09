@@ -11,16 +11,21 @@ import SwiftUI
 struct Questions: View {
     
     // for test and demo. later gonna use database
-    var answers = ["Cafe", "Restaurant", "Fast Food"]
+    let questions = ["Where do you wanna eat?"]
+    let answers = ["Cafe", "Restaurant", "Fast Food"]
     
     var body: some View {
         
         ZStack {
             VStack {
-                
-                Text("Where do you wanna eat?").font(.title).fontWeight(.semibold).bold().foregroundColor(.white).padding(.all,10).padding([.leading, .trailing], 10).background(Color.red).cornerRadius(50)
+           
+               
+               // Print question from an array
+                Text(questions[0]).font(.title).fontWeight(.semibold).bold().foregroundColor(.white).padding(.all,10).padding([.leading, .trailing], 10).background(Color.red).cornerRadius(50)
                 
                 Spacer().frame(height: 100)
+                
+                // Print answers from an array
                 
                 ForEach(answers, id: \.self) {  answer in
                     Button(action: {}) {
@@ -34,6 +39,16 @@ struct Questions: View {
     
                     }
      
+                }
+                Spacer().frame(height: 100)
+                HStack {
+                    
+                    NavigationLink(destination: Tags())
+                        {
+                    
+                        Text("CHOOSE TAGS").font(.title).fontWeight(.semibold).bold().foregroundColor(.white).padding(.all,10).padding([.leading, .trailing], 10).background(Color.green).cornerRadius(50).frame(alignment: .leading)
+                        }
+                    
                 }
                 
             }
