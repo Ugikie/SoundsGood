@@ -37,7 +37,15 @@ struct ContentView: View {
                 
                 
                 // favorite list for testing
-                
+                Button(action: {
+                    getFoodInfo()
+                    for tag in listOfFoodTags {
+                        print("\(tag), ")
+                    }
+                }) {
+                            Text("test")
+                    }.font(.subheadline).foregroundColor(.white).padding(.all,5).padding([.leading, .trailing], 10).background(Color.green).cornerRadius(30)
+                }
                 
                     NavigationLink(destination: Questions())
                     {
@@ -48,7 +56,7 @@ struct ContentView: View {
             }
         }
     }
-    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

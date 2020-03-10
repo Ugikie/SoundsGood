@@ -14,7 +14,8 @@ struct FoodDetail: View {
     
     
     var indes = 0
-
+    
+    
     var body: some View {
         
         
@@ -32,12 +33,12 @@ struct FoodDetail: View {
                 
                 
                // food TAGS
-            Text("Tags:").font(.subheadline).foregroundColor(.white).padding(.all,5).padding([.leading, .trailing], 10).background(Color.gray).cornerRadius(30)
+                Text("Tags").font(.subheadline).foregroundColor(.white).padding(.all,5).padding([.leading, .trailing], 10).background(Color.gray).cornerRadius(30)
                         
             Text(food.Origin).font(.subheadline).foregroundColor(.white).padding(.all,5).padding([.leading, .trailing], 10).background(Color.green).cornerRadius(30)
                 
-            
-                ForEach(tags, id: \.self) {  tag in
+                
+                ForEach(listOfFoodTags, id: \.self) {  tag in
                     Button(action: {}) {
                             Text(tag)
                     }.font(.subheadline).foregroundColor(.white).padding(.all,5).padding([.leading, .trailing], 10).background(Color.green).cornerRadius(30)
@@ -52,6 +53,6 @@ struct FoodDetail: View {
 
 struct FoodDetail_Previews: PreviewProvider {
     static var previews: some View {
-        FoodDetail(food: foodData[0])
+        FoodDetail(food: foodData[1])
     }
 }
