@@ -9,7 +9,7 @@ import SwiftUI
 struct FoodDetail: View {
     var food: Food
     
-    // for test and demo. later gonna use database
+    // for test and DEMO. lists all tags so far. later we gonna use a database
     var tags = ["Breakfast", "Lunch", "Dinner", "Dessert", "Snack", "Vegetarian", "Doughy", "Chewy", "Crunchy", "Sweet", "Sour", "Savory", "Hot", "Cold", "Room_Temp"]
     
     
@@ -31,12 +31,12 @@ struct FoodDetail: View {
             Text(food.FoodName).font(.title).foregroundColor(.white).padding(.all,5).padding([.leading, .trailing], 30).background(Color.red).cornerRadius(50)
                 
                 
-               // food TAGS
             Text("Tags:").font(.subheadline).foregroundColor(.white).padding(.all,5).padding([.leading, .trailing], 10).background(Color.gray).cornerRadius(30)
                         
+                // food country
             Text(food.Origin).font(.subheadline).foregroundColor(.white).padding(.all,5).padding([.leading, .trailing], 10).background(Color.green).cornerRadius(30)
                 
-            
+                // list food tags. DEMO: vertically...
                 ForEach(tags, id: \.self) {  tag in
                     Button(action: {}) {
                             Text(tag)
