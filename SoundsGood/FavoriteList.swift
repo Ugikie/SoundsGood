@@ -10,11 +10,17 @@ import SwiftUI
 struct FavoriteList: View {
     var body: some View {
         NavigationView {
-            List(foodData) { foodlist in
-                NavigationLink(destination: FoodDetail(food: foodlist)) {
-                    FoodRow(food: foodlist)
+            List(listOfFoodNames, id:\.self) { foodName in
+                NavigationLink(destination: FoodDetail(foodName: foodName)) {
+                    FoodRow(foodName: foodName)
                 }
+                
             }
+//            List(foodData) { foodlist in
+//                NavigationLink(destination: FoodDetail(food: foodlist)) {
+//                    FoodRow(food: foodlist)
+//                }
+//            }
             .navigationBarTitle(Text("My Favorite Meals"))
         }
     }

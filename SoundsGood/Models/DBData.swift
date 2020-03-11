@@ -14,29 +14,73 @@ let urlPath = Bundle.main.path(forResource: "food_db", ofType: "db")
 
 let db = try! Connection(urlPath!)
 let food_info = Table("food_info")
+let food_imgs = Table("food_imgs")
 let id = Expression<Int64>("id")
 let foodName = Expression<String?>("food")
 
 var columnNamesFromDB = getColumnNames()
 let listOfFoodTags = columnNamesFromDB.filter {$0 != " "}
 
+var foodNamesFromDB = getFoodNames()
+let listOfFoodNames = foodNamesFromDB.filter {$0 != " "}
+
+
+
 func getFoodInfo() {
     for food in try! db.prepare(food_info) {
         print("id: \(food[id]), foodName: \(food[foodName]!)")
     }
     
-    getTagValues()
+//    getTagValues()
     
 }
 
-func getTagValues() {
-    for tag in listOfFoodTags {
-        var query = try! food_info.select(tag)
-        for value in try! db.prepare(query) {
-            print("\(value), ")
-        }
-        
+func getFoodNames() -> [String] {
+    var listOfFoodNames: [String] = [" "]
+    for food in try! db.prepare(food_info) {
+        //print("foodName: \(food[foodName]!)")
+        listOfFoodNames.append(food[foodName]!)
     }
+    
+    return listOfFoodNames
+    
+//    getTagValues()
+    
+}
+
+func getTagValuesForFood(_ foodNameToCheck: String) -> [String] {
+    var posTags: [String] = [" "]
+    //var tagValuesForFood: [Int] = [-1]
+    //SELECT food from food_info WHERE food = foodNameToCheck
+    let query = food_info.filter(foodName == foodNameToCheck)
+    for tag in try! db.prepare(query) {
+        for tagName in listOfFoodTags {
+            if (tagName == "food" || tagName == "origin") {
+                let tagToCheck = Expression<String?>(tagName)
+                print("\(tagName): \(tag[tagToCheck]!)")
+                
+            } else {
+                
+                let tagToCheck = Expression<Int64>(tagName)
+                if (tag[tagToCheck] != 0 && (tagName != "id" )) {
+                    print("\(tagName): \(tag[tagToCheck])")
+                    posTags.append(tagName)
+                }
+            }
+                //let tag1 = Expression<Int64>(listOfFoodTags[7])
+           // let tag2 = Expression<Int64>(listOfFoodTags[4])
+            //let tag3 = Expression<Int64>(listOfFoodTags[5])
+            //print("\(listOfFoodTags[7])")
+            
+       // print("\(tag[tag2])")
+       // print("\(tag[tag3])")
+        
+            //tagValuesForFood.append(tag[tagValue]!)
+        }
+    }
+    return posTags
+    
+    //return tagValuesForFood
 }
 
 func getColumnNames() -> [String] {
@@ -49,6 +93,33 @@ func getColumnNames() -> [String] {
     
     return listOfTags
 }
+
+extension UIImage: Value {
+    public class var declaredDatatype: String {
+        return Blob.declaredDatatype
+    }
+    public class func fromDatatypeValue(_ blobValue: Blob) -> UIImage {
+        return UIImage(data: Data.fromDatatypeValue(blobValue))!
+    }
+    public var datatypeValue: Blob {
+        return self.pngData()!.datatypeValue
+    }
+
+}
+
+func getFoodImageFor(_ foodNameToCheck: String) -> Blob{
+    
+//    var imageBlob: Blob
+    let image = Expression<Blob>("image")
+    let query = food_imgs.filter(foodName == foodNameToCheck)
+    for tag in try! db.prepare(query) {
+        return tag[image]
+    }
+    
+    return 
+}
+
+
 
 //enum SQLiteError: Error {
 //  case OpenDatabase(message: String)

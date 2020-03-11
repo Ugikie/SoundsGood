@@ -8,13 +8,18 @@ A single row to be displayed in a list of food.
 import SwiftUI
 
 struct FoodRow: View {
-    var food: Food
+    //var food: Food
+    var foodName: String
     var body: some View {
         HStack {
-            food.image
-                    .resizable()
-                    .frame(width: 100, height: 100)
-            Text(food.FoodName)
+            //food.image
+            //        .resizable()
+            //        .frame(width: 100, height: 100)
+            UIImage.fromDatatypeValue(getFoodImageFor(listOfFoodNames[0]))
+                    //.resizable()
+                    //.frame(width: 100, height: 100)
+            
+            Text(foodName)
             Spacer()
         }
     }
@@ -23,9 +28,9 @@ struct FoodRow: View {
 struct FoodRow_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            FoodRow(food: foodData[0])
-            FoodRow(food: foodData[1])
-            FoodRow(food: foodData[2])
+            FoodRow(foodName: listOfFoodNames[0])
+            FoodRow(foodName: listOfFoodNames[1])
+            FoodRow(foodName: listOfFoodNames[2])
         }
         .previewLayout(.fixed(width: 300, height: 70))
     }

@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:SoundsGood.xcodeproj">
+      location = "group:/Users/liattyy/Desktop/SoundsGood/SoundsGood/Resorces/food_db.db">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>
