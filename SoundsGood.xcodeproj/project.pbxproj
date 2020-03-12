@@ -29,7 +29,6 @@
 		D7D7667E240ED97800E321BA /* QuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D7667D240ED97700E321BA /* QuestionController.swift */; };
 		D7D76680240EEB8300E321BA /* pizza.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D7D7667F240EEB8300E321BA /* pizza.jpg */; };
 		D7D766822412244A00E321BA /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D766812412244A00E321BA /* Questions.swift */; };
-		D7D7668624133E0300E321BA /* MView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D7668524133E0300E321BA /* MView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,7 +121,6 @@
 		D7D7667D240ED97700E321BA /* QuestionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionController.swift; sourceTree = "<group>"; };
 		D7D7667F240EEB8300E321BA /* pizza.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pizza.jpg; sourceTree = "<group>"; };
 		D7D766812412244A00E321BA /* Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
-		D7D7668524133E0300E321BA /* MView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,7 +168,6 @@
 				D7412010240642800087E1F3 /* FavoriteList.swift */,
 				D741201F2407670C0087E1F3 /* FoodRow.swift */,
 				D741201D240766290087E1F3 /* FoodDetail.swift */,
-				D7D7668524133E0300E321BA /* MView.swift */,
 				D74DB9F324046C40001B885B /* Assets.xcassets */,
 				8416DAA223EA046A00F638BF /* LaunchScreen.storyboard */,
 				8416DAA523EA046A00F638BF /* Info.plist */,
@@ -378,7 +375,6 @@
 				846FC5F52419FDF900AAF497 /* FoodByTags.swift in Sources */,
 				8416DA9A23EA046900F638BF /* SceneDelegate.swift in Sources */,
 				D7D7667E240ED97800E321BA /* QuestionController.swift in Sources */,
-				D7D7668624133E0300E321BA /* MView.swift in Sources */,
 				D7D766822412244A00E321BA /* Questions.swift in Sources */,
 				D741201C240763E30087E1F3 /* Food.swift in Sources */,
 				846FC5AB2415A91900AAF497 /* DBData.swift in Sources */,
