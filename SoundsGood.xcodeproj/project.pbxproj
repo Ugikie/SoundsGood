@@ -16,6 +16,8 @@
 		846FC5C52416E32F00AAF497 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846FC5B72416E2FB00AAF497 /* SQLite.framework */; };
 		846FC5C62416E32F00AAF497 /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 846FC5B72416E2FB00AAF497 /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		846FC5DE2419BA8800AAF497 /* food_db.db in Resources */ = {isa = PBXBuildFile; fileRef = 846FC5DD2419BA8800AAF497 /* food_db.db */; };
+		846FC5F42419FDF900AAF497 /* TagsChoose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FC5EB2419FDF900AAF497 /* TagsChoose.swift */; };
+		846FC5F52419FDF900AAF497 /* FoodByTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FC5F32419FDF900AAF497 /* FoodByTags.swift */; };
 		D72FE0E02404B6870083002A /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72FE0DF2404B6870083002A /* AppView.swift */; };
 		D7412011240642800087E1F3 /* FavoriteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7412010240642800087E1F3 /* FavoriteList.swift */; };
 		D7412016240763110087E1F3 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7412015240763110087E1F3 /* Data.swift */; };
@@ -107,6 +109,8 @@
 		846FC5AA2415A91900AAF497 /* DBData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBData.swift; sourceTree = "<group>"; };
 		846FC5AC2416E2FA00AAF497 /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "../SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
 		846FC5DD2419BA8800AAF497 /* food_db.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = food_db.db; sourceTree = "<group>"; };
+		846FC5EB2419FDF900AAF497 /* TagsChoose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsChoose.swift; sourceTree = "<group>"; };
+		846FC5F32419FDF900AAF497 /* FoodByTags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodByTags.swift; sourceTree = "<group>"; };
 		D72FE0DF2404B6870083002A /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		D7412010240642800087E1F3 /* FavoriteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteList.swift; sourceTree = "<group>"; };
 		D7412015240763110087E1F3 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
@@ -154,6 +158,8 @@
 		8416DA9623EA046900F638BF /* SoundsGood */ = {
 			isa = PBXGroup;
 			children = (
+				846FC5F32419FDF900AAF497 /* FoodByTags.swift */,
+				846FC5EB2419FDF900AAF497 /* TagsChoose.swift */,
 				D7D7667C240ED97700E321BA /* System */,
 				D7412014240762C40087E1F3 /* Models */,
 				8416DA9723EA046900F638BF /* AppDelegate.swift */,
@@ -367,7 +373,9 @@
 				D7412016240763110087E1F3 /* Data.swift in Sources */,
 				D7412011240642800087E1F3 /* FavoriteList.swift in Sources */,
 				D72FE0E02404B6870083002A /* AppView.swift in Sources */,
+				846FC5F42419FDF900AAF497 /* TagsChoose.swift in Sources */,
 				8416DA9823EA046900F638BF /* AppDelegate.swift in Sources */,
+				846FC5F52419FDF900AAF497 /* FoodByTags.swift in Sources */,
 				8416DA9A23EA046900F638BF /* SceneDelegate.swift in Sources */,
 				D7D7667E240ED97800E321BA /* QuestionController.swift in Sources */,
 				D7D7668624133E0300E321BA /* MView.swift in Sources */,
