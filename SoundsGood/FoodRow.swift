@@ -15,9 +15,9 @@ struct FoodRow: View {
             //food.image
             //        .resizable()
             //        .frame(width: 100, height: 100)
-            UIImage.fromDatatypeValue(getFoodImageFor(listOfFoodNames[0]))
-                    //.resizable()
-                    //.frame(width: 100, height: 100)
+            getFoodImageFor(foodName)!
+                    .resizable()
+                    .frame(width: 100, height: 100)
             
             Text(foodName)
             Spacer()

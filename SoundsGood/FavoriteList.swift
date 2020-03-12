@@ -16,11 +16,6 @@ struct FavoriteList: View {
                 }
                 
             }
-//            List(foodData) { foodlist in
-//                NavigationLink(destination: FoodDetail(food: foodlist)) {
-//                    FoodRow(food: foodlist)
-//                }
-//            }
             .navigationBarTitle(Text("My Favorite Meals"))
         }
     }

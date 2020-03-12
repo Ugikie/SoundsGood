@@ -25,7 +25,8 @@ struct FoodDetail: View {
             
                 Spacer().frame(height: 20)
                 // Food image on top of detail page
-            
+               getFoodImageFor(foodName)!
+               .scaledToFit().frame(alignment: .top)
                // food.image.resizable() .scaledToFit().frame(alignment: .top)
                         
                // food NAME

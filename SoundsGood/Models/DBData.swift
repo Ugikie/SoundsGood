@@ -44,43 +44,39 @@ func getFoodNames() -> [String] {
     
     return listOfFoodNames
     
-//    getTagValues()
     
 }
 
 func getTagValuesForFood(_ foodNameToCheck: String) -> [String] {
     var posTags: [String] = [" "]
-    //var tagValuesForFood: [Int] = [-1]
+    posTags = posTags.filter {$0 != " "}
+
     //SELECT food from food_info WHERE food = foodNameToCheck
     let query = food_info.filter(foodName == foodNameToCheck)
+    
     for tag in try! db.prepare(query) {
+        
         for tagName in listOfFoodTags {
+            
             if (tagName == "food" || tagName == "origin") {
+                
                 let tagToCheck = Expression<String?>(tagName)
                 print("\(tagName): \(tag[tagToCheck]!)")
                 
             } else {
                 
                 let tagToCheck = Expression<Int64>(tagName)
+                
                 if (tag[tagToCheck] != 0 && (tagName != "id" )) {
+                    
                     print("\(tagName): \(tag[tagToCheck])")
                     posTags.append(tagName)
                 }
             }
-                //let tag1 = Expression<Int64>(listOfFoodTags[7])
-           // let tag2 = Expression<Int64>(listOfFoodTags[4])
-            //let tag3 = Expression<Int64>(listOfFoodTags[5])
-            //print("\(listOfFoodTags[7])")
-            
-       // print("\(tag[tag2])")
-       // print("\(tag[tag3])")
-        
-            //tagValuesForFood.append(tag[tagValue]!)
         }
     }
     return posTags
     
-    //return tagValuesForFood
 }
 
 func getColumnNames() -> [String] {
@@ -107,16 +103,17 @@ extension UIImage: Value {
 
 }
 
-func getFoodImageFor(_ foodNameToCheck: String) -> Blob{
+func getFoodImageFor(_ foodNameToCheck: String) -> Image? {
+    var foodImage: Image?
+    let image = Expression<UIImage>("image")
     
-//    var imageBlob: Blob
-    let image = Expression<Blob>("image")
     let query = food_imgs.filter(foodName == foodNameToCheck)
+    
     for tag in try! db.prepare(query) {
-        return tag[image]
+        foodImage = Image(uiImage: tag[image])
     }
     
-    return 
+    return foodImage
 }
 
 
