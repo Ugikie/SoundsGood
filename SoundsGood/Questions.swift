@@ -11,11 +11,11 @@ import SwiftUI
 struct Questions: View {
     
     // for test and demo. later gonna use database
-    @State private var answers = ["Cafe", "Restaurant ", "Fast Food"]
+    @State private var answers = ["breakfast", "Lunch ", "Dinner", "Snack"]
     
-    @State private var QUESTIONSTATE:String = "Where do you wanna eat??"
+    @State private var QUESTIONSTATE: String = "What do you wanna eat?"
     
-    @State private var track:Int = 0
+    @State private var tagsFromAnswers: [String] = []
     
     
     var body: some View {
@@ -34,13 +34,16 @@ struct Questions: View {
                 ForEach(answers, id: \.self) {  answer in
                     Button(action: {
                         
-                        self.QUESTIONSTATE = "Next question!"
+                        self.QUESTIONSTATE = getNextQuestion()
+                        self.tagsFromAnswers.append(answer)
+                        computeResults(answer, trackedTags: self.tagsFromAnswers)
                         if (answer == "Answer1"){
                             
                         }
                         self.answers[0] = "Answer1"
                         self.answers[1] = "Answer2"
                         self.answers[2] = "Answer3"
+                        self.answers[3] = "Answer3"
                         //result(QUESTIONSTATE, answer, track)
                         
                     }) {

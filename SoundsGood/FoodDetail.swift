@@ -27,7 +27,6 @@ struct FoodDetail: View {
                 // Food image on top of detail page
                getFoodImageFor(foodName)!
                .scaledToFit().frame(alignment: .top)
-               // food.image.resizable() .scaledToFit().frame(alignment: .top)
                         
                // food NAME
             Text(foodName).font(.title).foregroundColor(.white).padding(.all,5).padding([.leading, .trailing], 30).background(Color.red).cornerRadius(50)

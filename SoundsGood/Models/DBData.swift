@@ -18,28 +18,33 @@ let food_imgs = Table("food_imgs")
 let id = Expression<Int64>("id")
 let foodName = Expression<String?>("food")
 
-var columnNamesFromDB = getColumnNames()
-let listOfFoodTags = columnNamesFromDB.filter {$0 != " "}
+var listOfFoodTags = getColumnNames()
 
-var foodNamesFromDB = getFoodNames()
-let listOfFoodNames = foodNamesFromDB.filter {$0 != " "}
+var listOfFoodNames = getFoodNames()
 
 
 
 func getFoodInfo() {
-    for food in try! db.prepare(food_info) {
+    do {
+        for food in try db.prepare(food_info) {
         print("id: \(food[id]), foodName: \(food[foodName]!)")
+        }
+    } catch {
+        print("Error finding a value for food")
     }
-    
-//    getTagValues()
     
 }
 
 func getFoodNames() -> [String] {
-    var listOfFoodNames: [String] = [" "]
-    for food in try! db.prepare(food_info) {
-        //print("foodName: \(food[foodName]!)")
-        listOfFoodNames.append(food[foodName]!)
+    var listOfFoodNames: [String] = []
+    
+    do {
+        for food in try db.prepare(food_info) {
+            //print("foodName: \(food[foodName]!)")
+            listOfFoodNames.append(food[foodName]!)
+        }
+    } catch {
+        print("Error finding a value for foodName")
     }
     
     return listOfFoodNames
@@ -48,39 +53,43 @@ func getFoodNames() -> [String] {
 }
 
 func getTagValuesForFood(_ foodNameToCheck: String) -> [String] {
-    var posTags: [String] = [" "]
-    posTags = posTags.filter {$0 != " "}
+    var posTags: [String] = []
+
 
     //SELECT food from food_info WHERE food = foodNameToCheck
     let query = food_info.filter(foodName == foodNameToCheck)
     
-    for tag in try! db.prepare(query) {
-        
-        for tagName in listOfFoodTags {
+    do {
+        for tag in try db.prepare(query) {
             
-            if (tagName == "food" || tagName == "origin") {
+            for tagName in listOfFoodTags {
                 
-                let tagToCheck = Expression<String?>(tagName)
-                print("\(tagName): \(tag[tagToCheck]!)")
-                
-            } else {
-                
-                let tagToCheck = Expression<Int64>(tagName)
-                
-                if (tag[tagToCheck] != 0 && (tagName != "id" )) {
+                if (tagName == "food" || tagName == "origin") {
                     
-                    print("\(tagName): \(tag[tagToCheck])")
-                    posTags.append(tagName)
+                    let tagToCheck = Expression<String?>(tagName)
+                    print("\(tagName): \(tag[tagToCheck]!)")
+                    
+                } else {
+                    
+                    let tagToCheck = Expression<Int64>(tagName)
+                    
+                    if (tag[tagToCheck] != 0 && (tagName != "id" )) {
+                        
+                        print("\(tagName): \(tag[tagToCheck])")
+                        posTags.append(tagName)
+                    }
                 }
             }
         }
+    } catch {
+        print("Error finding a tag values for: \(foodNameToCheck)")
     }
     return posTags
     
 }
 
 func getColumnNames() -> [String] {
-    var listOfTags: [String] = [" "]
+    var listOfTags: [String] = []
     
     let tableInfo = try! db.prepare("PRAGMA table_info(food_info)")
     for line in tableInfo {
@@ -109,8 +118,12 @@ func getFoodImageFor(_ foodNameToCheck: String) -> Image? {
     
     let query = food_imgs.filter(foodName == foodNameToCheck)
     
-    for tag in try! db.prepare(query) {
-        foodImage = Image(uiImage: tag[image])
+    do {
+        for tag in try db.prepare(query) {
+            foodImage = Image(uiImage: tag[image])
+        }
+    } catch {
+        print("Error finding an image for: \(foodNameToCheck)")
     }
     
     return foodImage
