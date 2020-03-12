@@ -32,7 +32,10 @@ func computeResults(_ selectedAnswer: String, trackedTags: [String]) {
 
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> Austin-Branch
 func getNumberOfResults(expression: Expression<Int>) -> Int {
     
     let count = try! db.scalar(food_info.filter(expression == 1).count)
