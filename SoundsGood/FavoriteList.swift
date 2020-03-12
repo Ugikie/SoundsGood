@@ -8,7 +8,9 @@ A view showing a list of food.
 import SwiftUI
 
 struct FavoriteList: View {
+    
     var body: some View {
+        
         NavigationView {
             List(listOfFoodNames, id:\.self) { foodName in
                 NavigationLink(destination: FoodDetail(foodName: foodName)) {
@@ -17,6 +19,7 @@ struct FavoriteList: View {
                 
             }
             .navigationBarTitle(Text("My Favorite Meals"))
+
         }
     }
 }
