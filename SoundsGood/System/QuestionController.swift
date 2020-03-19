@@ -15,27 +15,63 @@ func getNextQuestion() -> String {
     return "Next Question"
 }
 
-func computeResults(_ selectedAnswer: String, trackedTags: [String]) {
+func computeResults(_ selectedAnswer: String, trackedTags: [String]) -> [String] {
         
-    var queryString = "SELECT food FROM food_info WHERE \(selectedAnswer) == 1"
-    
+    var queryString = "SELECT food FROM food_info WHERE \"\(selectedAnswer)\" == 1"
+
     for tag in trackedTags {
-        queryString = queryString + " AND \(tag) == 1"
+        queryString = queryString + " AND \"\(tag)\" == 1"
     }
+
+    var totalNumberOfResults: Int = 0
+    var resultingFoods: [String] = []
+
     do {
+
+        print("\n")
+
         for result in try db.prepare(queryString) {
+            totalNumberOfResults += 1
+            resultingFoods.append(result[0]! as! String)
             print(result[0]!)
         }
+        
+        if totalNumberOfResults <= 5 && totalNumberOfResults > 0 {
+
+            print("\nResults are:")
+
+            for resultingFood in resultingFoods {
+                print(resultingFood)
+
+            }
+
+        } else if totalNumberOfResults == 0 {
+            print("\nNo results")
+        }
+        
     } catch {
         print("Error finding a value for tag: \(selectedAnswer)")
     }
-
+    return getNewAnswers(trackedTags)
 }
 
-<<<<<<< HEAD
+func getNewAnswers(_ trackedTags: [String]) -> [String] {
+    var newAnswers: [String] = []
+    
+    let shuffledAnswers = listOfFoodTags.shuffled()
+    
+    var count = 0
+    for tag in shuffledAnswers {
+        count += 1
+        if (count <= 4 && !trackedTags.contains(tag)) {
+            newAnswers.append(tag.capitalized)
+        } else if count > 4 {
+            break
+        }
+    }
+    return newAnswers
+}
 
-=======
->>>>>>> Austin-Branch
 func getNumberOfResults(expression: Expression<Int>) -> Int {
     
     let count = try! db.scalar(food_info.filter(expression == 1).count)

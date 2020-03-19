@@ -11,7 +11,7 @@ import SwiftUI
 struct Questions: View {
     
     // for test and demo. later gonna use database
-    @State private var answers = ["breakfast", "Lunch ", "Dinner", "Snack"]
+    @State private var answers = ["breakfast", "Lunch", "Dinner", "Snack"]
     
     @State private var QUESTIONSTATE: String = "What do you wanna eat?"
     
@@ -35,15 +35,17 @@ struct Questions: View {
                     Button(action: {
                         
                         self.QUESTIONSTATE = getNextQuestion()
+                        
+                        let newAnswers = computeResults(answer, trackedTags: self.tagsFromAnswers)
                         self.tagsFromAnswers.append(answer)
-                        computeResults(answer, trackedTags: self.tagsFromAnswers)
                         if (answer == "Answer1"){
                             
                         }
-                        self.answers[0] = "Answer1"
-                        self.answers[1] = "Answer2"
-                        self.answers[2] = "Answer3"
-                        self.answers[3] = "Answer3"
+                        
+                        self.answers[0] = newAnswers[0]
+                        self.answers[1] = newAnswers[1]
+                        self.answers[2] = newAnswers[2]
+                        self.answers[3] = newAnswers[3]
                         //result(QUESTIONSTATE, answer, track)
                         
                     }) {
