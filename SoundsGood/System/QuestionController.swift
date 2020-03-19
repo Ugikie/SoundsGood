@@ -44,6 +44,7 @@ func computeResults(_ selectedAnswer: String, trackedTags: [String]) -> [String]
                 print(resultingFood)
 
             }
+            
 
         } else if totalNumberOfResults == 0 {
             print("\nNo results")
