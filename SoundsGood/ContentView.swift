@@ -41,11 +41,10 @@ struct ContentView: View {
                 
                     Text("LET'S GO").font(.title).fontWeight(.semibold).bold().foregroundColor(.white).padding(.all,20).padding([.leading, .trailing], 20).background(Color.green).cornerRadius(50)
                     }
-            }
+                }
             }
         }
     }
-    
 }
 
 struct ContentView_Previews: PreviewProvider {

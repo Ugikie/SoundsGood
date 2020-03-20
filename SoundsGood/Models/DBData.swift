@@ -115,7 +115,7 @@ func getColumnNames() -> [String] {
     let tableInfo = try! db.prepare("PRAGMA table_info(food_info)")
     for line in tableInfo {
         let tagName = line[1] as! String
-        if (tagName != "food" && tagName != "id" && tagName != "origin" && tagName != "isFavorite") {
+        if (tagName != "food" && tagName != "id" && tagName != "origin") {
             listOfTags.append(tagName)
         }
     }

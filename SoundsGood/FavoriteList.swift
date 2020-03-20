@@ -13,7 +13,7 @@ struct FavoriteList: View {
             
         NavigationView {
             
-            List(listOfFavoriteFoods, id:\.self) { foodName in
+            List(favoriteFoods, id:\.self) { foodName in
                     NavigationLink(destination: FoodDetail(foodName: foodName)) {
                     // prints picture and name in foodRow file
                     FoodRow(foodName: foodName)
