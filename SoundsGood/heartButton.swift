@@ -10,7 +10,7 @@
 
 import SwiftUI
 
-struct starButton: View {
+struct heartButton: View {
     var foodName: String
     
     @State private var heartColor:Color = .red
@@ -18,16 +18,21 @@ struct starButton: View {
     var body: some View {
         ForEach(getTagValuesForFood(foodName), id: \.self) {  tag in
             HStack {
-                if (tag == "breakfast" && self.heartColor == .red) {
+                if (tag == "isFavorite" && self.heartColor == .red) {
             Button(action: {
+                
+                // AUSTIN ADD ACTION TO CHANGE TAG TO 0
+                
                     self.heartColor = .gray
         }) {
                 Image(systemName: "heart.fill")
                     .foregroundColor(self.heartColor).font(.system(size: 30))
             }
                 }
-                else if (tag == "breakfast" && self.heartColor == .gray) {
+                else if (tag == "isFavorite" && self.heartColor == .gray) {
                     Button(action: {
+                        
+                        // AUSTIN ADD ACTION TO CHANGE TAG BACK TO 1
                                 self.heartColor = .red
                     }) {
                             Image(systemName: "heart.fill")
@@ -39,8 +44,8 @@ struct starButton: View {
         
     }
 }
-struct starButton_Previews: PreviewProvider {
+struct heartButton_Previews: PreviewProvider {
     static var previews: some View {
-        starButton(foodName: "CHICKEN")
+        heartButton(foodName: "CHICKEN")
     }
 }
