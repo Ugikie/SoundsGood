@@ -36,29 +36,12 @@ struct ContentView: View {
                 // Main button!
                 
                 
-                // favorite list for testing
-                Button(action: {
-                    getFoodInfo()
-                    
-                    for tag in listOfFoodTags {
-                        print("\(tag), ")
-                    }
-                    
-                    for food in listOfFoodNames {
-                        print("\(food), ")
-                    }
-                    
-                }) {
-                            Text("test")
-                    }.font(.subheadline).foregroundColor(.white).padding(.all,5).padding([.leading, .trailing], 10).background(Color.green).cornerRadius(30)
-                }
-                
                     NavigationLink(destination: Questions())
                     {
                 
                     Text("LET'S GO").font(.title).fontWeight(.semibold).bold().foregroundColor(.white).padding(.all,20).padding([.leading, .trailing], 20).background(Color.green).cornerRadius(50)
                     }
-                
+            }
             }
         }
     }

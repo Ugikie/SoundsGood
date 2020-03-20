@@ -15,7 +15,6 @@ struct FoodDetail: View {
     
     var indes = 0
     
-    
     var body: some View {
         
         

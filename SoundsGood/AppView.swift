@@ -27,16 +27,16 @@ struct AppView: View {
                             Text("Favorites")
                   }
             
-                  Text("Previous Orders")
+                  Text("Food Scanner?")
                         .tabItem {
                             Image(systemName: "2.square.fill")
-                            Text("Previous")
+                            Text("Food Scanner?")
                   }
             
-                  Text("Food Scanner")
+                  SignIn()
                         .tabItem {
                             Image(systemName: "3.square.fill")
-                            Text("Scan")
+                            Text("Profile??")
                   }
             
               }

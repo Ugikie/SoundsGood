@@ -12,9 +12,6 @@ struct FoodRow: View {
     var foodName: String
     var body: some View {
         HStack {
-            //food.image
-            //        .resizable()
-            //        .frame(width: 100, height: 100)
             getFoodImageFor(foodName)!
                     .resizable()
                     .frame(width: 100, height: 100)
