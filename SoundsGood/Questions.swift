@@ -10,6 +10,9 @@ import SwiftUI
 
 struct Questions: View {
     
+    // fixing BACK button
+     @Binding var isActive: Bool
+    
     // for test and demo. later gonna use database
     @State private var answers = ["breakfast", "Lunch", "Dinner", "Snack"]
     
@@ -75,14 +78,9 @@ struct Questions: View {
                 
             }
             
-        }
+        }.navigationBarItems(leading: Button(action: { self.isActive = false }, label: { Text("Back") }))
+        
         
     }
     
-}
-
-struct Questions_Previews: PreviewProvider {
-    static var previews: some View {
-        Questions()
-    }
 }

@@ -9,11 +9,6 @@ import SwiftUI
 struct FoodDetail: View {
     //var food: Food
     var foodName: String
-
-    // for test and demo. later gonna use database
-    var tags = ["Breakfast", "Lunch", "Dinner", "Dessert", "Snack", "Vegetarian", "Doughy", "Chewy", "Crunchy", "Sweet", "Sour", "Savory", "Hot", "Cold", "Room_Temp"]
-    
-    var indes = 0
     
     var body: some View {
         
@@ -33,9 +28,6 @@ struct FoodDetail: View {
                 
                // food TAGS
                 Text("Tags").font(.subheadline).foregroundColor(.white).padding(.all,5).padding([.leading, .trailing], 10).background(Color.gray).cornerRadius(30)
-                        
-            //Text(food.Origin).font(.subheadline).foregroundColor(.white).padding(.all,5).padding([.leading, .trailing], 10).background(Color.green).cornerRadius(30)
-                
                 
                 ForEach(getTagValuesForFood(foodName), id: \.self) {  tag in
                     Button(action: {}) {
