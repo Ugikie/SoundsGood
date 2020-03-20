@@ -22,6 +22,8 @@ var listOfFoodTags = getColumnNames()
 
 var listOfFoodNames = getFoodNames()
 
+var favoriteFoods = getFavoriteFoods()
+
 
 
 func getFoodInfo() {
@@ -48,6 +50,25 @@ func getFoodNames() -> [String] {
     }
     
     return listOfFoodNames
+    
+    
+}
+
+func getFavoriteFoods() -> [String] {
+    var favoriteFoods: [String] = []
+    let isFavorite = Expression<Int64>("isFavorite")
+    do {
+        for food in try db.prepare(food_info) {
+            if (food[isFavorite] == 1) {
+                //print("foodName: \(food[foodName]!)")
+                favoriteFoods.append(food[foodName]!)
+            }
+        }
+    } catch {
+        print("Error finding a value for foodName")
+    }
+    
+    return favoriteFoods
     
     
 }
