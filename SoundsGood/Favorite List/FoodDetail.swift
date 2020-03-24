@@ -28,12 +28,14 @@ struct FoodDetail: View {
         }.offset(y: 100)
         
         VStack  {
+            
+            Spacer().frame(height: 380)
                 
-            TestWrappedLayout(foodName: foodName)
+            PrintTags(foodName: foodName)
                 
                 
                 // Navigation bar title is not necessary since we have food name in details already
-            }.offset(y: 200)
+            }
         }.navigationBarTitle(Text(foodName), displayMode: .inline).offset(y: -60)
     }
 }

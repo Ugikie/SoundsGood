@@ -9,7 +9,7 @@
 import SwiftUI
 
 
-struct TestWrappedLayout: View {
+struct PrintTags: View {
     
     @State var foodName: String
 
@@ -29,13 +29,13 @@ struct TestWrappedLayout: View {
                     print("hey")
                 }) {
                       if (tag != "isFavorite") {
-                    Text(tag).font(.title)
+                    Text(tag.capitalized)
+                    .font(.title)
                     .padding(.all, 5).padding([.leading, .trailing], 10)
                     .font(.body)
                     .background(Color.blue)
                     .foregroundColor(Color.white)
-                    .cornerRadius(8)
-                    }
+                    .cornerRadius(8)                    }
                 }
                     .padding([.horizontal, .vertical], 4)
                     .alignmentGuide(.leading, computeValue: { d in
