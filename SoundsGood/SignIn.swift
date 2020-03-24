@@ -15,7 +15,7 @@ struct SignIn: View {
     
     var body: some View {
         VStack() {
-            Text("Pizza!")
+            Text("**in development**")
                 .font(.largeTitle).foregroundColor(Color.white)
                 .padding([.top, .bottom], 40)
                 .shadow(radius: 10.0, x: 20, y: 10)

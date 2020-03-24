@@ -30,11 +30,11 @@ struct TestWrappedLayout: View {
                 }) {
                       if (tag != "isFavorite") {
                     Text(tag).font(.title)
-                    .padding(.all, 5)
+                    .padding(.all, 5).padding([.leading, .trailing], 10)
                     .font(.body)
                     .background(Color.blue)
                     .foregroundColor(Color.white)
-                    .cornerRadius(5)
+                    .cornerRadius(8)
                     }
                 }
                     .padding([.horizontal, .vertical], 4)

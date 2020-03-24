@@ -138,8 +138,6 @@
 		8416DA9623EA046900F638BF /* SoundsGood */ = {
 			isa = PBXGroup;
 			children = (
-				846FC5F32419FDF900AAF497 /* FoodByTags.swift */,
-				846FC5EB2419FDF900AAF497 /* TagsChoose.swift */,
 				D7D7667C240ED97700E321BA /* System */,
 				D7412014240762C40087E1F3 /* Models */,
 				8416DA9723EA046900F638BF /* AppDelegate.swift */,
@@ -147,8 +145,10 @@
 				D72FE0DF2404B6870083002A /* AppView.swift */,
 				8416DA9B23EA046900F638BF /* ContentView.swift */,
 				D7D766812412244A00E321BA /* Questions.swift */,
-				D7CE20042429F8E300C4142E /* Favorite List */,
+				846FC5EB2419FDF900AAF497 /* TagsChoose.swift */,
+				846FC5F32419FDF900AAF497 /* FoodByTags.swift */,
 				D7680CCC2424510000C023B7 /* SignIn.swift */,
+				D7CE20042429F8E300C4142E /* Favorite List */,
 				D74DB9F324046C40001B885B /* Assets.xcassets */,
 				8416DAA223EA046A00F638BF /* LaunchScreen.storyboard */,
 				8416DAA523EA046A00F638BF /* Info.plist */,
