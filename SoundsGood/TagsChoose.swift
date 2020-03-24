@@ -12,7 +12,6 @@ import SwiftUI
 
 struct Tags: View {
     
-    
     // demo: initially a row of buttons(tags) is gray
     // one click - green, 2 clicks - red
     
@@ -297,8 +296,7 @@ struct Tags: View {
         }
      }
 
-struct Tags_Previews: PreviewProvider {
-    static var previews: some View {
-        Tags()
-    }
-}
+
+//.navigationBarItems(leading: Button(action: { self.isActive2 = false }, label: {  Image(systemName: "chevron.left")
+//.aspectRatio(contentMode: .fit)
+//    Text("Back") }))

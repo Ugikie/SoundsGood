@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
 
-    
     @State var isActive = false
     
     var body: some View {
@@ -38,9 +37,9 @@ struct ContentView: View {
                 // Main button!
                 
                    NavigationLink(
-                    destination: Questions(isActive: $isActive),
-                    isActive: $isActive,
-                    label: { Button(action: { self.isActive = true }, label: { Text("LET'S GO").font(.title).fontWeight(.semibold).bold().foregroundColor(.white).padding(.all,20).padding([.leading, .trailing], 20).background(Color.green).cornerRadius(50) }) })
+                    destination: Questions())
+                    {
+                        Text("LET'S GO").font(.title).fontWeight(.semibold).bold().foregroundColor(.white).padding(.all,20).padding([.leading, .trailing], 20).background(Color.green).cornerRadius(50) }
                 }
             }
         }
