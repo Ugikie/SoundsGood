@@ -20,13 +20,19 @@ struct FoodDetail: View {
                     .resizable().frame(width: 360.0, height: 360.0)
         }.offset(y: -100)
             
-        
+            ZStack {
         VStack {
                // food NAME
             Text(foodName).font(.title).foregroundColor(.black).frame(width: 360, alignment: .topLeading)
                 
         }.offset(y: 100)
-        
+                
+                VStack {
+                    heartButton(foodName: foodName)
+                }.offset(x: 160, y: 100)
+                
+                
+            }
         VStack  {
             
             Spacer().frame(height: 380)

@@ -20,6 +20,8 @@ struct Questions: View {
     
     @State private var QuestionState: String = "What do you wanna eat?"
     
+    @State private var ResultAnswer: String = ""
+    
     @State private var tagsFromAnswers: [String] = []
     
     
@@ -45,19 +47,26 @@ struct Questions: View {
                         
                         //
                         self.tagsFromAnswers.append(answer)
-                        if (answer == "Sweet"){
+                        if (answer == "Sweet") {
                             self.buttonBackColor = .white
-                            self.answers2[0] = "Result1"
+                            self.answers2[0] = "Result"
                             self.answers2[1] = ""
                             self.answers2[2] = ""
-                            
+                            self.ResultAnswer = "French Toast"
                         }
-                        else if (answer == "Savory"){
+                        else if (answer == "Savory") {
                             self.buttonBackColor = .white
-                            self.answers2[0] = "Result2"
+                            self.answers2[0] = "Result"
                             self.answers2[1] = ""
                             self.answers2[2] = ""
-                            
+                            self.ResultAnswer = "Omlete"
+                        }
+                        else if (answer == "Not sure") {
+                            self.buttonBackColor = .white
+                            self.answers2[0] = "Result"
+                            self.answers2[1] = ""
+                            self.answers2[2] = ""
+                            self.ResultAnswer = "Pizza"
                         }
                         
                         self.answers[0] = self.answers2[0]
@@ -71,10 +80,10 @@ struct Questions: View {
                            
                        // make an even bakcground under the buttons
                             
-                            if (answer == "Result1") {
+                            if (answer == "Result") {
                                                       
                             NavigationLink(
-                                destination: FoodDetail(foodName: "French Toast"))
+                                destination: FoodDetail(foodName: self.ResultAnswer))
                             {
                                 ZStack {
                                 Text("").padding(.all,20).padding([.leading, .trailing], 100).background(Color.green).cornerRadius(30)
@@ -82,18 +91,6 @@ struct Questions: View {
                                 Text("Click to see the result").frame(height: 50).font(.headline).foregroundColor(.white)
                                 }
                                 }
-                            }
-                            else if (answer == "Result2")
-                            {
-                                NavigationLink(
-                                    destination: FoodDetail(foodName: "Omlete"))
-                                {
-                                    ZStack {
-                                    Text("").padding(.all,20).padding([.leading, .trailing], 100).background(Color.green).cornerRadius(30)
-                                    
-                                    Text("Click to see the result").frame(height: 50).font(.headline).foregroundColor(.white)
-                                    }
-                                    }
                             }
 
                             else {
