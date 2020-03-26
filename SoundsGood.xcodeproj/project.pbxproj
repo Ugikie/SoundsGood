@@ -17,6 +17,7 @@
 		846FC5F42419FDF900AAF497 /* TagsChoose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FC5EB2419FDF900AAF497 /* TagsChoose.swift */; };
 		846FC5F52419FDF900AAF497 /* FoodByTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FC5F32419FDF900AAF497 /* FoodByTags.swift */; };
 		D72FE0E02404B6870083002A /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72FE0DF2404B6870083002A /* AppView.swift */; };
+		D73D3249242C9640004BE404 /* FoodSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73D3248242C9640004BE404 /* FoodSearch.swift */; };
 		D7412011240642800087E1F3 /* FavoriteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7412010240642800087E1F3 /* FavoriteList.swift */; };
 		D741201E240766290087E1F3 /* FoodDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D741201D240766290087E1F3 /* FoodDetail.swift */; };
 		D74120202407670C0087E1F3 /* FoodRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D741201F2407670C0087E1F3 /* FoodRow.swift */; };
@@ -24,7 +25,7 @@
 		D7680CCD2424510000C023B7 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7680CCC2424510000C023B7 /* SignIn.swift */; };
 		D7680CCF242452CF00C023B7 /* HeartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7680CCE242452CF00C023B7 /* HeartButton.swift */; };
 		D7CE1FFC2429F5E700C4142E /* PrintTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CE1FFB2429F5E700C4142E /* PrintTags.swift */; };
-		D7CE200A242A7A2B00C4142E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2009242A7A2B00C4142E /* Result.swift */; };
+		D7CE200A242A7A2B00C4142E /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2009242A7A2B00C4142E /* Results.swift */; };
 		D7D7667E240ED97800E321BA /* QuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D7667D240ED97700E321BA /* QuestionController.swift */; };
 		D7D76680240EEB8300E321BA /* pizza.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D7D7667F240EEB8300E321BA /* pizza.jpg */; };
 		D7D766822412244A00E321BA /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D766812412244A00E321BA /* Questions.swift */; };
@@ -95,6 +96,7 @@
 		846FC5EB2419FDF900AAF497 /* TagsChoose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsChoose.swift; sourceTree = "<group>"; };
 		846FC5F32419FDF900AAF497 /* FoodByTags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodByTags.swift; sourceTree = "<group>"; };
 		D72FE0DF2404B6870083002A /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		D73D3248242C9640004BE404 /* FoodSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSearch.swift; sourceTree = "<group>"; };
 		D7412010240642800087E1F3 /* FavoriteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteList.swift; sourceTree = "<group>"; };
 		D741201D240766290087E1F3 /* FoodDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetail.swift; sourceTree = "<group>"; usesTabs = 0; };
 		D741201F2407670C0087E1F3 /* FoodRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodRow.swift; sourceTree = "<group>"; };
@@ -103,7 +105,7 @@
 		D7680CCC2424510000C023B7 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		D7680CCE242452CF00C023B7 /* HeartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartButton.swift; sourceTree = "<group>"; };
 		D7CE1FFB2429F5E700C4142E /* PrintTags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintTags.swift; sourceTree = "<group>"; };
-		D7CE2009242A7A2B00C4142E /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		D7CE2009242A7A2B00C4142E /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
 		D7D7667D240ED97700E321BA /* QuestionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionController.swift; sourceTree = "<group>"; };
 		D7D7667F240EEB8300E321BA /* pizza.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pizza.jpg; sourceTree = "<group>"; };
 		D7D766812412244A00E321BA /* Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
@@ -150,7 +152,8 @@
 				846FC5EB2419FDF900AAF497 /* TagsChoose.swift */,
 				846FC5F32419FDF900AAF497 /* FoodByTags.swift */,
 				D7680CCC2424510000C023B7 /* SignIn.swift */,
-				D7CE2009242A7A2B00C4142E /* Result.swift */,
+				D7CE2009242A7A2B00C4142E /* Results.swift */,
+				D73D3248242C9640004BE404 /* FoodSearch.swift */,
 				D7CE20042429F8E300C4142E /* Favorite List */,
 				D74DB9F324046C40001B885B /* Assets.xcassets */,
 				8416DAA223EA046A00F638BF /* LaunchScreen.storyboard */,
@@ -360,12 +363,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7412011240642800087E1F3 /* FavoriteList.swift in Sources */,
+				D73D3249242C9640004BE404 /* FoodSearch.swift in Sources */,
 				D72FE0E02404B6870083002A /* AppView.swift in Sources */,
 				846FC5F42419FDF900AAF497 /* TagsChoose.swift in Sources */,
 				8416DA9823EA046900F638BF /* AppDelegate.swift in Sources */,
 				846FC5F52419FDF900AAF497 /* FoodByTags.swift in Sources */,
 				8416DA9A23EA046900F638BF /* SceneDelegate.swift in Sources */,
-				D7CE200A242A7A2B00C4142E /* Result.swift in Sources */,
+				D7CE200A242A7A2B00C4142E /* Results.swift in Sources */,
 				D7CE1FFC2429F5E700C4142E /* PrintTags.swift in Sources */,
 				D7680CCD2424510000C023B7 /* SignIn.swift in Sources */,
 				D7D7667E240ED97800E321BA /* QuestionController.swift in Sources */,

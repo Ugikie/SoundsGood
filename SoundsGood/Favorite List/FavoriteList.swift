@@ -30,21 +30,20 @@ struct FavoriteList: View {
             .buttonStyle(BorderlessButtonStyle())
                 
             .navigationBarTitle(Text("My Favorite Meals"))
-            .navigationBarItems(trailing: Button(action: {
-                 // Maybe to add food later on????
-                  
-                } ) {
-                    // plus on top right corner to add new food to favorites. --- From the whole DB of food?
-                    // LET'S MAKE A SEARCH OF MEALS/FOOD
-                Text("Search")
-                Image(systemName: "plus")
-                    .resizable()
-                    .padding(6)
-                    .frame(width: 24, height: 24)
-                    .background(Color.green)
-                    .clipShape(Circle())
-                    .foregroundColor(.white)
-            } )
+            .navigationBarItems(trailing: NavigationLink(
+                destination: FoodSearch())
+                {
+                    Text("Search")
+                    Image(systemName: "plus")
+                        .resizable()
+                        .padding(6)
+                        .frame(width: 24, height: 24)
+                        .background(Color.green)
+                        .clipShape(Circle())
+                        .foregroundColor(.white)
+                    
+                }
+             )
 
         }
     }

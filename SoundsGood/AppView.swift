@@ -17,25 +17,25 @@ struct AppView: View {
         TabView {
                   ContentView()
                       .tabItem {
-                          Image(systemName: "s.circle.fill")
-                          Text("Main")
+                        Image(systemName: "house.fill")
+                        Text("Main")
                       }
 
                   FavoriteList()
                         .tabItem {
-                            Image(systemName: "1.square.fill")
+                            Image(systemName: "heart.fill")
                             Text("Favorites")
                   }
             
-                  Text("Food Scanner?")
+                  FoodSearch()
                         .tabItem {
-                            Image(systemName: "2.square.fill")
-                            Text("Food Scanner?")
+                            Image(systemName: "magnifyingglass.circle.fill")
+                            Text("Search")
                   }
             
                   SignIn()
                         .tabItem {
-                            Image(systemName: "3.square.fill")
+                            Image(systemName: "person.fill")
                             Text("Profile??")
                   }
             

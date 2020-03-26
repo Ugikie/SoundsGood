@@ -12,7 +12,7 @@ import SQLite
 
 
 func getNextQuestion() -> String {
-    return "Next Question"
+    return "Are you in the mood for something Sweet or Savory?"
 }
 
 func computeResults(_ selectedAnswer: String, trackedTags: [String]) -> [String] {
