@@ -31,15 +31,14 @@ struct FoodDetail: View {
                     heartButton(foodName: foodName)
                 }.offset(x: 160, y: 100)
                 
-                
             }
-        VStack  {
             
-            Spacer().frame(height: 380)
+            VStack  {
+            
+                Spacer().frame(height: 360)
                 
-            PrintTags(foodName: foodName)
-                
-                
+                PrintTags(foodName: foodName)
+              
                 // Navigation bar title is not necessary since we have food name in details already
             }
         }.navigationBarTitle(Text(foodName), displayMode: .inline).offset(y: -60)

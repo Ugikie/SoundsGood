@@ -18,11 +18,12 @@ let food_imgs = Table("food_imgs")
 let id = Expression<Int64>("id")
 let foodName = Expression<String?>("food")
 
-var listOfFoodTags = getColumnNames()
+var listOfFoodTags = getColumnNames() 
 
 var listOfFoodNames = getFoodNames()
 
 var favoriteFoods = getFavoriteFoods()
+
 
 
 

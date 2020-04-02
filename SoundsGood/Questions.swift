@@ -115,14 +115,13 @@ struct Questions: View {
                         {
 
                         Text("CHOOSE TAGS").font(.title).fontWeight(.semibold).bold().foregroundColor(.white).padding(.all,10).padding([.leading, .trailing], 10).background(Color.green).cornerRadius(50).frame(alignment: .leading)
-                        }
+                    }
                     
                 }
                 
             }
             
         }
-        
         
     }
     

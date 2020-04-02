@@ -23,15 +23,16 @@ struct PrintTags: View {
         var width = CGFloat.zero
         var height = CGFloat.zero
 
+
         return ZStack(alignment: .topLeading) {
             ForEach(getTagValuesForFood(self.foodName), id: \.self) { tag in
                 Button(action: {
-                    print("hey")
+                    print("for Austin")
                 }) {
                       if (tag != "isFavorite") {
                     Text(tag.capitalized)
-                    .font(.title)
-                    .padding(.all, 5).padding([.leading, .trailing], 10)
+                    .font(.body)
+                    .padding(.all, 5).padding([.leading, .trailing], 5)
                     .font(.body)
                     .background(Color.blue)
                     .foregroundColor(Color.white)
@@ -41,12 +42,14 @@ struct PrintTags: View {
                     .alignmentGuide(.leading, computeValue: { d in
                         if (abs(width - d.width) > g.size.width)
                         {
-                            width = -35
-                            height -= d.height
+                            width = -50
+                            height -= (d.height + 10)
+                            
                         }
+                    
                         let result = width
                         if tag == getTagValuesForFood(self.foodName).last! {
-                            width = -35
+                            width = -50
                         } else {
                             width -= d.width
                         }
