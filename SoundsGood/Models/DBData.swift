@@ -25,8 +25,6 @@ var listOfFoodNames = getFoodNames()
 var favoriteFoods = getFavoriteFoods()
 
 
-
-
 func getFoodInfo() {
     do {
         for food in try db.prepare(food_info) {
@@ -49,10 +47,7 @@ func getFoodNames() -> [String] {
     } catch {
         print("Error finding a value for foodName")
     }
-    
     return listOfFoodNames
-    
-    
 }
 
 func getFavoriteFoods() -> [String] {
@@ -70,8 +65,6 @@ func getFavoriteFoods() -> [String] {
     }
     
     return favoriteFoods
-    
-    
 }
 
 func getTagValuesForFood(_ foodNameToCheck: String) -> [String] {
@@ -89,7 +82,7 @@ func getTagValuesForFood(_ foodNameToCheck: String) -> [String] {
                 if (tagName == "food" || tagName == "origin") {
                     
                     let tagToCheck = Expression<String?>(tagName)
-                    print("\(tagName): \(tag[tagToCheck]!)")
+                    //print("\(tagName): \(tag[tagToCheck]!)")
                     
                 } else {
                     
@@ -97,7 +90,7 @@ func getTagValuesForFood(_ foodNameToCheck: String) -> [String] {
                     
                     if (tag[tagToCheck] != 0 && (tagName != "id" )) {
                         
-                        print("\(tagName): \(tag[tagToCheck])")
+                        //print("\(tagName): \(tag[tagToCheck])")
                         posTags.append(tagName)
                     }
                 }
@@ -107,7 +100,6 @@ func getTagValuesForFood(_ foodNameToCheck: String) -> [String] {
         print("Error finding a tag values for: \(foodNameToCheck)")
     }
     return posTags
-    
 }
 
 func getColumnNames() -> [String] {
@@ -120,7 +112,6 @@ func getColumnNames() -> [String] {
             listOfTags.append(tagName)
         }
     }
-    
     return listOfTags
 }
 
@@ -152,4 +143,37 @@ func getFoodImageFor(_ foodNameToCheck: String) -> Image? {
     }
     
     return foodImage
+}
+
+func setIsFavorite(_ valueToSet : Int, _ foodNameToFavorite: String ) {
+    
+    //try! db.prepare("UPDATE food_info SET isFavorite = \(value) WHERE food = \"Pizza\"")
+    
+    let foodNameToFav = food_info.filter(foodName == foodNameToFavorite)
+    
+    let favorite = Expression<Int64>("isFavorite")
+    
+    try! db.run(foodNameToFav.update(favorite <- Int64(valueToSet)))
+    
+    print(checkIsFavorite(foodNameToFavorite))
+}
+
+func checkIsFavorite(_ foodNameToCheck: String) -> Int {
+    var isFavorite: Int = 0
+     
+    let favorite = Expression<Int64>("isFavorite")
+    //SELECT isFavorite from food_info WHERE food = foodNameToCheck
+    let query = food_info.select(favorite)
+                         .filter(foodName == foodNameToCheck)
+    
+    
+    do {
+        for value in try db.prepare(query) {
+            
+            print("Favorited: \(value[favorite])\n")
+        }
+    } catch {
+            print("Error finding food \(foodNameToCheck)!\n")
+        }
+    return isFavorite
 }

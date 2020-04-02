@@ -14,33 +14,34 @@ struct heartButton: View {
     var foodName: String
     
     @State private var heartColor:Color = .red
-    
+
     var body: some View {
-        ForEach(getTagValuesForFood(foodName), id: \.self) {  tag in
+        //ForEach(getTagValuesForFood(foodName), id: \.self) {  tag in
+            
             HStack {
-                if (tag == "isFavorite" && self.heartColor == .red) {
+                
+                if (self.heartColor == .red) {
             Button(action: {
+                setIsFavorite(0, self.foodName)
                 
-                // AUSTIN ADD ACTION TO CHANGE TAG TO 0
-                
-                    self.heartColor = .gray
+                self.heartColor = .gray
         }) {
                 Image(systemName: "heart.fill")
                     .foregroundColor(self.heartColor).font(.system(size: 30))
             }
                 }
-                else if (tag == "isFavorite" && self.heartColor == .gray) {
+                else if (self.heartColor == .gray) {
                     Button(action: {
                         
-                        // AUSTIN ADD ACTION TO CHANGE TAG BACK TO 1
-                                self.heartColor = .red
+                        setIsFavorite(1, self.foodName)
+                        self.heartColor = .red
                     }) {
                             Image(systemName: "heart.fill")
                                 .foregroundColor(self.heartColor).font(.system(size: 30))
                     }
                 }
             }
-        }
+        //}
         
     }
 }

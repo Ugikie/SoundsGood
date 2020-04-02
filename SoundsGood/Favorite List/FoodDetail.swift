@@ -35,7 +35,7 @@ struct FoodDetail: View {
             
             VStack  {
             
-                Spacer().frame(height: 360)
+                Spacer().frame(height: 370)
                 
                 PrintTags(foodName: foodName)
               
