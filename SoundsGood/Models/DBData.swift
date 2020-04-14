@@ -159,7 +159,7 @@ func setIsFavorite(_ valueToSet : Int, _ foodNameToFavorite: String ) {
 }
 
 func checkIsFavorite(_ foodNameToCheck: String) -> Int {
-    var isFavorite: Int = 0
+    let isFavorite: Int = 0
      
     let favorite = Expression<Int64>("isFavorite")
     //SELECT isFavorite from food_info WHERE food = foodNameToCheck

@@ -19,11 +19,10 @@ struct heartButton: View {
         //ForEach(getTagValuesForFood(foodName), id: \.self) {  tag in
             
             HStack {
-                
                 if (self.heartColor == .red) {
             Button(action: {
-                setIsFavorite(0, self.foodName)
                 
+                setIsFavorite(0, self.foodName)
                 self.heartColor = .gray
         }) {
                 Image(systemName: "heart.fill")
