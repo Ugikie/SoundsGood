@@ -10,9 +10,11 @@ import Foundation
 import SQLite
 import SwiftUI
 
-let urlPath = Bundle.main.path(forResource: "food_db", ofType: "db")
+//let urlPath = Bundle.main.path(forResource: "food_db", ofType: "db")
+//let db = try! Connection(urlPath!)
 
-let db = try! Connection(urlPath!)
+let db = try! Connection("/Users/Max717/Documents/food_db.db")
+
 let food_info = Table("food_info")
 let food_imgs = Table("food_imgs")
 let id = Expression<Int64>("id")
@@ -155,11 +157,14 @@ func setIsFavorite(_ valueToSet : Int, _ foodNameToFavorite: String ) {
     
     try! db.run(foodNameToFav.update(favorite <- Int64(valueToSet)))
     
+    print("Result: ")
     print(checkIsFavorite(foodNameToFavorite))
 }
 
-func checkIsFavorite(_ foodNameToCheck: String) -> Int {
-    let isFavorite: Int = 0
+func checkIsFavorite(_ foodNameToCheck: String) -> Color {
+    
+    var isFavorite: Int64 = 0
+    var color: Color = .gray
      
     let favorite = Expression<Int64>("isFavorite")
     //SELECT isFavorite from food_info WHERE food = foodNameToCheck
@@ -170,10 +175,20 @@ func checkIsFavorite(_ foodNameToCheck: String) -> Int {
     do {
         for value in try db.prepare(query) {
             
-            print("Favorited: \(value[favorite])\n")
+            isFavorite = value[favorite]
+            //print("Result: ")
+            //print("\(value[favorite])")
         }
     } catch {
             print("Error finding food \(foodNameToCheck)!\n")
         }
-    return isFavorite
+    if (isFavorite == 1) {
+
+        color = .red
+    }
+    else if (isFavorite == 0) {
+
+        color = .gray
+    }
+    return color
 }
