@@ -51,6 +51,7 @@ func getFoodNames() -> [String] {
 
 func getFavoriteFoods() -> [String] {
     
+    
     db = try! Connection("/Users/Max717/Documents/food_db.db")
     print("UPDATED NOW")
     
@@ -193,4 +194,11 @@ func checkIsFavorite(_ foodNameToCheck: String) -> Color {
         color = .gray
     }
     return color
+}
+
+func getTags() -> [String] {
+    var tags = getColumnNames()
+    tags.removeFirst()
+    tags.removeLast()
+    return tags
 }

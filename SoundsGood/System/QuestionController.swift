@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import SwiftUI
 import SQLite
 
 // keep track of what is was the last question
@@ -26,7 +25,7 @@ let tag_subset1: Set = ["breakfast"]
 let tag_subset2: Set = ["lunch"]
 let tag_subset3: Set = ["dinner"]
 let tag_subset4: Set = ["dessert"]
-let tag_subset5: Set = ["snack"]
+//let tag_subset5: Set = ["snack"]
 let tag_subset6: Set = ["vegetarian"]
 let tag_subset7: Set = ["doughy"]
 let tag_subset8: Set = ["chewy"]
@@ -136,7 +135,7 @@ func getNextQuestion(_ tagChoice :  String) -> String {
         tags_list = tags_list.subtracting(tag_subset2)
         tags_list = tags_list.subtracting(tag_subset3)
         tags_list = tags_list.subtracting(tag_subset4)
-        tags_list = tags_list.subtracting(tag_subset5)
+        //tags_list = tags_list.subtracting(tag_subset5)
     }
     else if (currentQuestion == "Are you Vegan or Vegetarian?"){
         if (tagChoice == "Vegan"){
