@@ -13,8 +13,8 @@ import SQLite
 // keep track of what is was the last question
 var currentQuestion: String = ""
 var getNextAnswers = ["Yes", "No", "", ""]
-var resultFlag = 0
 
+var resultFlag = 0
 var ResultList: [String] = []
 
 // basically counts questions, but if answer is "neither" "i don't know" - it doesn't count
@@ -105,7 +105,7 @@ private var AnswerState10 = ["Baked", "Fried", "Grilled", "Does not matter"]
 private var QuestionState11: String = "Would you like your food choice to be Sour?"
 private var AnswerState11 = ["Yes", "No", "", ""]
 private var QuestionState12: String = "How much would you be willing to spend for your food choice?"
-private var AnswerState12 = ["$", "$$", "$$$", ""]
+private var AnswerState12 = ["Price: $", "Price: $$", "Price: $$$", ""]
 private var QuestionState13: String = "Would you like your food choice to be healthy?"
 private var AnswerState13 = ["Yes", "No", "", ""]
 private var QuestionState14: String = "Do you want your food choice to have vegetables?"
@@ -142,10 +142,16 @@ func getNextQuestion(_ tagChoice :  String) -> String {
         if (tagChoice == "Vegan"){
             tag2_64 = Expression<Int64>("vegan")
             answer_int2 = 1
+            tags_list = tags_list.subtracting(tag_subset35)
+            tags_list = tags_list.subtracting(tag_subset36)
+            tags_list = tags_list.subtracting(tag_subset37)
         }
         else if (tagChoice == "Vegetarian"){
             tag2_64 = Expression<Int64>("vegetarian")
             answer_int2 = 1
+            tags_list = tags_list.subtracting(tag_subset35)
+            tags_list = tags_list.subtracting(tag_subset36)
+            tags_list = tags_list.subtracting(tag_subset37)
         }
         else if (tagChoice == "Neither"){
             no_option_flag = 1
@@ -180,6 +186,7 @@ func getNextQuestion(_ tagChoice :  String) -> String {
         if (tagChoice == "Warm"){
             temp_tag_64 = Expression<Int64>("hot")
             temp_answer_int = 1
+            print("HOT")
         }
         else if (tagChoice == "Cold"){
             temp_tag_64 = Expression<Int64>("cold")
@@ -244,15 +251,16 @@ func getNextQuestion(_ tagChoice :  String) -> String {
         tags_list = tags_list.subtracting(tag_subset11)
     }
     else if (currentQuestion == "How much would you be willing to spend for your food choice?") {
-        if (tagChoice == "$"){
+        if (tagChoice == "Price: $"){
             temp_tag_64 = Expression<Int64>("$")
             temp_answer_int = 1
+            print("hey")
         }
-        else if (tagChoice == "$$"){
+        else if (tagChoice == "Price: $$"){
             temp_tag_64 = Expression<Int64>("$$")
             temp_answer_int = 1
         }
-        else if (tagChoice == "$$$"){
+        else if (tagChoice == "Price: $$$"){
             temp_tag_64 = Expression<Int64>("$$$")
             temp_answer_int = 1
         }
@@ -335,7 +343,7 @@ func getNextQuestion(_ tagChoice :  String) -> String {
         }
         tags_list = tags_list.subtracting(tag_subset24)
     }
-    
+
     
     if (currentQuestion == "What type of meal do you think you would like?") {
         currentQuestion = QuestionState2
@@ -348,11 +356,20 @@ func getNextQuestion(_ tagChoice :  String) -> String {
             count -= 1
         }
         else {
+            tag2_64 = temp_tag_64
+            answer_int2 = temp_answer_int
+        }
+    }
+    else if (count == 3) {
+        if (no_option_flag == 1) {
+            count -= 1
+        }
+        else {
             tag3_64 = temp_tag_64
             answer_int3 = temp_answer_int
         }
     }
-    else if (count == 3) {
+    else if (count == 4) {
         if (no_option_flag == 1) {
             count -= 1
         }
@@ -361,7 +378,7 @@ func getNextQuestion(_ tagChoice :  String) -> String {
             answer_int4 = temp_answer_int
         }
     }
-    else if (count == 4) {
+    else if (count == 5) {
         if (no_option_flag == 1) {
             count -= 1
         }
@@ -370,16 +387,16 @@ func getNextQuestion(_ tagChoice :  String) -> String {
             answer_int5 = temp_answer_int
         }
     }
-    else if (count == 5) {
-        if (no_option_flag == 1) {
-            count -= 1
-        }
-        else {
-            tag6_64 = temp_tag_64
-            answer_int6 = temp_answer_int
-        }
-    }
     else if (count == 6) {
+           if (no_option_flag == 1) {
+               count -= 1
+           }
+           else {
+               tag6_64 = temp_tag_64
+               answer_int6 = temp_answer_int
+           }
+    }
+    else if (count == 7) {
            if (no_option_flag == 1) {
                count -= 1
            }
@@ -388,7 +405,7 @@ func getNextQuestion(_ tagChoice :  String) -> String {
                answer_int7 = temp_answer_int
            }
     }
-    else if (count == 7) {
+    else if (count == 8) {
            if (no_option_flag == 1) {
                count -= 1
            }
@@ -397,7 +414,7 @@ func getNextQuestion(_ tagChoice :  String) -> String {
                answer_int8 = temp_answer_int
            }
     }
-    else if (count == 8) {
+    else if (count == 9) {
            if (no_option_flag == 1) {
                count -= 1
            }
@@ -428,11 +445,11 @@ func getNextQuestion(_ tagChoice :  String) -> String {
     
     
     
-    
+    print(count)
     // calculate which tag is most common in the table
     do {
         for _ in tags_list_array {
-            print(tags_list_array[index])
+            //print(tags_list_array[index])
             let tag_64 = Expression<Int64>(tags_list_array[index])
             //initialize
             var query = food_info.select(foodName).filter(tag1_64 == answer_int1)
@@ -477,11 +494,15 @@ func getNextQuestion(_ tagChoice :  String) -> String {
             print("Error")
         }
     
-    // results part
-    if (maximum_tags < 7) {
+    //check
+    print(maximum_tags_name)
+    print("Appears: \(maximum_tags) times")
+    
+   //  results part
+    if (maximum_tags < 8) {
         
+        resultFlag = 1;
         let foodName = Expression<String?>("food")
-
         var query = food_info.select(foodName).filter(tag1_64 == answer_int1)
         if (count == 3){
             query = food_info.select(foodName).filter(tag1_64 == answer_int1 && tag2_64 == answer_int2)
@@ -507,25 +528,21 @@ func getNextQuestion(_ tagChoice :  String) -> String {
         else if (count == 10){
             query = food_info.select(foodName).filter(tag1_64 == answer_int1 && tag2_64 == answer_int2 && tag3_64 == answer_int3 && tag4_64 == answer_int4 && tag5_64 == answer_int5 && tag6_64 == answer_int6 && tag7_64 == answer_int7 && tag8_64 == answer_int8 && tag9_64 == answer_int9)
         }
-        
         var c = 0
         do {
             for food in try db.prepare(query) {
-                while (c < 5) {
+                if (c < 5) {
                     ResultList.append(food[foodName]!)
                 }
-                c += 0
+                c += 1
             }
         } catch {
             print("Error")
         }
-        
-        getNextAnswers = ["", "", "", ""]
-        return "Click to see the results"
+
+        getNextAnswers = ["Click here to see the results", "", "", ""]
+        return ""
     }
-    //check
-    print(maximum_tags_name)
-    print("Appears: \(maximum_tags) times")
     
         if (maximum_tags_name == "sweet" || maximum_tags_name == "savory") {
             getNextAnswers = AnswerState3

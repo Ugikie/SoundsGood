@@ -15,7 +15,7 @@ struct Questions: View {
     
     
     @State private var buttonBackColor: Color = .green
-    
+    @State var QuestionButtonBackColor: Color = .red
     @State private var ResultAnswer: String = ""
     private var questionstr: String = ""
     
@@ -26,7 +26,7 @@ struct Questions: View {
             VStack {
                
                // Print question from an array
-            Text(QuestionState).font(.title).fontWeight(.semibold).bold().foregroundColor(.white).padding(.all,10).padding([.leading, .trailing], 10).background(Color.red).cornerRadius(50)
+                Text(QuestionState).font(.title).fontWeight(.semibold).bold().foregroundColor(.white).padding(.all,10).padding([.leading, .trailing], 10).background(self.QuestionButtonBackColor).cornerRadius(50)
                 
                 Spacer().frame(height: 100)
                 
@@ -37,46 +37,33 @@ struct Questions: View {
                         currentQuestion = self.QuestionState
                         self.QuestionState = getNextQuestion(answer)
                         self.AnswerState = getNextAnswers
-//                        
-//                        //let newAnswers = computeResults(answer, trackedTags: self.tagsFromAnswers)
-//                        
-//                        //
-//                        self.tagsFromAnswers.append(answer)
-//                        if (answer == "Sweet") {
-//                            self.buttonBackColor = .white
-//                            self.answers2[0] = "Result"
-//                            self.answers2[1] = ""
-//                            self.answers2[2] = ""
-//                            self.ResultAnswer = "French Toast"
-//                        }
-//                        else if (answer == "Savory") {
-//                            self.buttonBackColor = .white
-//                            self.answers2[0] = "Result"
-//                            self.answers2[1] = ""
-//                            self.answers2[2] = ""
-//                            self.ResultAnswer = "Omlete"
-//                        }
-//                        else if (answer == "Not sure") {
-//                            self.buttonBackColor = .white
-//                            self.answers2[0] = "Result"
-//                            self.answers2[1] = ""
-//                            self.answers2[2] = ""
-//                            self.ResultAnswer = "Pizza"
-//                        }
-//                        
-//                        self.answers[0] = self.answers2[0]
-//                        self.answers[1] = self.answers2[1]
-//                        self.answers[2] = self.answers2[2]
-//                        self.answers[3] = ""
-//                        //result(QUESTIONSTATE, answer, track)
-//                        
+                        if (resultFlag == 1){
+                            self.QuestionButtonBackColor = .white
+                        }
+                        if(answer == "Click here to see the results") {
+                            self.buttonBackColor = .yellow
+                        }
+                        else if (answer == ""){
+                            self.buttonBackColor = .white
+                        }
                     }) {
-                           
+                        
+                        if (resultFlag == 1) {
+                            NavigationLink(
+                                destination: Result())
+                            {
+                                ZStack {
+                                Text("").padding(.all,20).padding([.leading, .trailing], 100).background(Color.yellow).cornerRadius(30)
+                                Text(answer).frame(height: 50).font(.headline).foregroundColor(.white)
+                                }
+                            }
+                        }
                        // make an even bakcground under the buttons
+                        else {
                         ZStack {
-                                Text("").padding(.all,20).padding([.leading, .trailing], 100).background(self.buttonBackColor).cornerRadius(30)
-                                
+                            Text("").padding(.all,20).padding([.leading, .trailing], 100).background(self.buttonBackColor).cornerRadius(30)
                             Text(answer).frame(height: 20).font(.headline).foregroundColor(.white)
+                        }
                         }
                     }
                 }

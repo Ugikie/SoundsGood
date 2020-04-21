@@ -29,13 +29,6 @@ struct FoodDetail: View {
                     heartButton(foodName: foodName)
                 }.offset(x: 160, y: 100)
                 
-                Button(action: {
-                    getNextQuestion("chewy")
-                    
-                }) {
-                    Text("hey")
-                }
-                
             }
             
             VStack  {
