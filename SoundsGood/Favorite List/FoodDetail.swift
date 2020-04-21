@@ -11,10 +11,8 @@ struct FoodDetail: View {
     var foodName: String
     
     var body: some View {
-      
         ZStack {
         VStack {
-            
                 // Food image on top of detail page
                 getFoodImageFor(foodName)!
                     .resizable().frame(width: 360.0, height: 360.0)
@@ -31,11 +29,18 @@ struct FoodDetail: View {
                     heartButton(foodName: foodName)
                 }.offset(x: 160, y: 100)
                 
+                Button(action: {
+                    getNextQuestion("chewy")
+                    
+                }) {
+                    Text("hey")
+                }
+                
             }
             
             VStack  {
             
-                Spacer().frame(height: 370)
+                Spacer().frame(height: 430)
                 
                 PrintTags(foodName: foodName)
               
@@ -44,12 +49,4 @@ struct FoodDetail: View {
         }.navigationBarTitle(Text(foodName), displayMode: .inline).offset(y: -60)
     }
 }
-
-
-struct FoodDetail_Previews: PreviewProvider {
-    static var previews: some View {
-        FoodDetail(foodName: "Chicken Nuggets")
-    }
-}
-
 

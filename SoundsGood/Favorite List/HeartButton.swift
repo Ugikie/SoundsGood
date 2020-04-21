@@ -13,18 +13,14 @@ import SwiftUI
 struct heartButton: View {
     var foodName: String
     
-    
-    
+    // This state will help to prevent bugs, as well as help to keep track of the heart color. Green means INITIAL color when favorite tab is opened
     @State private var heartColor:Color = .green
     
     var body: some View {
-        //ForEach(getTagValuesForFood(foodName), id: \.self) {  tag in
             
         HStack {
-                
             if (self.heartColor == .green && checkIsFavorite(self.foodName) == .red) {
             Button(action: {
-                print("here1")
                 setIsFavorite(0, self.foodName)
                 self.heartColor = .gray
         }) {
@@ -34,7 +30,6 @@ struct heartButton: View {
             }
             else if (self.heartColor == .green && checkIsFavorite(self.foodName) == .gray) {
                 Button(action: {
-                    print("here2")
                     setIsFavorite(1, self.foodName)
                     self.heartColor = .red
             }) {
@@ -44,7 +39,6 @@ struct heartButton: View {
                 }
             else if (self.heartColor == .red) {
                 Button(action: {
-                    print("here3")
                     setIsFavorite(0, self.foodName)
                     self.heartColor = .gray
             }) {
@@ -54,7 +48,6 @@ struct heartButton: View {
             }
             else if (self.heartColor == .gray) {
                     Button(action: {
-                        print("here4")
                         setIsFavorite(1, self.foodName)
                         self.heartColor = .red
                     }) {
@@ -62,15 +55,7 @@ struct heartButton: View {
                                 .foregroundColor(checkIsFavorite(self.foodName)).font(.system(size: 30))
                     }
                 }
-            
-            
             }
         //}
-        
-    }
-}
-struct heartButton_Previews: PreviewProvider {
-    static var previews: some View {
-        heartButton(foodName: "CHICKEN")
     }
 }

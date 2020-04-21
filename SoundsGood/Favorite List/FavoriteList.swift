@@ -8,11 +8,12 @@ A view showing a list of food.
 import SwiftUI
 
 struct FavoriteList: View {
+    
     var body: some View {
         NavigationView {
             
             List(favoriteFoods, id:\.self) { foodName in
-                    NavigationLink(destination: FoodDetail(foodName: foodName)) {
+                NavigationLink(destination: FoodDetail(foodName: foodName)) {
                     // prints picture and name in foodRow file
                     FoodRow(foodName: foodName)
                     

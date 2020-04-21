@@ -13,17 +13,14 @@ import SwiftUI
 //let urlPath = Bundle.main.path(forResource: "food_db", ofType: "db")
 //let db = try! Connection(urlPath!)
 
-let db = try! Connection("/Users/Max717/Documents/food_db.db")
+var db = try! Connection("/Users/Max717/Documents/food_db.db")
 
 let food_info = Table("food_info")
 let food_imgs = Table("food_imgs")
 let id = Expression<Int64>("id")
 let foodName = Expression<String?>("food")
-
-var listOfFoodTags = getColumnNames() 
-
+var listOfFoodTags = getColumnNames()
 var listOfFoodNames = getFoodNames()
-
 var favoriteFoods = getFavoriteFoods()
 
 
@@ -53,7 +50,12 @@ func getFoodNames() -> [String] {
 }
 
 func getFavoriteFoods() -> [String] {
+    
+    db = try! Connection("/Users/Max717/Documents/food_db.db")
+    print("UPDATED NOW")
+    
     var favoriteFoods: [String] = []
+    var sortedFood: [String] = []
     let isFavorite = Expression<Int64>("isFavorite")
     do {
         for food in try db.prepare(food_info) {
@@ -65,8 +67,9 @@ func getFavoriteFoods() -> [String] {
     } catch {
         print("Error finding a value for foodName")
     }
-    
-    return favoriteFoods
+    // list of food is now sorted
+    sortedFood = favoriteFoods.sorted()
+    return sortedFood
 }
 
 func getTagValuesForFood(_ foodNameToCheck: String) -> [String] {
@@ -150,7 +153,6 @@ func getFoodImageFor(_ foodNameToCheck: String) -> Image? {
 func setIsFavorite(_ valueToSet : Int, _ foodNameToFavorite: String ) {
     
     //try! db.prepare("UPDATE food_info SET isFavorite = \(value) WHERE food = \"Pizza\"")
-    
     let foodNameToFav = food_info.filter(foodName == foodNameToFavorite)
     
     let favorite = Expression<Int64>("isFavorite")

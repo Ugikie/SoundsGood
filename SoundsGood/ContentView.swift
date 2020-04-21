@@ -34,7 +34,7 @@ struct ContentView: View {
                     
                     Spacer().frame(height: 100)
                 
-                // Main button!
+                 //Main button!
                 
                    NavigationLink(
                     destination: Questions())
