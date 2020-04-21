@@ -13,7 +13,7 @@ import SwiftUI
 //let urlPath = Bundle.main.path(forResource: "food_db", ofType: "db")
 //let db = try! Connection(urlPath!)
 
-let db = try! Connection("/Users/Max717/Documents/food_db.db")
+let db = try! Connection("/Users/andrew/Desktop/SoundsGood/SoundsGood/Resorces/food_db.db")
 
 let food_info = Table("food_info")
 let food_imgs = Table("food_imgs")
@@ -115,6 +115,13 @@ func getColumnNames() -> [String] {
         }
     }
     return listOfTags
+}
+
+func getTags() -> [String] {
+    var tags = getColumnNames()
+    tags.removeFirst()
+    tags.removeLast()
+    return tags
 }
 
 extension UIImage: Value {
