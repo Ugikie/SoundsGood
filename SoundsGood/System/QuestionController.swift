@@ -96,7 +96,7 @@ private var AnswerState6 = ["Warm", "Cold", "Room Temperature", ""]
 private var QuestionState7: String = "Would you be opposed to your food being Chewy?"
 private var AnswerState7 = ["Yes, I don't want chewy", "No, I don't mind if it's chewy", "", ""]
 private var QuestionState8: String = "Would you be opposed to your food being Crunchy?"
-private var AnswerState8 = ["Yes, I do not want it to be crunchy", "No, I do not mind if it is crunchy", "", ""]
+private var AnswerState8 = ["I don't want it to be crunchy", "NO, I don't mind", "", ""]
 //private var QuestionState9: String = "Do you want your food to contain meat?"
 //private var AnswerState9 = ["Yes", "No", "", ""]
 private var QuestionState10: String = "In terms of cooking method, would you prefer your food be baked, fried, or grilled?"
@@ -120,6 +120,7 @@ private var AnswerState18 = ["Yes", "No", "", ""]
 private var QuestionState19: String = "Can it contain milk products"
 private var AnswerState19 = ["Yes", "No", "", ""]
 
+
 private var question_flag = 0
 
 func getNextQuestion(_ tagChoice :  String) -> String {
@@ -139,15 +140,15 @@ func getNextQuestion(_ tagChoice :  String) -> String {
     }
     else if (currentQuestion == "Are you Vegan or Vegetarian?"){
         if (tagChoice == "Vegan"){
-            tag2_64 = Expression<Int64>("vegan")
-            answer_int2 = 1
+            temp_tag_64 = Expression<Int64>("vegan")
+            temp_answer_int = 1
             tags_list = tags_list.subtracting(tag_subset35)
             tags_list = tags_list.subtracting(tag_subset36)
             tags_list = tags_list.subtracting(tag_subset37)
         }
         else if (tagChoice == "Vegetarian"){
-            tag2_64 = Expression<Int64>("vegetarian")
-            answer_int2 = 1
+            temp_tag_64 = Expression<Int64>("vegetarian")
+            temp_answer_int = 1
             tags_list = tags_list.subtracting(tag_subset35)
             tags_list = tags_list.subtracting(tag_subset36)
             tags_list = tags_list.subtracting(tag_subset37)
@@ -211,11 +212,11 @@ func getNextQuestion(_ tagChoice :  String) -> String {
         tags_list = tags_list.subtracting(tag_subset8)
     }
     else if (currentQuestion == "Would you be opposed to your food being Crunchy?") {
-        if (tagChoice == "Yes, I do not want it to be crunchy"){
+        if (tagChoice == "I don't want it to be crunchy"){
             temp_tag_64 = Expression<Int64>("crunchy")
             temp_answer_int = 0
         }
-        else if (tagChoice == "No, I do not mind if it is crunchy"){
+        else if (tagChoice == "NO, I don't mind"){
             temp_tag_64 = Expression<Int64>("crunchy")
             temp_answer_int = 1
         }
@@ -349,6 +350,15 @@ func getNextQuestion(_ tagChoice :  String) -> String {
         count += 1
         getNextAnswers = AnswerState2
         return QuestionState2
+    }
+    else if (currentQuestion == QuestionState2) {
+        if (no_option_flag == 1) {
+            count -= 1
+        }
+        else {
+            tag2_64 = temp_tag_64
+            answer_int2 = temp_answer_int
+        }
     }
     else if (count == 2) {
         if (no_option_flag == 1) {
