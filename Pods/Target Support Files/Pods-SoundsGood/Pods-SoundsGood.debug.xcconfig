@@ -1,10 +1,9 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/GoogleMaps/Base/Frameworks" "${PODS_ROOT}/GooglePlaces/Frameworks"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/SQLite.swift"
 LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/SQLite.swift"
 OTHER_CFLAGS = $(inherited) -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/SQLite.swift/SQLite.modulemap"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"SQLite.swift" -l"c++" -l"sqlite3" -l"z" -framework "CoreData" -framework "CoreGraphics" -framework "CoreLocation" -framework "GoogleMapsBase" -framework "GooglePlaces" -framework "QuartzCore" -framework "SystemConfiguration" -framework "UIKit"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"SQLite.swift" -l"sqlite3"
 OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/SQLite.swift/SQLite.modulemap"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)

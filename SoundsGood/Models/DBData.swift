@@ -198,7 +198,7 @@ func checkIsFavorite(_ foodNameToCheck: String) -> Color {
 
 func getTags() -> [String] {
     
-    let tags_list: [String] = ["Breakfast", "Lunch", "Dinner", "Dessert", "Snack", "Vegetarian", "Doughy", "Chewy", "Crunchy", "Sweet", "Sour", "Savory", "Hot", "Cold", "Room Temp", "Price: $", "Price: $$", "Price: $$$", "Healthy", "Vegetables", "Fired", "Baked", "Grilled", "Milk", "Vegan", "Sick", "Fast Food", "Mexican", "Asian", "Italian/French", "Indian", "American", "Greek/Persian", "Seafood", "Chicken", "Beef", "Pork"]
+    let tags_list: [String] = ["Breakfast", "Lunch", "Dinner", "Dessert", "Snack", "Vegetarian", "Doughy", "Chewy", "Crunchy", "Sweet", "Sour", "Savory", "Hot", "Cold", "Room Temp", "Price: $", "Price: $$", "Price: $$$", "Healthy", "Vegetables", "Fired", "Baked", "Grilled", "Milk", "Vegan", "Sick", "Fast Food", "Mexican", "Asian", "Italian,   French", "Indian", "American", "Greek, Persian", "Seafood", "Chicken", "Beef", "Pork"]
     let tags = tags_list
     //tags.removeFirst()
     //tags.removeLast()

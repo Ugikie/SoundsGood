@@ -58,7 +58,7 @@ struct TagButton: View {
             }
         }) {
             Text(self.data.tag)
-                .font(.headline)
+                .font(.footnote)
                 .fontWeight(.semibold)
                 .bold()
                 .frame(width: 90, height: 50)
@@ -72,7 +72,7 @@ struct TagButton: View {
             self.button = button
         }
         func makeBody(configuration: Self.Configuration) -> some View {
-            configuration.label.padding(25).background(Circle().fill(button.getColor()))
+            configuration.label.padding().background(Circle().fill(button.getColor()))
         }
     }
 }

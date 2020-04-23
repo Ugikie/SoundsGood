@@ -27,6 +27,7 @@
 		D74DB9F424046C40001B885B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D74DB9F324046C40001B885B /* Assets.xcassets */; };
 		D7680CCD2424510000C023B7 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7680CCC2424510000C023B7 /* SignIn.swift */; };
 		D7680CCF242452CF00C023B7 /* HeartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7680CCE242452CF00C023B7 /* HeartButton.swift */; };
+		D7C7E27C2452083300C96C65 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C7E27B2452083300C96C65 /* ViewController.swift */; };
 		D7CE1FFC2429F5E700C4142E /* PrintTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CE1FFB2429F5E700C4142E /* PrintTags.swift */; };
 		D7CE200A242A7A2B00C4142E /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2009242A7A2B00C4142E /* Results.swift */; };
 		D7D7667E240ED97800E321BA /* QuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D7667D240ED97700E321BA /* QuestionController.swift */; };
@@ -59,6 +60,7 @@
 		D74DB9F324046C40001B885B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7680CCC2424510000C023B7 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		D7680CCE242452CF00C023B7 /* HeartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartButton.swift; sourceTree = "<group>"; };
+		D7C7E27B2452083300C96C65 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D7CE1FFB2429F5E700C4142E /* PrintTags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintTags.swift; sourceTree = "<group>"; };
 		D7CE2009242A7A2B00C4142E /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
 		D7D7667D240ED97700E321BA /* QuestionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionController.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				D7680CCC2424510000C023B7 /* SignIn.swift */,
 				D7CE2009242A7A2B00C4142E /* Results.swift */,
 				D73D3248242C9640004BE404 /* FoodSearch.swift */,
+				D7C7E27B2452083300C96C65 /* ViewController.swift */,
 				D7CE20042429F8E300C4142E /* Favorite List */,
 				D74DB9F324046C40001B885B /* Assets.xcassets */,
 				8416DAA223EA046A00F638BF /* LaunchScreen.storyboard */,
@@ -196,7 +199,6 @@
 				8416DA9023EA046900F638BF /* Sources */,
 				8416DA9123EA046900F638BF /* Frameworks */,
 				8416DA9223EA046900F638BF /* Resources */,
-				E2D392495ED23ED835EF2BFA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -279,23 +281,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E2D392495ED23ED835EF2BFA /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SoundsGood/Pods-SoundsGood-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SoundsGood/Pods-SoundsGood-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SoundsGood/Pods-SoundsGood-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -312,6 +297,7 @@
 				846FC5F52419FDF900AAF497 /* FoodByTags.swift in Sources */,
 				8416DA9A23EA046900F638BF /* SceneDelegate.swift in Sources */,
 				D7CE200A242A7A2B00C4142E /* Results.swift in Sources */,
+				D7C7E27C2452083300C96C65 /* ViewController.swift in Sources */,
 				D7CE1FFC2429F5E700C4142E /* PrintTags.swift in Sources */,
 				D7680CCD2424510000C023B7 /* SignIn.swift in Sources */,
 				D7D7667E240ED97800E321BA /* QuestionController.swift in Sources */,

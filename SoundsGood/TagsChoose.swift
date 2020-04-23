@@ -54,11 +54,11 @@ struct Tags: View {
                 ForEach(rows) { row in
                     HStack(alignment: .center) {
                         ForEach(row.cells) { cell in
-                            TagButton(cell.bData)
+                            TagButton(cell.bData).padding(-12)
                         }
-                    }
+                    }.padding(EdgeInsets.init(top: 5, leading: 0, bottom: 5, trailing: 0))
                 }
-            }.padding(EdgeInsets.init(top: 0, leading: -20, bottom: 0, trailing: -20))
+            }.padding(EdgeInsets.init(top: 0, leading: 5, bottom: 0, trailing: 5))
             
             Spacer().frame(height: 60)
             
