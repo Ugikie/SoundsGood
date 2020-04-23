@@ -104,7 +104,7 @@ private var AnswerState10 = ["Baked", "Fried", "Grilled", "Does not matter"]
 private var QuestionState11: String = "Would you like your food choice to be Sour?"
 private var AnswerState11 = ["Yes", "No", "", ""]
 private var QuestionState12: String = "How much would you be willing to spend for your food choice?"
-private var AnswerState12 = ["Price: $", "Price: $$", "Price: $$$", ""]
+private var AnswerState12 = ["Price: $", "Price: $ $", "Price: $ $ $", ""]
 private var QuestionState13: String = "Would you like your food choice to be healthy?"
 private var AnswerState13 = ["Yes", "No", "", ""]
 private var QuestionState14: String = "Do you want your food choice to have vegetables?"
@@ -257,11 +257,11 @@ func getNextQuestion(_ tagChoice :  String) -> String {
             print("hey")
         }
         else if (tagChoice == "Price: $$"){
-            temp_tag_64 = Expression<Int64>("$$")
+            temp_tag_64 = Expression<Int64>("$ $")
             temp_answer_int = 1
         }
         else if (tagChoice == "Price: $$$"){
-            temp_tag_64 = Expression<Int64>("$$$")
+            temp_tag_64 = Expression<Int64>("$ $ $")
             temp_answer_int = 1
         }
         tags_list = tags_list.subtracting(tag_subset16)

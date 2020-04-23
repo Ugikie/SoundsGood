@@ -8,19 +8,30 @@
 
 import SwiftUI
 
+func update() {
+
+    tags_list = ["breakfast", "lunch", "dinner", "dessert", "snack", "vegetarian", "doughy", "chewy", "crunchy", "sweet", "sour", "savory", "hot", "cold", "roomtemp", "$", "$$", "$$$", "healthy", "vegetables", "fired", "baked", "grilled", "milkproducts", "vegan", "sick", "junkfood", "mexican", "asian", "Italian/French", "Indian", "American", "Greek/Persian", "seafood", "chicken", "beef", "pork"]
+    count = 1
+    ResultList = []
+    resultFlag = 0
+}
+
 struct Questions: View {
     
     @State private var QuestionState: String = "What type of meal do you think you would like?"
-    @State private var AnswerState = ["breakfast", "lunch", "dinner", "dessert"]
-    
+    @State private var AnswerState = ["Breakfast", "Lunch", "Dinner", "Dessert"]
     
     @State private var buttonBackColor: Color = .green
+    @State private var buttonBackColor2: Color = .green
+    @State private var buttonBackColor3: Color = .green
+    @State private var buttonBackColor4: Color = .green
     @State var QuestionButtonBackColor: Color = .red
     @State private var ResultAnswer: String = ""
     private var questionstr: String = ""
     
     
     var body: some View {
+        
         
         ZStack {
             VStack {
@@ -32,38 +43,116 @@ struct Questions: View {
                 
                 // Print answers from an array
                 
-                ForEach(AnswerState, id: \.self) {  answer in
+                VStack {
                     Button(action: {
                         currentQuestion = self.QuestionState
-                        self.QuestionState = getNextQuestion(answer)
+                        if (currentQuestion == "What type of meal do you think you would like?") {
+                            update()
+                        }
+                        self.QuestionState = getNextQuestion(self.AnswerState[0])
                         self.AnswerState = getNextAnswers
-                        if (resultFlag == 1){
+                        if (resultFlag == 1) {
                             self.QuestionButtonBackColor = .white
-                        }
-                        if(answer == "Click here to see the results") {
-                            self.buttonBackColor = .yellow
-                        }
-                        else if (answer == ""){
                             self.buttonBackColor = .white
                         }
+                        if (self.AnswerState[1] != ""){ self.buttonBackColor2 = .green }
+                        else { self.buttonBackColor2 = .white }
+                        if (self.AnswerState[2] != ""){ self.buttonBackColor3 = .green }
+                        else { self.buttonBackColor3 = .white }
+                        if (self.AnswerState[3] != ""){ self.buttonBackColor4 = .green }
+                        else { self.buttonBackColor4 = .white }
                     }) {
                         
-                        if (resultFlag == 1) {
-                            NavigationLink(
-                                destination: Result())
-                            {
-                                ZStack {
-                                Text("").padding(.all,20).padding([.leading, .trailing], 100).background(Color.yellow).cornerRadius(30)
-                                Text(answer).frame(height: 50).font(.headline).foregroundColor(.white)
+                       // make an even bakcground under the buttons
+                        
+                        ZStack {
+                            if (self.AnswerState[0] == "Click here to see the results") {
+                                NavigationLink(destination: Result())
+                                    {
+                                        Text(self.AnswerState[0]).font(.title).fontWeight(.semibold).bold().foregroundColor(.white).padding(.all,10).padding([.leading, .trailing], 10).background(Color.orange).cornerRadius(50).frame(alignment: .leading)
                                 }
                             }
-                        }
-                       // make an even bakcground under the buttons
-                        else {
-                        ZStack {
+                            else{
                             Text("").padding(.all,20).padding([.leading, .trailing], 100).background(self.buttonBackColor).cornerRadius(30)
-                            Text(answer).frame(height: 20).font(.headline).foregroundColor(.white)
+                            Text(self.AnswerState[0]).frame(height: 20).font(.headline).foregroundColor(.white)
+                            }
                         }
+                    }
+                    Button(action: {
+                        currentQuestion = self.QuestionState
+                        if (currentQuestion == "What type of meal do you think you would like?") {
+                            update()
+                        }
+                        self.QuestionState = getNextQuestion(self.AnswerState[1])
+                        self.AnswerState = getNextAnswers
+                        if (resultFlag == 1) {
+                            self.QuestionButtonBackColor = .white
+                            self.buttonBackColor = .white
+                        }
+                        if (self.AnswerState[1] != ""){ self.buttonBackColor2 = .green }
+                        else { self.buttonBackColor2 = .white }
+                        if (self.AnswerState[2] != ""){ self.buttonBackColor3 = .green }
+                        else { self.buttonBackColor3 = .white }
+                        if (self.AnswerState[3] != ""){ self.buttonBackColor4 = .green }
+                        else { self.buttonBackColor4 = .white }
+                    }) {
+                        
+                       // make an even bakcground under the buttons
+                        
+                        ZStack {
+                            Text("").padding(.all,20).padding([.leading, .trailing], 100).background(self.buttonBackColor2).cornerRadius(30)
+                            Text(self.AnswerState[1]).frame(height: 20).font(.headline).foregroundColor(.white)
+                        }
+                    }
+                    Button(action: {
+                        currentQuestion = self.QuestionState
+                        if (currentQuestion == "What type of meal do you think you would like?") {
+                            update()
+                        }
+                        self.QuestionState = getNextQuestion(self.AnswerState[2])
+                        self.AnswerState = getNextAnswers
+                        if (resultFlag == 1) {
+                            self.QuestionButtonBackColor = .white
+                            self.buttonBackColor = .white
+                        }
+                        if (self.AnswerState[1] != ""){ self.buttonBackColor2 = .green }
+                        else { self.buttonBackColor2 = .white }
+                        if (self.AnswerState[2] != ""){ self.buttonBackColor3 = .green }
+                        else { self.buttonBackColor3 = .white }
+                        if (self.AnswerState[3] != ""){ self.buttonBackColor4 = .green }
+                        else { self.buttonBackColor4 = .white }
+                    }) {
+                        
+                       // make an even bakcground under the buttons
+                       
+                        ZStack {
+                            Text("").padding(.all,20).padding([.leading, .trailing], 100).background(self.buttonBackColor3).cornerRadius(30)
+                            Text(self.AnswerState[2]).frame(height: 20).font(.headline).foregroundColor(.white)
+                        }
+                    }
+                    Button(action: {
+                        currentQuestion = self.QuestionState
+                        if (currentQuestion == "What type of meal do you think you would like?") {
+                            update()
+                        }
+                        self.QuestionState = getNextQuestion(self.AnswerState[3])
+                        self.AnswerState = getNextAnswers
+                        if (resultFlag == 1) {
+                            self.QuestionButtonBackColor = .white
+                            self.buttonBackColor = .white
+                        }
+                        if (self.AnswerState[1] != ""){ self.buttonBackColor2 = .green }
+                        else { self.buttonBackColor2 = .white }
+                        if (self.AnswerState[2] != ""){ self.buttonBackColor3 = .green }
+                        else { self.buttonBackColor3 = .white }
+                        if (self.AnswerState[3] != ""){ self.buttonBackColor4 = .green }
+                        else { self.buttonBackColor4 = .white }
+                    }) {
+                       // make an even bakcground under the buttons
+                       
+                        ZStack {
+                            Text("").padding(.all,20).padding([.leading, .trailing], 100).background(self.buttonBackColor4).cornerRadius(30)
+                            Text(self.AnswerState[3]).frame(height: 20).font(.headline).foregroundColor(.white)
                         }
                     }
                 }
