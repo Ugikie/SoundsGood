@@ -58,7 +58,7 @@ struct TagButton: View {
             }
         }) {
             Text(self.data.tag)
-                .font(.title)
+                .font(.headline)
                 .fontWeight(.semibold)
                 .bold()
                 .frame(width: 90, height: 50)

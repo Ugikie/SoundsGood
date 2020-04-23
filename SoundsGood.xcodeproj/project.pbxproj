@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,7 +16,9 @@
 		846FC5DE2419BA8800AAF497 /* food_db.db in Resources */ = {isa = PBXBuildFile; fileRef = 846FC5DD2419BA8800AAF497 /* food_db.db */; };
 		846FC5F42419FDF900AAF497 /* TagsChoose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FC5EB2419FDF900AAF497 /* TagsChoose.swift */; };
 		846FC5F52419FDF900AAF497 /* FoodByTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FC5F32419FDF900AAF497 /* FoodByTags.swift */; };
+		D6A00F44906D9512FF300DB2 /* libPods-SoundsGood.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0676E2061A5501C0B2486C04 /* libPods-SoundsGood.a */; };
 		D71AAAC4244F639B00D6A25E /* TagButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71AAAC3244F639B00D6A25E /* TagButton.swift */; };
+		D71AAAD724514D6C00D6A25E /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D71AAAD624514D6C00D6A25E /* Podfile */; };
 		D72FE0E02404B6870083002A /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72FE0DF2404B6870083002A /* AppView.swift */; };
 		D73D3249242C9640004BE404 /* FoodSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73D3248242C9640004BE404 /* FoodSearch.swift */; };
 		D7412011240642800087E1F3 /* FavoriteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7412010240642800087E1F3 /* FavoriteList.swift */; };
@@ -32,59 +34,10 @@
 		D7D766822412244A00E321BA /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D766812412244A00E321BA /* Questions.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		D7680CBE242447CF00C023B7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D7680CB4242447CE00C023B7 /* SQLite.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = EE247AD31C3F04ED00AE3E12;
-			remoteInfo = "SQLite iOS";
-		};
-		D7680CC0242447CF00C023B7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D7680CB4242447CE00C023B7 /* SQLite.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = EE247ADD1C3F04ED00AE3E12;
-			remoteInfo = "SQLiteTests iOS";
-		};
-		D7680CC2242447CF00C023B7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D7680CB4242447CE00C023B7 /* SQLite.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = EE247B3C1C3F3ED000AE3E12;
-			remoteInfo = "SQLite Mac";
-		};
-		D7680CC4242447CF00C023B7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D7680CB4242447CE00C023B7 /* SQLite.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = EE247B451C3F3ED000AE3E12;
-			remoteInfo = "SQLiteTests Mac";
-		};
-		D7680CC6242447CF00C023B7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D7680CB4242447CE00C023B7 /* SQLite.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 03A65E5A1C6BB0F50062603F;
-			remoteInfo = "SQLite tvOS";
-		};
-		D7680CC8242447CF00C023B7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D7680CB4242447CE00C023B7 /* SQLite.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 03A65E631C6BB0F60062603F;
-			remoteInfo = "SQLiteTests tvOS";
-		};
-		D7680CCA242447CF00C023B7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D7680CB4242447CE00C023B7 /* SQLite.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A121AC451CA35C79005A31D1;
-			remoteInfo = "SQLite watchOS";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
+		02136AE9812668264640BDD3 /* Pods-SoundsGood.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoundsGood.debug.xcconfig"; path = "Target Support Files/Pods-SoundsGood/Pods-SoundsGood.debug.xcconfig"; sourceTree = "<group>"; };
+		0676E2061A5501C0B2486C04 /* libPods-SoundsGood.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SoundsGood.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		350460BB416C04E03FCB3903 /* Pods-SoundsGood.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoundsGood.release.xcconfig"; path = "Target Support Files/Pods-SoundsGood/Pods-SoundsGood.release.xcconfig"; sourceTree = "<group>"; };
 		8416DA9423EA046900F638BF /* SoundsGood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundsGood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8416DA9723EA046900F638BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8416DA9923EA046900F638BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,13 +50,13 @@
 		846FC5EB2419FDF900AAF497 /* TagsChoose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsChoose.swift; sourceTree = "<group>"; };
 		846FC5F32419FDF900AAF497 /* FoodByTags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodByTags.swift; sourceTree = "<group>"; };
 		D71AAAC3244F639B00D6A25E /* TagButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagButton.swift; sourceTree = "<group>"; };
+		D71AAAD624514D6C00D6A25E /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		D72FE0DF2404B6870083002A /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		D73D3248242C9640004BE404 /* FoodSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSearch.swift; sourceTree = "<group>"; };
 		D7412010240642800087E1F3 /* FavoriteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteList.swift; sourceTree = "<group>"; };
 		D741201D240766290087E1F3 /* FoodDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetail.swift; sourceTree = "<group>"; usesTabs = 0; };
 		D741201F2407670C0087E1F3 /* FoodRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodRow.swift; sourceTree = "<group>"; };
 		D74DB9F324046C40001B885B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D7680CB4242447CE00C023B7 /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
 		D7680CCC2424510000C023B7 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		D7680CCE242452CF00C023B7 /* HeartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartButton.swift; sourceTree = "<group>"; };
 		D7CE1FFB2429F5E700C4142E /* PrintTags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintTags.swift; sourceTree = "<group>"; };
@@ -118,18 +71,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6A00F44906D9512FF300DB2 /* libPods-SoundsGood.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1CD45193C2BAE9F589B7AE9D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				02136AE9812668264640BDD3 /* Pods-SoundsGood.debug.xcconfig */,
+				350460BB416C04E03FCB3903 /* Pods-SoundsGood.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		8416DA8B23EA046900F638BF = {
 			isa = PBXGroup;
 			children = (
+				D71AAAD624514D6C00D6A25E /* Podfile */,
 				8416DA9623EA046900F638BF /* SoundsGood */,
 				8416DA9523EA046900F638BF /* Products */,
 				846FC5C42416E32F00AAF497 /* Frameworks */,
+				1CD45193C2BAE9F589B7AE9D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -178,7 +143,7 @@
 		846FC5C42416E32F00AAF497 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D7680CB4242447CE00C023B7 /* SQLite.xcodeproj */,
+				0676E2061A5501C0B2486C04 /* libPods-SoundsGood.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -198,20 +163,6 @@
 				D7D7667F240EEB8300E321BA /* pizza.jpg */,
 			);
 			path = Resorces;
-			sourceTree = "<group>";
-		};
-		D7680CB5242447CE00C023B7 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				D7680CBF242447CF00C023B7 /* SQLite.framework */,
-				D7680CC1242447CF00C023B7 /* SQLiteTests iOS.xctest */,
-				D7680CC3242447CF00C023B7 /* SQLite.framework */,
-				D7680CC5242447CF00C023B7 /* SQLiteTests Mac.xctest */,
-				D7680CC7242447CF00C023B7 /* SQLite.framework */,
-				D7680CC9242447CF00C023B7 /* SQLiteTests tvOS.xctest */,
-				D7680CCB242447CF00C023B7 /* SQLite.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		D7CE20042429F8E300C4142E /* Favorite List */ = {
@@ -241,9 +192,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8416DAA823EA046A00F638BF /* Build configuration list for PBXNativeTarget "SoundsGood" */;
 			buildPhases = (
+				501E1C01FE9113664975F865 /* [CP] Check Pods Manifest.lock */,
 				8416DA9023EA046900F638BF /* Sources */,
 				8416DA9123EA046900F638BF /* Frameworks */,
 				8416DA9223EA046900F638BF /* Resources */,
+				E2D392495ED23ED835EF2BFA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -280,70 +233,12 @@
 			mainGroup = 8416DA8B23EA046900F638BF;
 			productRefGroup = 8416DA9523EA046900F638BF /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = D7680CB5242447CE00C023B7 /* Products */;
-					ProjectRef = D7680CB4242447CE00C023B7 /* SQLite.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				8416DA9323EA046900F638BF /* SoundsGood */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		D7680CBF242447CF00C023B7 /* SQLite.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SQLite.framework;
-			remoteRef = D7680CBE242447CF00C023B7 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D7680CC1242447CF00C023B7 /* SQLiteTests iOS.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "SQLiteTests iOS.xctest";
-			remoteRef = D7680CC0242447CF00C023B7 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D7680CC3242447CF00C023B7 /* SQLite.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SQLite.framework;
-			remoteRef = D7680CC2242447CF00C023B7 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D7680CC5242447CF00C023B7 /* SQLiteTests Mac.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "SQLiteTests Mac.xctest";
-			remoteRef = D7680CC4242447CF00C023B7 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D7680CC7242447CF00C023B7 /* SQLite.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SQLite.framework;
-			remoteRef = D7680CC6242447CF00C023B7 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D7680CC9242447CF00C023B7 /* SQLiteTests tvOS.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "SQLiteTests tvOS.xctest";
-			remoteRef = D7680CC8242447CF00C023B7 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D7680CCB242447CF00C023B7 /* SQLite.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SQLite.framework;
-			remoteRef = D7680CCA242447CF00C023B7 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8416DA9223EA046900F638BF /* Resources */ = {
@@ -355,10 +250,53 @@
 				D74DB9F424046C40001B885B /* Assets.xcassets in Resources */,
 				846FC5DE2419BA8800AAF497 /* food_db.db in Resources */,
 				8416DAA123EA046A00F638BF /* Preview Assets.xcassets in Resources */,
+				D71AAAD724514D6C00D6A25E /* Podfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		501E1C01FE9113664975F865 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SoundsGood-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2D392495ED23ED835EF2BFA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SoundsGood/Pods-SoundsGood-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SoundsGood/Pods-SoundsGood-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SoundsGood/Pods-SoundsGood-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8416DA9023EA046900F638BF /* Sources */ = {
@@ -516,6 +454,7 @@
 		};
 		8416DAA923EA046A00F638BF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02136AE9812668264640BDD3 /* Pods-SoundsGood.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -537,6 +476,7 @@
 		};
 		8416DAAA23EA046A00F638BF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 350460BB416C04E03FCB3903 /* Pods-SoundsGood.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

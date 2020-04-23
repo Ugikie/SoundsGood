@@ -22,7 +22,7 @@ extension Row {
             var row: [Cell] = []
             var cellCount = 0;
             
-            while(index < tags.count && cellCount < (quadRow ? 3 : 2)) {
+            while(index < tags.count && cellCount < (quadRow ? 4 : 3)) {
                 row.append(Cell(bData: ButtonData(tag: tags[index], state: .ignore)))
                 index += 1
                 cellCount += 1

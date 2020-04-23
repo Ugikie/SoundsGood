@@ -33,11 +33,11 @@ struct AppView: View {
                             Text("Search")
                   }
             
-                  SignIn()
-                        .tabItem {
-                            Image(systemName: "person.fill")
-                            Text("Profile??")
-                  }
+//                  SignIn()
+//                        .tabItem {
+//                            Image(systemName: "person.fill")
+//                            Text("Profile??")
+//                  }
             
               }
         .font(.headline)

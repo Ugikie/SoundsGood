@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // MAX: make a splash screen last longer
         //sleep(2);
+        GMSPlacesClient.provideAPIKey("AIzaSyBO4BDMhleH2oESWgVd8W4HIIC7swn8CHk")
         
         return true
     }

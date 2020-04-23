@@ -1,0 +1,6 @@
+module Pods_SoundsGood {
+  umbrella header "Pods-SoundsGood-umbrella.h"
+
+  export *
+  module * { export * }
+}
