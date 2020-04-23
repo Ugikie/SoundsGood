@@ -129,7 +129,7 @@ func getNextQuestion(_ tagChoice :  String) -> String {
     var temp_tag_64 = Expression<Int64>("")
     var temp_answer_int: Int64 = 0
     if (currentQuestion == "What type of meal do you think you would like?") {
-        tag1_64 = Expression<Int64>(tagChoice)
+        tag1_64 = Expression<Int64>(tagChoice.lowercased())
         answer_int1 = 1
 
         tags_list = tags_list.subtracting(tag_subset1)
