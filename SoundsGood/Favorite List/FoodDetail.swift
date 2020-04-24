@@ -4,6 +4,7 @@ See LICENSE folder for this sample’s licensing information.
 Abstract:
 A view showing food details (tags)
 */
+
 import SwiftUI
 
 struct FoodDetail: View {
@@ -14,6 +15,7 @@ struct FoodDetail: View {
         ZStack {
         VStack {
                 // Food image on top of detail page
+                
                 getFoodImageFor(foodName)!
                     .resizable().frame(width: 360.0, height: 360.0)
         }.offset(y: -100)

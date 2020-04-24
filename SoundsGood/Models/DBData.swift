@@ -14,7 +14,7 @@ import SwiftUI
 //let db = try! Connection(urlPath!)
 
 var db = try! Connection("/Users/Max717/Documents/food_db.db")
-
+var globalID: Int = 9
 let food_info = Table("food_info")
 let food_imgs = Table("food_imgs")
 let id = Expression<Int64>("id")
@@ -23,6 +23,25 @@ var listOfFoodTags = getColumnNames()
 var listOfFoodNames = getFoodNames()
 var favoriteFoods = getFavoriteFoods()
 
+
+func getID(_ foodNameToCheck: String) {
+    
+    //var ID: Int64 = 0
+    let idtag = Expression<Int64>("id")
+    //SELECT isFavorite from food_info WHERE food = foodNameToCheck
+    let query = food_info.select(idtag)
+                         .filter(foodName == foodNameToCheck)
+    
+    
+    do {
+        for value in try db.prepare(query) {
+            
+            globalID = Int(value[idtag])
+        }
+    } catch {
+            print("Error finding food \(foodNameToCheck)!\n")
+        }
+}
 
 func getFoodInfo() {
     do {
@@ -74,6 +93,13 @@ func getFavoriteFoods() -> [String] {
 }
 
 func getTagValuesForFood(_ foodNameToCheck: String) -> [String] {
+    
+    // just in case update globalID here as well
+    getID(foodNameToCheck)
+    
+    print(globalID)
+    print("WTF")
+    
     var posTags: [String] = []
 
 
@@ -108,6 +134,7 @@ func getTagValuesForFood(_ foodNameToCheck: String) -> [String] {
     return posTags
 }
 
+
 func getColumnNames() -> [String] {
     var listOfTags: [String] = []
     
@@ -135,6 +162,10 @@ extension UIImage: Value {
 }
 
 func getFoodImageFor(_ foodNameToCheck: String) -> Image? {
+    
+    //Each time image is loaded - globalID is updated
+    getID(foodNameToCheck)
+    
     var foodImage: Image?
     let image = Expression<UIImage>("image")
     
@@ -147,7 +178,6 @@ func getFoodImageFor(_ foodNameToCheck: String) -> Image? {
     } catch {
         print("Error finding an image for: \(foodNameToCheck)")
     }
-    
     return foodImage
 }
 

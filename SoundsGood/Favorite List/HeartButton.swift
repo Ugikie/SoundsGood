@@ -21,6 +21,7 @@ struct heartButton: View {
         HStack {
             if (self.heartColor == .green && checkIsFavorite(self.foodName) == .red) {
             Button(action: {
+
                 setIsFavorite(0, self.foodName)
                 self.heartColor = .gray
         }) {
