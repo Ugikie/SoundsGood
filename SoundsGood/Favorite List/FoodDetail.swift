@@ -39,6 +39,12 @@ struct FoodDetail: View {
               
                 // Navigation bar title is not necessary since we have food name in details already
             }
+            HStack {
+                NavigationLink(
+                    destination: Restaurants(foodName: foodName))
+                {
+                    Text("Search Nearby Restaurants").font(.headline).fontWeight(.semibold).bold().foregroundColor(.white).padding(.all,20).padding([.leading, .trailing], 30).background(Color.green).cornerRadius(50) }
+            }.offset(y: 350)
         }.navigationBarTitle(Text(foodName), displayMode: .inline).offset(y: -60)
     }
 }

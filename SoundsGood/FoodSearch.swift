@@ -14,6 +14,7 @@ struct FoodSearch: View {
     let array = [""]
     @State private var searchText = ""
     @State private var showCancelButton: Bool = false
+    @State private var isPresented = false
 
     var body: some View {
 

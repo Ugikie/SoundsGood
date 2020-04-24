@@ -87,7 +87,7 @@ func getTagValuesForFood(_ foodNameToCheck: String) -> [String] {
                 
                 if (tagName == "food" || tagName == "origin") {
                     
-                    let tagToCheck = Expression<String?>(tagName)
+                    //let tagToCheck = Expression<String?>(tagName)
                     //print("\(tagName): \(tag[tagToCheck]!)")
                     
                 } else {
