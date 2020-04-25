@@ -32,28 +32,228 @@ class observer : ObservableObject{
     
     @Published var datas = [datatype]()
     
-    
     init() {
         
         var url_search = ""
         switch globalID {
         case 1:
-            url_search = "ice%20cream"
+             url_search = "Ice%20Cream"
         case 2:
-            url_search = "chicken%20nuggets"
+             url_search = "Chicken%20Nuggets"
         case 3:
-            url_search = "chicken%20tenders"
-        case 4: //omlete. let's search breakfast
-            url_search = "breakfast"
+             url_search = "Chicken%20Tenders"
+        case 4:
+             url_search = "Breakfast"
         case 5:
-            url_search = "macaroni%20and%20Cheese"
+             url_search = "Macaroni%20and%20Cheese"
         case 6:
-            url_search = "fried%20rice"
-
+             url_search = "Fried%20Rice"
+        case 7:
+             url_search = "Egg%20Rolls"
+        case 8:
+             url_search = "Dumplings"
         case 9:
-            url_search = "sushi"
+             url_search = "Sushi"
+        case 10:
+             url_search = "Empanadas"
+        case 11:
+             url_search = "Tacos"
+        case 12:
+             url_search = "Burritos"
+        case 13:
+             url_search = "Nachos"
         case 14:
-            url_search = "pizza"
+             url_search = "Pizza"
+        case 15:
+             url_search = "Burgers"
+        case 16:
+             url_search = "Sandwich"
+        case 17:
+             url_search = "Grilled%20Cheese"
+        case 18:
+             url_search = "Peanut%20Butter%20and%20Jelly%20Sandwich"
+        case 19:
+             url_search = "Bagel"
+        case 20:
+             url_search = "Pancakes"
+        case 21:
+             url_search = "Waffles"
+        case 22:
+             url_search = "French%20Toast"
+        case 23:
+             url_search = "Cereal"
+        case 24:
+             url_search = "Oatmeal"
+        case 25:
+             url_search = "Potato%20Chips"
+        case 26:
+             url_search = "Tortilla%20Chips"
+        case 27:
+             url_search = "Popcorn"
+        case 28:
+             url_search = "Pretzels%20(baked)"
+        case 29:
+             url_search = "Pretzels"
+        case 30:
+             url_search = "Crackers"
+        case 31:
+             url_search = "Cake"
+        case 32:
+             url_search = "Cookies"
+        case 33:
+             url_search = "Brownies"
+        case 34:
+             url_search = "Doughnut"
+        case 35:
+             url_search = "Candy"
+        case 36:
+             url_search = "Burgers"
+        case 37:
+             url_search = "Muffins"
+        case 38:
+             url_search = "Cheese%20Cake"
+        case 39:
+             url_search = "Enchiladas"
+        case 40:
+             url_search = "Steak"
+        case 41:
+             url_search = "Fried%20Chicken"
+        case 42:
+             url_search = "Grilled%20Chicken"
+        case 43:
+             url_search = "Ribs"
+        case 44:
+             url_search = "Hot%20Dog"
+        case 45:
+             url_search = "Lasagna"
+        case 46:
+             url_search = "Pudding"
+        case 47:
+             url_search = "Onion%20Rings"
+        case 48:
+             url_search = "Tamales"
+        case 49:
+             url_search = "Fajitas"
+        case 50:
+             url_search = "Taquitos"
+        case 51:
+             url_search = "Pasta"
+        case 52:
+             url_search = "Gelato"
+        case 53:
+             url_search = "Chow%20Mein"
+        case 54:
+             url_search = "Kung%20Pao%20Chicken"
+        case 55:
+             url_search = "Orange%20Chicken"
+        case 56:
+             url_search = "Wontons"
+        case 57:
+             url_search = "Egg%20Drop%20Soup"
+        case 58:
+             url_search = "Beef%20and%20Broccoli"
+        case 59:
+             url_search = "Ramen"
+        case 60:
+             url_search = "Turkish"
+        case 61:
+             url_search = "Stuffed%20Grape%20Leaves"
+        case 62:
+             url_search = "Gyro"
+        case 63:
+             url_search = "Meatballs"
+        case 64:
+             url_search = "Oysters"
+        case 65:
+             url_search = "Shrimp%20Cocktail"
+        case 66:
+             url_search = "Quiche"
+        case 67:
+             url_search = "Ratatouille"
+        case 68:
+             url_search = "Croissant"
+        case 69:
+             url_search = "Macarons"
+        case 70:
+             url_search = "Creme%20Brulee"
+        case 71:
+             url_search = "Pad%20Thai"
+        case 72:
+             url_search = "Paella"
+        case 73:
+             url_search = "Samosas"
+        case 74:
+             url_search = "Naan"
+        case 75:
+             url_search = "Tandoori%20Chicken"
+        case 76:
+             url_search = "Hummus"
+        case 77:
+             url_search = "Salad"
+        case 78:
+             url_search = "Falafel"
+        case 79:
+             url_search = "String%20Cheese"
+        case 80:
+             url_search = "Pizza%20Rolls"
+        case 81:
+             url_search = "Rice%20Krispies"
+        case 82:
+             url_search = "Corn%20Nuts"
+        case 83:
+             url_search = "Gummy%20Bears"
+        case 84:
+             url_search = "Gummy%20Worms"
+        case 85:
+             url_search = "Licorice"
+        case 86:
+             url_search = "Chocolate%20Bar"
+        case 87:
+             url_search = "Oreos"
+        case 88:
+             url_search = "Jelly%20Beans"
+        case 89:
+             url_search = "Skittles"
+        case 90:
+             url_search = "Sour%20Patch%20Kids"
+        case 91:
+             url_search = "Chips%20Ahoy"
+        case 92:
+             url_search = "Beef%20Jerky"
+        case 93:
+             url_search = "Doritios"
+        case 94:
+             url_search = "Cinnamon%20Rolls"
+        case 95:
+             url_search = "Eclair"
+        case 96:
+             url_search = "Danish"
+        case 97:
+             url_search = "Cannolis"
+        case 98:
+             url_search = "Churros"
+        case 99:
+             url_search = "Pecan%20Pie"
+        case 100:
+             url_search = "Pie"
+        case 101:
+             url_search = "Pie"
+        case 102:
+             url_search = "Banana%20Bread"
+        case 103:
+             url_search = "Fruit%20Tart"
+        case 104:
+             url_search = "Pumpkin%20Pie"
+        case 105:
+             url_search = "Chicken%20Noodle%20Soup"
+        case 106:
+             url_search = "Tomato%20Soup"
+        case 107:
+             url_search = "Clam%20Chowder"
+        case 108:
+             url_search = "Spicy%20Tortilla%20Soup"
+        case 109:
+             url_search = "Kabob"
         default:
             url_search = "pizza"
         }
@@ -77,7 +277,6 @@ class observer : ObservableObject{
                 print(fetch)
                 
                 for i in fetch.restaurants{
-                    
                     
                     DispatchQueue.main.async {
                         
