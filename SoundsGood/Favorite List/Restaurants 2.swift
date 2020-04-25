@@ -17,15 +17,14 @@ struct Restaurants: View {
     
     var body: some View {
         
-       // NavigationView {
+        NavigationView {
             
             List(obs.datas){i in
                 
                 Card(name: i.name, address: i.address, weburl: i.webUrl, rating: i.rating)
                 
-            }
-            .navigationBarTitle(Text("Nearby Restaurants"))
-       // }
+            }.navigationBarTitle("Near By Restaurants")
+        }
     }
 }
 

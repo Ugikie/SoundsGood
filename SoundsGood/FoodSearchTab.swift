@@ -10,7 +10,7 @@
 
 import SwiftUI
 
-struct FoodSearch: View {
+struct FoodSearchTab: View {
     var foodNames = getFoodNames().sorted()
     @State private var searchText = ""
     @State private var showCancelButton: Bool = false
@@ -18,7 +18,7 @@ struct FoodSearch: View {
 
     var body: some View {
 
-       // NavigationView {
+        NavigationView {
             VStack {
                 //Spacer().frame(height: 50)
                 HStack {
@@ -73,11 +73,11 @@ struct FoodSearch: View {
             }
         }
     }
-//}
+}
 
 
 
-struct FoodSearch_Previews: PreviewProvider {
+struct FoodSearchTab_Previews: PreviewProvider {
     static var previews: some View {
         Group {
            FoodSearch()
@@ -89,11 +89,3 @@ struct FoodSearch_Previews: PreviewProvider {
     }
 }
 
-extension UIApplication {
-    func endEditing(_ force: Bool) {
-        self.windows
-            .filter{$0.isKeyWindow}
-            .first?
-            .endEditing(force)
-    }
-}

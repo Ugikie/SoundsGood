@@ -12,7 +12,7 @@ struct Result: View {
     
     var body: some View {
         
-        NavigationView {
+       // NavigationView {
             List(ResultList, id:\.self) { foodName in
                  NavigationLink(destination: FoodDetail(foodName: foodName)) {
                   // prints picture and name in foodRow file
@@ -29,7 +29,7 @@ struct Result: View {
                     //   of the NavigationLink row (button)
             .buttonStyle(BorderlessButtonStyle())
             .navigationBarTitle(Text("Results"))
-        }
+       // }
     }
 }
 

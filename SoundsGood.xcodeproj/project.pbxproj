@@ -16,6 +16,7 @@
 		846FC5DE2419BA8800AAF497 /* food_db.db in Resources */ = {isa = PBXBuildFile; fileRef = 846FC5DD2419BA8800AAF497 /* food_db.db */; };
 		846FC5F42419FDF900AAF497 /* TagsChoose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FC5EB2419FDF900AAF497 /* TagsChoose.swift */; };
 		846FC5F52419FDF900AAF497 /* FoodByTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FC5F32419FDF900AAF497 /* FoodByTags.swift */; };
+		847A65C62454CA8C0057A99A /* FoodSearchTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A65C52454CA8C0057A99A /* FoodSearchTab.swift */; };
 		D6A00F44906D9512FF300DB2 /* libPods-SoundsGood.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0676E2061A5501C0B2486C04 /* libPods-SoundsGood.a */; };
 		D71AAAC4244F639B00D6A25E /* TagButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71AAAC3244F639B00D6A25E /* TagButton.swift */; };
 		D71AAAD724514D6C00D6A25E /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D71AAAD624514D6C00D6A25E /* Podfile */; };
@@ -50,6 +51,7 @@
 		846FC5DD2419BA8800AAF497 /* food_db.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = food_db.db; sourceTree = "<group>"; };
 		846FC5EB2419FDF900AAF497 /* TagsChoose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsChoose.swift; sourceTree = "<group>"; };
 		846FC5F32419FDF900AAF497 /* FoodByTags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodByTags.swift; sourceTree = "<group>"; };
+		847A65C52454CA8C0057A99A /* FoodSearchTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSearchTab.swift; sourceTree = "<group>"; };
 		D71AAAC3244F639B00D6A25E /* TagButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagButton.swift; sourceTree = "<group>"; };
 		D71AAAD624514D6C00D6A25E /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		D72426C72452E1F700B29FDF /* Restaurants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurants.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				D71AAAC3244F639B00D6A25E /* TagButton.swift */,
 				846FC5F32419FDF900AAF497 /* FoodByTags.swift */,
 				D73D3248242C9640004BE404 /* FoodSearch.swift */,
+				847A65C52454CA8C0057A99A /* FoodSearchTab.swift */,
 				D7680CCC2424510000C023B7 /* SignIn.swift */,
 				D7CE20042429F8E300C4142E /* Favorite List */,
 				D74DB9F324046C40001B885B /* Assets.xcassets */,
@@ -303,6 +306,7 @@
 				D7D766822412244A00E321BA /* Questions.swift in Sources */,
 				846FC5AB2415A91900AAF497 /* DBData.swift in Sources */,
 				D7680CCF242452CF00C023B7 /* HeartButton.swift in Sources */,
+				847A65C62454CA8C0057A99A /* FoodSearchTab.swift in Sources */,
 				8416DA9C23EA046900F638BF /* ContentView.swift in Sources */,
 				D74120202407670C0087E1F3 /* FoodRow.swift in Sources */,
 				D741201E240766290087E1F3 /* FoodDetail.swift in Sources */,

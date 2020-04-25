@@ -13,7 +13,7 @@ import SwiftUI
 //let urlPath = Bundle.main.path(forResource: "food_db", ofType: "db")
 //let db = try! Connection(urlPath!)
 
-var db = try! Connection("/Users/Max717/Documents/food_db.db")
+var db = try! Connection("/Users/liattyy/Desktop/food_db.db")
 var globalID: Int = 9
 let food_info = Table("food_info")
 let food_imgs = Table("food_imgs")
@@ -71,7 +71,7 @@ func getFoodNames() -> [String] {
 func getFavoriteFoods() -> [String] {
     
     
-    db = try! Connection("/Users/Max717/Documents/food_db.db")
+    db = try! Connection("/Users/liattyy/Desktop/food_db.db")
     print("UPDATED NOW")
     
     var favoriteFoods: [String] = []

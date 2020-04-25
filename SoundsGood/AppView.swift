@@ -27,7 +27,7 @@ struct AppView: View {
                             Text("Favorites")
                   }
             
-                  FoodSearch()
+                  FoodSearchTab()
                         .tabItem {
                             Image(systemName: "magnifyingglass.circle.fill")
                             Text("Search")
