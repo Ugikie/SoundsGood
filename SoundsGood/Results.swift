@@ -1,7 +1,5 @@
 import SwiftUI
 
-
-
 struct Results: View {
     var title: String = "Results"
     @Binding var foods: [String]

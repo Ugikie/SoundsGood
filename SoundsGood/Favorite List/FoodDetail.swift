@@ -27,8 +27,17 @@ struct FoodDetail: View {
                     .frame(alignment: .topLeading)
                 HeartButton(foodName)
             }
+            Spacer().frame(height: 30)
+            HStack {
+                NavigationLink(
+                    destination: Restaurants(foodName: foodName))
+                {
+                    Text("Search Nearby Restaurants").font(.headline).fontWeight(.semibold).bold().foregroundColor(.white).padding(.all,20).padding([.leading, .trailing], 30).background(Color.green).cornerRadius(50) }
+            }
             
             PrintTags(foodName: foodName)
+            
+            
         }.navigationBarTitle(Text(foodName), displayMode: .inline)
     }
 }

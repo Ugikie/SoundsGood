@@ -5,11 +5,16 @@
 //  Created by Max Bogatyrev on 3/9/20.
 //  Copyright © 2020 MAAD Hungry. All rights reserved.
 //
+
 import SwiftUI
 
-struct Row: Identifiable {
+class Row: Identifiable, ObservableObject {
     let id = UUID()
-    let cells: [Cell]
+    @Published var cells: [Cell]
+    
+    init(_ cells: [Cell]) {
+        self.cells = cells
+    }
 }
 
 extension Row {
@@ -23,46 +28,68 @@ extension Row {
             var cellCount = 0;
             
             while(index < tags.count && cellCount < (quadRow ? 4 : 3)) {
-                row.append(Cell(bData: ButtonData(tag: tags[index], state: .ignore)))
+                row.append(Cell(ButtonData(tag: tags[index], state: .ignore)))
                 index += 1
                 cellCount += 1
             }
             
             quadRow = !quadRow
-            rows.append(Row(cells: row))
+            rows.append(Row(row))
         }
         
         return rows
     }
 }
 
-struct Cell: Identifiable {
+class Cell: Identifiable, ObservableObject {
     let id = UUID()
-    let bData: ButtonData
+    @Published var bData: ButtonData
+    
+    init(_ bData: ButtonData) {
+        self.bData = bData
+    }
 }
 
 struct Tags: View {
-    let rows = Row.buildRows()
+    var rows = Row.buildRows()
     var tagDict: [String: TagButton] = [:]
+    @State var foods: [String] = []
+    @State var isActive: Bool = false
+    
+    func updateFoods() {
+        var tagStates: [String: TagState] = [:]
+        for row in self.rows {
+            for cell in row.cells {
+                tagStates[cell.bData.tag] = cell.bData.state
+            }
+        }
+        
+        self.foods = tagQuery(tagStates)
+    }
     
     var body: some View {
-        
         ScrollView {
             Spacer().frame(height: 20)
-            
+                
             VStack {
                 ForEach(rows) { row in
                     HStack(alignment: .center) {
                         ForEach(row.cells) { cell in
-                            TagButton(cell.bData).padding(-12)
+                            TagButton(cell.bData).padding(-10)
                         }
                     }.padding(EdgeInsets.init(top: 5, leading: 0, bottom: 5, trailing: 0))
                 }
             }.padding(EdgeInsets.init(top: 0, leading: 5, bottom: 0, trailing: 5))
-            
+                
             Spacer().frame(height: 60)
-            
-            NavigationLink(destination: FoodByTags()) {
+                
+            NavigationLink(destination: Results(title: "Tag Results", foods: self.$foods),
+                           isActive: self.$isActive) { EmptyView() }
+                
+            Button(action: {
+                self.updateFoods()
+                self.isActive = true
+            }) {
                 Text("Continue")
                     .font(.title)
                     .fontWeight(.semibold)
@@ -73,7 +100,7 @@ struct Tags: View {
                     .cornerRadius(50)
                     .frame(alignment: .leading)
             }
-        }.navigationBarTitle(Text("CHOOSE TAGS"), displayMode: .inline)
+        }.navigationBarTitle(Text("Tag Filter"), displayMode: .inline)
     }
 }
 

@@ -46,11 +46,11 @@ struct PrintTags: View {
                 NavigationLink(destination: Results(title: tag, foods: self.$tagResults)) {
                     Text(tag.capitalized)
                         .font(.body)
-                        .padding(.all, 5).padding([.leading, .trailing], 5)
+                        .padding(.all, 5).padding([.leading, .trailing], 8)
                         .font(.body)
                         .background(Color.blue)
                         .foregroundColor(Color.white)
-                        .cornerRadius(8)
+                        .cornerRadius(20)
                 }
                 .padding([.horizontal, .vertical], 4)
                 .alignmentGuide(.leading, computeValue: { d in
