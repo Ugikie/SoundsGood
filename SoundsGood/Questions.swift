@@ -17,7 +17,7 @@ func update() {
 }
 
 struct Questions: View {
-    
+    @State var resultList: [String] = ResultList
     @State private var QuestionState: String = "What type of meal do you think you would like?"
     @State private var AnswerState = ["Breakfast", "Lunch", "Dinner", "Dessert"]
     
@@ -67,7 +67,7 @@ struct Questions: View {
                         
                         ZStack {
                             if (self.AnswerState[0] == "Click here to see the results") {
-                                NavigationLink(destination: Result())
+                                NavigationLink(destination: Results(foods: self.$resultList))
                                     {
                                         Text(self.AnswerState[0]).font(.title).fontWeight(.semibold).bold().foregroundColor(.white).padding(.all,10).padding([.leading, .trailing], 10).background(Color.orange).cornerRadius(50).frame(alignment: .leading)
                                 }
