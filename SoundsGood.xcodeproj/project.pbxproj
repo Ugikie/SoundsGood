@@ -26,7 +26,6 @@
 		D741201E240766290087E1F3 /* FoodDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D741201D240766290087E1F3 /* FoodDetail.swift */; };
 		D74120202407670C0087E1F3 /* FoodRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D741201F2407670C0087E1F3 /* FoodRow.swift */; };
 		D74DB9F424046C40001B885B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D74DB9F324046C40001B885B /* Assets.xcassets */; };
-		D7680CCD2424510000C023B7 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7680CCC2424510000C023B7 /* SignIn.swift */; };
 		D7680CCF242452CF00C023B7 /* HeartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7680CCE242452CF00C023B7 /* HeartButton.swift */; };
 		D7CE1FFC2429F5E700C4142E /* PrintTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CE1FFB2429F5E700C4142E /* PrintTags.swift */; };
 		D7CE200A242A7A2B00C4142E /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2009242A7A2B00C4142E /* Results.swift */; };
@@ -59,7 +58,6 @@
 		D741201D240766290087E1F3 /* FoodDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetail.swift; sourceTree = "<group>"; usesTabs = 0; };
 		D741201F2407670C0087E1F3 /* FoodRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodRow.swift; sourceTree = "<group>"; };
 		D74DB9F324046C40001B885B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D7680CCC2424510000C023B7 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		D7680CCE242452CF00C023B7 /* HeartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartButton.swift; sourceTree = "<group>"; };
 		D7CE1FFB2429F5E700C4142E /* PrintTags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintTags.swift; sourceTree = "<group>"; };
 		D7CE2009242A7A2B00C4142E /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
@@ -119,11 +117,8 @@
 				8416DA9B23EA046900F638BF /* ContentView.swift */,
 				D7D766812412244A00E321BA /* Questions.swift */,
 				D7CE2009242A7A2B00C4142E /* Results.swift */,
-				846FC5EB2419FDF900AAF497 /* TagsChoose.swift */,
-				D71AAAC3244F639B00D6A25E /* TagButton.swift */,
-				846FC5F32419FDF900AAF497 /* FoodByTags.swift */,
 				D73D3248242C9640004BE404 /* FoodSearch.swift */,
-				D7680CCC2424510000C023B7 /* SignIn.swift */,
+				D7CB420E2458B26B00975208 /* Tags */,
 				D7CE20042429F8E300C4142E /* Favorite List */,
 				D74DB9F324046C40001B885B /* Assets.xcassets */,
 				8416DAA223EA046A00F638BF /* LaunchScreen.storyboard */,
@@ -165,6 +160,16 @@
 				D7D7667F240EEB8300E321BA /* pizza.jpg */,
 			);
 			path = Resorces;
+			sourceTree = "<group>";
+		};
+		D7CB420E2458B26B00975208 /* Tags */ = {
+			isa = PBXGroup;
+			children = (
+				846FC5F32419FDF900AAF497 /* FoodByTags.swift */,
+				D71AAAC3244F639B00D6A25E /* TagButton.swift */,
+				846FC5EB2419FDF900AAF497 /* TagsChoose.swift */,
+			);
+			path = Tags;
 			sourceTree = "<group>";
 		};
 		D7CE20042429F8E300C4142E /* Favorite List */ = {
@@ -298,7 +303,6 @@
 				8416DA9A23EA046900F638BF /* SceneDelegate.swift in Sources */,
 				D7CE200A242A7A2B00C4142E /* Results.swift in Sources */,
 				D7CE1FFC2429F5E700C4142E /* PrintTags.swift in Sources */,
-				D7680CCD2424510000C023B7 /* SignIn.swift in Sources */,
 				D7D7667E240ED97800E321BA /* QuestionController.swift in Sources */,
 				D7D766822412244A00E321BA /* Questions.swift in Sources */,
 				846FC5AB2415A91900AAF497 /* DBData.swift in Sources */,

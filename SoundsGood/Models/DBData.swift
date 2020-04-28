@@ -21,7 +21,16 @@ let id = Expression<Int64>("id")
 let foodName = Expression<String?>("food")
 var listOfFoodTags = getColumnNames()
 var listOfFoodNames = getFoodNames()
-var favoriteFoods = getFavoriteFoods()
+
+var favoriteFoods = FavoriteListViewModel()
+
+class FavoriteListViewModel: ObservableObject {
+    @Published var listData = Set<String>()
+    
+    init() {
+        listData = getFavoriteFoods()
+    }
+}
 
 
 func getID(_ foodNameToCheck: String) {
@@ -68,37 +77,26 @@ func getFoodNames() -> [String] {
     return listOfFoodNames
 }
 
-func getFavoriteFoods() -> [String] {
-    
-    
-    db = try! Connection("/Users/Max717/Documents/food_db.db")
-    print("UPDATED NOW")
-    
-    var favoriteFoods: [String] = []
-    var sortedFood: [String] = []
+func getFavoriteFoods() -> Set<String> {
+    var favoriteFoods = Set<String>()
     let isFavorite = Expression<Int64>("isFavorite")
     do {
         for food in try db.prepare(food_info) {
             if (food[isFavorite] == 1) {
                 //print("foodName: \(food[foodName]!)")
-                favoriteFoods.append(food[foodName]!)
+                favoriteFoods.insert(food[foodName]!)
             }
         }
     } catch {
         print("Error finding a value for foodName")
     }
-    // list of food is now sorted
-    sortedFood = favoriteFoods.sorted()
-    return sortedFood
+    
+    return favoriteFoods
 }
 
 func getTagValuesForFood(_ foodNameToCheck: String) -> [String] {
     
-    // just in case update globalID here as well
     getID(foodNameToCheck)
-    
-    print(globalID)
-    print("WTF")
     
     var posTags: [String] = []
 
@@ -111,7 +109,7 @@ func getTagValuesForFood(_ foodNameToCheck: String) -> [String] {
             
             for tagName in listOfFoodTags {
                 
-                if (tagName == "food" || tagName == "origin") {
+                if (tagName == "food" || tagName == "origin" || tagName == "isFavorite") {
                     
                     //let tagToCheck = Expression<String?>(tagName)
                     //print("\(tagName): \(tag[tagToCheck]!)")
@@ -162,10 +160,6 @@ extension UIImage: Value {
 }
 
 func getFoodImageFor(_ foodNameToCheck: String) -> Image? {
-    
-    //Each time image is loaded - globalID is updated
-    getID(foodNameToCheck)
-    
     var foodImage: Image?
     let image = Expression<UIImage>("image")
     
@@ -178,20 +172,30 @@ func getFoodImageFor(_ foodNameToCheck: String) -> Image? {
     } catch {
         print("Error finding an image for: \(foodNameToCheck)")
     }
-    return foodImage
+    
+    return foodImage == nil ? Image(systemName: "stop") : foodImage
 }
 
-func setIsFavorite(_ valueToSet : Int, _ foodNameToFavorite: String ) {
+
+func setFavorite(_ valueToSet : Int, _ foodNameToFavorite: String ) {
     
     //try! db.prepare("UPDATE food_info SET isFavorite = \(value) WHERE food = \"Pizza\"")
+    
     let foodNameToFav = food_info.filter(foodName == foodNameToFavorite)
     
     let favorite = Expression<Int64>("isFavorite")
     
     try! db.run(foodNameToFav.update(favorite <- Int64(valueToSet)))
     
+    if(valueToSet == 1) {
+        favoriteFoods.listData.insert(foodNameToFavorite)
+    }
+    else {
+        favoriteFoods.listData.remove(foodNameToFavorite)
+    }
+    
     print("Result: ")
-    print(checkIsFavorite(foodNameToFavorite))
+    print(isDBFavorite(foodNameToFavorite))
 }
 
 func checkIsFavorite(_ foodNameToCheck: String) -> Color {
@@ -226,11 +230,65 @@ func checkIsFavorite(_ foodNameToCheck: String) -> Color {
     return color
 }
 
-func getTags() -> [String] {
+func isFavorite(_ fName: String) -> Bool {
+    return favoriteFoods.listData.contains(fName)
+}
+
+func isDBFavorite(_ fName: String) -> Bool {
+    let fTag = Expression<Int64>("isFavorite")
+    let query = food_info.select(fTag).filter(foodName == fName)
     
-    let tags_list: [String] = ["Breakfast", "Lunch", "Dinner", "Dessert", "Snack", "Vegetarian", "Doughy", "Chewy", "Crunchy", "Sweet", "Sour", "Savory", "Hot", "Cold", "Room Temp", "Price: $", "Price: $$", "Price: $$$", "Healthy", "Vegetables", "Fired", "Baked", "Grilled", "Milk", "Vegan", "Sick", "Fast Food", "Mexican", "Asian", "Italian,   French", "Indian", "American", "Greek, Persian", "Seafood", "Chicken", "Beef", "Pork"]
-    let tags = tags_list
-    //tags.removeFirst()
-    //tags.removeLast()
+    do {
+        if let food = try db.pluck(query) {
+            return food[fTag] == 1
+        }
+    }
+    catch { return false }
+    
+    return false
+}
+
+func getTags() -> [String] {
+    var tags = getColumnNames()
+    tags.removeFirst()
+    tags.removeLast()
     return tags
+}
+
+func tagQuery(_ tagsStates: [String: TagState]) -> [String] {
+    let queryStart: String = "SELECT food FROM food_info"
+    
+    var conditional: String = ""
+    for (tag, state) in tagsStates {
+        switch(state) {
+        case .exclude:
+            if(conditional.count != 0) {
+                conditional += " AND "
+            }
+            conditional += "\"\(tag)\" == 0"
+        case .include:
+            if(conditional.count != 0) {
+                conditional += " AND "
+            }
+            conditional += "\"\(tag)\" == 1"
+        case .ignore:
+            continue
+        }
+    }
+    
+    let query = queryStart
+        + (conditional.count > 0 ? " WHERE " + conditional : "")
+        + " ORDER BY food"
+    //print(query)
+    var results: [String] = []
+    do {
+        let dbResults = try db.prepare(query)
+        for row in dbResults {
+            results.append(row[0]! as! String)
+        }
+    } catch {
+        print("Error filtering tag selection!")
+    }
+    //print("Result Count: \(results.count)")
+    return results
 }
