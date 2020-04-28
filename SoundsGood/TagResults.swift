@@ -9,13 +9,18 @@
 import SwiftUI
 
 struct TagResults: View {
+    @Binding var foods: [String]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-struct TagResults_Previews: PreviewProvider {
-    static var previews: some View {
-        TagResults()
+        NavigationView {
+            List(self.foods, id:\.self) { foodName in
+                 NavigationLink(destination: FoodDetail(foodName: foodName)) {
+                    FoodRow(foodName: foodName)
+                    HeartButton(foodName)
+                    Spacer().frame(width:30)
+                }
+            }.buttonStyle(BorderlessButtonStyle())
+             .navigationBarTitle(Text("Results"))
+        }
     }
 }

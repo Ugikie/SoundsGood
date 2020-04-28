@@ -24,8 +24,15 @@ var listOfFoodTags = getColumnNames()
 
 var listOfFoodNames = getFoodNames()
 
-var favoriteFoods = getFavoriteFoods()
+var favoriteFoods = FavoriteListViewModel()
 
+class FavoriteListViewModel: ObservableObject {
+    @Published var listData = Set<String>()
+    
+    init() {
+        listData = getFavoriteFoods()
+    }
+}
 
 func getFoodInfo() {
     do {
@@ -52,14 +59,14 @@ func getFoodNames() -> [String] {
     return listOfFoodNames
 }
 
-func getFavoriteFoods() -> [String] {
-    var favoriteFoods: [String] = []
+func getFavoriteFoods() -> Set<String> {
+    var favoriteFoods = Set<String>()
     let isFavorite = Expression<Int64>("isFavorite")
     do {
         for food in try db.prepare(food_info) {
             if (food[isFavorite] == 1) {
                 //print("foodName: \(food[foodName]!)")
-                favoriteFoods.append(food[foodName]!)
+                favoriteFoods.insert(food[foodName]!)
             }
         }
     } catch {
@@ -81,7 +88,7 @@ func getTagValuesForFood(_ foodNameToCheck: String) -> [String] {
             
             for tagName in listOfFoodTags {
                 
-                if (tagName == "food" || tagName == "origin") {
+                if (tagName == "food" || tagName == "origin" || tagName == "isFavorite") {
                     
                     let tagToCheck = Expression<String?>(tagName)
                     //print("\(tagName): \(tag[tagToCheck]!)")
@@ -151,10 +158,10 @@ func getFoodImageFor(_ foodNameToCheck: String) -> Image? {
         print("Error finding an image for: \(foodNameToCheck)")
     }
     
-    return foodImage
+    return foodImage == nil ? Image(systemName: "stop") : foodImage
 }
 
-func setIsFavorite(_ valueToSet : Int, _ foodNameToFavorite: String ) {
+func setFavorite(_ valueToSet : Int, _ foodNameToFavorite: String ) {
     
     //try! db.prepare("UPDATE food_info SET isFavorite = \(value) WHERE food = \"Pizza\"")
     
@@ -164,38 +171,69 @@ func setIsFavorite(_ valueToSet : Int, _ foodNameToFavorite: String ) {
     
     try! db.run(foodNameToFav.update(favorite <- Int64(valueToSet)))
     
+    if(valueToSet == 1) {
+        favoriteFoods.listData.insert(foodNameToFavorite)
+    }
+    else {
+        favoriteFoods.listData.remove(foodNameToFavorite)
+    }
+    
     print("Result: ")
-    print(checkIsFavorite(foodNameToFavorite))
+    print(isDBFavorite(foodNameToFavorite))
 }
 
-func checkIsFavorite(_ foodNameToCheck: String) -> Color {
-    
-    var isFavorite: Int64 = 0
-    var color: Color = .gray
-     
-    let favorite = Expression<Int64>("isFavorite")
-    //SELECT isFavorite from food_info WHERE food = foodNameToCheck
-    let query = food_info.select(favorite)
-                         .filter(foodName == foodNameToCheck)
-    
+func isFavorite(_ fName: String) -> Bool {
+    return favoriteFoods.listData.contains(fName)
+}
+
+func isDBFavorite(_ fName: String) -> Bool {
+    let fTag = Expression<Int64>("isFavorite")
+    let query = food_info.select(fTag).filter(foodName == fName)
     
     do {
-        for value in try db.prepare(query) {
-            
-            isFavorite = value[favorite]
-            //print("Result: ")
-            //print("\(value[favorite])")
+        if let food = try db.pluck(query) {
+            return food[fTag] == 1
+        }
+    }
+    catch { return false }
+    
+    return false
+}
+
+func tagQuery(_ tagsStates: [String: TagState]) -> [String] {
+    let queryStart: String = "SELECT food FROM food_info"
+    
+    var conditional: String = ""
+    for (tag, state) in tagsStates {
+        switch(state) {
+        case .exclude:
+            if(conditional.count != 0) {
+                conditional += " AND "
+            }
+            conditional += "\"\(tag)\" == 0"
+        case .include:
+            if(conditional.count != 0) {
+                conditional += " AND "
+            }
+            conditional += "\"\(tag)\" == 1"
+        case .ignore:
+            continue
+        }
+    }
+    
+    let query = queryStart
+        + (conditional.count > 0 ? " WHERE " + conditional : "")
+        + " ORDER BY food"
+    //print(query)
+    var results: [String] = []
+    do {
+        let dbResults = try db.prepare(query)
+        for row in dbResults {
+            results.append(row[0]! as! String)
         }
     } catch {
-            print("Error finding food \(foodNameToCheck)!\n")
-        }
-    if (isFavorite == 1) {
-
-        color = .red
+        print("Error filtering tag selection!")
     }
-    else if (isFavorite == 0) {
-
-        color = .gray
-    }
-    return color
+    //print("Result Count: \(results.count)")
+    return results
 }

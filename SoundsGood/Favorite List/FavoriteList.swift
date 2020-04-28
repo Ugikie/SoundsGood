@@ -8,41 +8,17 @@ A view showing a list of food.
 import SwiftUI
 
 struct FavoriteList: View {
+    @ObservedObject private var fList = favoriteFoods
+    
     var body: some View {
         NavigationView {
-            
-            List(favoriteFoods, id:\.self) { foodName in
-                    NavigationLink(destination: FoodDetail(foodName: foodName)) {
-                    // prints picture and name in foodRow file
+            List(fList.listData.sorted(), id:\.self) { foodName in
+                 NavigationLink(destination: FoodDetail(foodName: foodName)) {
                     FoodRow(foodName: foodName)
-                    
-                    // also prints a star button to favorite / unfavorite
-                    heartButton(foodName: foodName)
-                    
-                    Spacer().frame(width:30)
-
                 }
             }
-                    // this magic buttonStyle thing allows to have a button on top
-                    //   of the NavigationLink row (button)
             .buttonStyle(BorderlessButtonStyle())
-                
             .navigationBarTitle(Text("My Favorite Meals"))
-            .navigationBarItems(trailing: NavigationLink(
-                destination: FoodSearch())
-                {
-                    Text("Search")
-                    Image(systemName: "plus")
-                        .resizable()
-                        .padding(6)
-                        .frame(width: 24, height: 24)
-                        .background(Color.green)
-                        .clipShape(Circle())
-                        .foregroundColor(.white)
-                    
-                }
-             )
-
         }
     }
 }

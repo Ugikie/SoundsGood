@@ -9,24 +9,24 @@
 import SwiftUI
 
 
-enum ButtonState {
+enum TagState {
     case include
     case exclude
     case ignore
 }
 
-class ButtonData {
+class ButtonData: ObservableObject {
     let tag: String
-    var state: ButtonState
+    @Published var state: TagState
     
-    init(tag: String, state: ButtonState) {
+    init(tag: String, state: TagState) {
         self.tag = tag
         self.state = state
     }
 }
 
 struct TagButton: View {
-    @State private var curState: ButtonState = .ignore
+    @State private var curState: TagState = .ignore
     var data: ButtonData
     
     init(_ data: ButtonData) {
@@ -59,7 +59,7 @@ struct TagButton: View {
             }
         }) {
             Text(self.data.tag)
-                .font(.title)
+                .font(.subheadline)
                 .fontWeight(.semibold)
                 .bold()
                 .frame(width: 90, height: 50)
@@ -73,7 +73,7 @@ struct TagButton: View {
             self.button = button
         }
         func makeBody(configuration: Self.Configuration) -> some View {
-            configuration.label.padding(25).background(Circle().fill(button.getColor()))
+            configuration.label.padding().background(Circle().fill(button.getColor()))
         }
     }
 }

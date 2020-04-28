@@ -1,45 +1,16 @@
-//
-//  Result.swift
-//  SoundsGood
-//
-//  Created by Max Bogatyrev on 3/24/20.
-//  Copyright © 2020 MAAD Hungry. All rights reserved.
-//
-
 import SwiftUI
 
-struct Result: View {
+struct Results: View {
+    var title: String = "Results"
+    @Binding var foods: [String]
     
     var body: some View {
-        
-        NavigationView {
-            
-            List(favoriteFoods, id:\.self) { foodName in
-                NavigationLink(destination: FoodDetail(foodName: foodName)) {
-                    // prints picture and name in foodRow file
+            List(self.foods, id:\.self) { foodName in
+                 NavigationLink(destination: FoodDetail(foodName: foodName)) {
                     FoodRow(foodName: foodName)
-                    
-                    // also prints a star button to favorite / unfavorite
-                    heartButton(foodName: foodName)
-                    
-                    Spacer().frame(width:30)
-
-                }
             }
-                    // this magic buttonStyle thing allows to have a button on top
-                    //   of the NavigationLink row (button)
             .buttonStyle(BorderlessButtonStyle())
-                
-            .navigationBarTitle(Text("My Favorite Meals"))
-            
-
+            .navigationBarTitle(Text(self.title))
         }
     }
 }
-
-struct Result_Previews: PreviewProvider {
-    static var previews: some View {
-            Result()
-    }
-}
-
