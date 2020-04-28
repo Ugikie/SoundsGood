@@ -157,19 +157,6 @@ struct Questions: View {
                     }
                 }
                 
-                Spacer().frame(height: 100)
-                HStack {
-                    
-                    // this is a button to choose tags
-                    
-                    NavigationLink(destination: Tags())
-                        {
-
-                        Text("CHOOSE TAGS").font(.title).fontWeight(.semibold).bold().foregroundColor(.white).padding(.all,10).padding([.leading, .trailing], 10).background(Color.green).cornerRadius(50).frame(alignment: .leading)
-                    }
-                    
-                }
-                
             }
             
         }

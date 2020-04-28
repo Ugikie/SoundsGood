@@ -26,18 +26,20 @@ struct AppView: View {
                             Image(systemName: "heart.fill")
                             Text("Favorites")
                   }
+
+                Tags()
+                      .tabItem {
+                          Image(systemName: "circle.grid.2x2.fill")
+                          Text("Choose Tags")
+                }
             
-                  FoodSearch()
+            
+                  FoodSearchTab()
                         .tabItem {
                             Image(systemName: "magnifyingglass.circle.fill")
                             Text("Search")
                   }
             
-//                  SignIn()
-//                        .tabItem {
-//                            Image(systemName: "person.fill")
-//                            Text("Profile??")
-//                  }
             
               }
         .font(.headline)

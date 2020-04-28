@@ -21,7 +21,7 @@ let id = Expression<Int64>("id")
 let foodName = Expression<String?>("food")
 var listOfFoodTags = getColumnNames()
 var listOfFoodNames = getFoodNames()
-
+//var favoriteFoods = getFavoriteFoods()
 var favoriteFoods = FavoriteListViewModel()
 
 class FavoriteListViewModel: ObservableObject {
@@ -31,7 +31,6 @@ class FavoriteListViewModel: ObservableObject {
         listData = getFavoriteFoods()
     }
 }
-
 
 func getID(_ foodNameToCheck: String) {
     
@@ -96,7 +95,11 @@ func getFavoriteFoods() -> Set<String> {
 
 func getTagValuesForFood(_ foodNameToCheck: String) -> [String] {
     
+    // just in case update globalID here as well
     getID(foodNameToCheck)
+    
+    print(globalID)
+    print("WTF")
     
     var posTags: [String] = []
 
@@ -109,7 +112,7 @@ func getTagValuesForFood(_ foodNameToCheck: String) -> [String] {
             
             for tagName in listOfFoodTags {
                 
-                if (tagName == "food" || tagName == "origin" || tagName == "isFavorite") {
+                if (tagName == "food" || tagName == "origin") {
                     
                     //let tagToCheck = Expression<String?>(tagName)
                     //print("\(tagName): \(tag[tagToCheck]!)")
@@ -158,8 +161,9 @@ extension UIImage: Value {
     }
 
 }
-
 func getFoodImageFor(_ foodNameToCheck: String) -> Image? {
+
+    getID(foodNameToCheck)
     var foodImage: Image?
     let image = Expression<UIImage>("image")
     
@@ -176,26 +180,17 @@ func getFoodImageFor(_ foodNameToCheck: String) -> Image? {
     return foodImage == nil ? Image(systemName: "stop") : foodImage
 }
 
-
-func setFavorite(_ valueToSet : Int, _ foodNameToFavorite: String ) {
+func setIsFavorite(_ valueToSet : Int, _ foodNameToFavorite: String ) {
     
     //try! db.prepare("UPDATE food_info SET isFavorite = \(value) WHERE food = \"Pizza\"")
-    
     let foodNameToFav = food_info.filter(foodName == foodNameToFavorite)
     
     let favorite = Expression<Int64>("isFavorite")
     
     try! db.run(foodNameToFav.update(favorite <- Int64(valueToSet)))
     
-    if(valueToSet == 1) {
-        favoriteFoods.listData.insert(foodNameToFavorite)
-    }
-    else {
-        favoriteFoods.listData.remove(foodNameToFavorite)
-    }
-    
     print("Result: ")
-    print(isDBFavorite(foodNameToFavorite))
+    print(checkIsFavorite(foodNameToFavorite))
 }
 
 func checkIsFavorite(_ foodNameToCheck: String) -> Color {
@@ -230,6 +225,34 @@ func checkIsFavorite(_ foodNameToCheck: String) -> Color {
     return color
 }
 
+func setFavorite(_ valueToSet : Int, _ foodNameToFavorite: String ) {
+    
+    //try! db.prepare("UPDATE food_info SET isFavorite = \(value) WHERE food = \"Pizza\"")
+    
+    let foodNameToFav = food_info.filter(foodName == foodNameToFavorite)
+    
+    let favorite = Expression<Int64>("isFavorite")
+    
+    try! db.run(foodNameToFav.update(favorite <- Int64(valueToSet)))
+    
+    if(valueToSet == 1) {
+        favoriteFoods.listData.insert(foodNameToFavorite)
+    }
+    else {
+        favoriteFoods.listData.remove(foodNameToFavorite)
+    }
+    
+    print("Result: ")
+    print(isDBFavorite(foodNameToFavorite))
+}
+
+func getTags() -> [String] {
+    var tags = getColumnNames()
+    tags.removeFirst()
+    tags.removeLast()
+    return tags
+}
+
 func isFavorite(_ fName: String) -> Bool {
     return favoriteFoods.listData.contains(fName)
 }
@@ -246,13 +269,6 @@ func isDBFavorite(_ fName: String) -> Bool {
     catch { return false }
     
     return false
-}
-
-func getTags() -> [String] {
-    var tags = getColumnNames()
-    tags.removeFirst()
-    tags.removeLast()
-    return tags
 }
 
 func tagQuery(_ tagsStates: [String: TagState]) -> [String] {
