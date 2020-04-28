@@ -9,6 +9,7 @@ import SwiftUI
 //import SDWebImageSwiftUI
 import WebKit
 
+
 struct Restaurants: View {
     
     var foodName: String
