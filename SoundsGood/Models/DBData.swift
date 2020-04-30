@@ -297,7 +297,7 @@ func tagQuery(_ tagsStates: [String: TagState]) -> [String] {
     let query = queryStart
         + (conditional.count > 0 ? " WHERE " + conditional : "")
         + " ORDER BY food"
-    print(query)
+    //print(query)
     var results: [String] = []
     do {
         let dbResults = try db.prepare(query)
@@ -307,6 +307,6 @@ func tagQuery(_ tagsStates: [String: TagState]) -> [String] {
     } catch {
         print("Error filtering tag selection!")
     }
-    print("Result Count: \(results.count)")
+    //print("Result Count: \(results.count)")
     return results
 }
