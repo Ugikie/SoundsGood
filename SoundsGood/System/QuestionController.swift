@@ -14,8 +14,6 @@ var currentQuestion: String = ""
 var getNextAnswers = ["Yes", "No", "", ""]
 
 var resultFlag = 0
-var ResultList: [String] = []
-
 // basically counts questions, but if answer is "neither" "i don't know" - it doesn't count
 var count = 1
 
@@ -123,7 +121,7 @@ private var AnswerState19 = ["Yes", "No", "", ""]
 
 private var question_flag = 0
 
-func getNextQuestion(_ tagChoice :  String) -> String {
+func getNextQuestion(_ tagChoice :  String, _ results: inout [String]) -> String {
 
     var no_option_flag = 0
     var temp_tag_64 = Expression<Int64>("")
@@ -541,7 +539,7 @@ func getNextQuestion(_ tagChoice :  String) -> String {
         do {
             for food in try db.prepare(query) {
                 if (c < 5) {
-                    ResultList.append(food[foodName]!)
+                    results.append(food[foodName]!)
                 }
                 c += 1
             }

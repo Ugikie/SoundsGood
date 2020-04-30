@@ -65,42 +65,45 @@ struct Tags: View {
         }
         
         self.foods = tagQuery(tagStates)
+        print("Foods: \(self.foods.count)")
     }
     
     var body: some View {
-        ScrollView {
-            Spacer().frame(height: 20)
-                
-            VStack {
-                ForEach(rows) { row in
-                    HStack(alignment: .center) {
-                        ForEach(row.cells) { cell in
-                            TagButton(cell.bData).padding(-10)
-                        }
-                    }.padding(EdgeInsets.init(top: 5, leading: 0, bottom: 5, trailing: 0))
+        NavigationView {
+            ScrollView {
+                Spacer().frame(height: 20)
+                    
+                VStack {
+                    ForEach(rows) { row in
+                        HStack(alignment: .center) {
+                            ForEach(row.cells) { cell in
+                                TagButton(cell.bData).padding(-10)
+                            }
+                        }.padding(EdgeInsets.init(top: 5, leading: 0, bottom: 5, trailing: 0))
+                    }
+                }.padding(EdgeInsets.init(top: 0, leading: 5, bottom: 0, trailing: 5))
+                    
+                Spacer().frame(height: 60)
+                    
+                NavigationLink(destination: Results(title: "Tag Results", foods: self.$foods),
+                               isActive: self.$isActive) { EmptyView() }
+                    
+                Button(action: {
+                    self.updateFoods()
+                    self.isActive = true
+                }) {
+                    Text("Continue")
+                        .font(.title)
+                        .fontWeight(.semibold)
+                        .bold().foregroundColor(.white)
+                        .padding(.all, 10)
+                        .padding([.leading, .trailing], 10)
+                        .background(Color.green)
+                        .cornerRadius(50)
+                        .frame(alignment: .leading)
                 }
-            }.padding(EdgeInsets.init(top: 0, leading: 5, bottom: 0, trailing: 5))
-                
-            Spacer().frame(height: 60)
-                
-            NavigationLink(destination: Results(title: "Tag Results", foods: self.$foods),
-                           isActive: self.$isActive) { EmptyView() }
-                
-            Button(action: {
-                self.updateFoods()
-                self.isActive = true
-            }) {
-                Text("Continue")
-                    .font(.title)
-                    .fontWeight(.semibold)
-                    .bold().foregroundColor(.white)
-                    .padding(.all, 10)
-                    .padding([.leading, .trailing], 10)
-                    .background(Color.green)
-                    .cornerRadius(50)
-                    .frame(alignment: .leading)
-            }
-        }.navigationBarTitle(Text("Tag Filter"), displayMode: .inline)
+            }.navigationBarTitle(Text("Tag Filter"), displayMode: .inline)
+        }
     }
 }
 

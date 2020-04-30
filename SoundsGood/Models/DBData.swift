@@ -10,10 +10,12 @@ import Foundation
 import SQLite
 import SwiftUI
 
+let DB_DIR = "/Users/andrew/Desktop/SoundsGood/SoundsGood/Resorces/food_db.db"
+
 //let urlPath = Bundle.main.path(forResource: "food_db", ofType: "db")
 //let db = try! Connection(urlPath!)
 
-var db = try! Connection("/Users/Max717/Documents/food_db.db")
+var db = try! Connection(DB_DIR)
 var globalID: Int = 9
 let food_info = Table("food_info")
 let food_imgs = Table("food_imgs")
@@ -295,7 +297,7 @@ func tagQuery(_ tagsStates: [String: TagState]) -> [String] {
     let query = queryStart
         + (conditional.count > 0 ? " WHERE " + conditional : "")
         + " ORDER BY food"
-    //print(query)
+    print(query)
     var results: [String] = []
     do {
         let dbResults = try db.prepare(query)
@@ -305,6 +307,6 @@ func tagQuery(_ tagsStates: [String: TagState]) -> [String] {
     } catch {
         print("Error filtering tag selection!")
     }
-    //print("Result Count: \(results.count)")
+    print("Result Count: \(results.count)")
     return results
 }

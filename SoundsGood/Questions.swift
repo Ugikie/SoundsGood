@@ -8,16 +8,8 @@
 
 import SwiftUI
 
-func update() {
-
-    tags_list = ["breakfast", "lunch", "dinner", "dessert", "snack", "vegetarian", "doughy", "chewy", "crunchy", "sweet", "sour", "savory", "hot", "cold", "roomtemp", "$", "$$", "$$$", "healthy", "vegetables", "fired", "baked", "grilled", "milkproducts", "vegan", "sick", "junkfood", "mexican", "asian", "Italian/French", "Indian", "American", "Greek/Persian", "seafood", "chicken", "beef", "pork"]
-    count = 1
-    ResultList = []
-    resultFlag = 0
-}
-
 struct Questions: View {
-    @State var resultList: [String] = ResultList
+    @State var resultList: [String] = []
     @State private var QuestionState: String = "What type of meal do you think you would like?"
     @State private var AnswerState = ["Breakfast", "Lunch", "Dinner", "Dessert"]
     
@@ -29,6 +21,12 @@ struct Questions: View {
     @State private var ResultAnswer: String = ""
     private var questionstr: String = ""
     
+    func update() {
+        tags_list = ["breakfast", "lunch", "dinner", "dessert", "snack", "vegetarian", "doughy", "chewy", "crunchy", "sweet", "sour", "savory", "hot", "cold", "roomtemp", "$", "$$", "$$$", "healthy", "vegetables", "fired", "baked", "grilled", "milkproducts", "vegan", "sick", "junkfood", "mexican", "asian", "Italian/French", "Indian", "American", "Greek/Persian", "seafood", "chicken", "beef", "pork"]
+        count = 1
+        resultList = []
+        resultFlag = 0
+    }
     
     var body: some View {
         
@@ -47,9 +45,9 @@ struct Questions: View {
                     Button(action: {
                         currentQuestion = self.QuestionState
                         if (currentQuestion == "What type of meal do you think you would like?") {
-                            update()
+                            self.update()
                         }
-                        self.QuestionState = getNextQuestion(self.AnswerState[0])
+                        self.QuestionState = getNextQuestion(self.AnswerState[0], &self.resultList)
                         self.AnswerState = getNextAnswers
                         if (resultFlag == 1) {
                             self.QuestionButtonBackColor = .white
@@ -81,9 +79,9 @@ struct Questions: View {
                     Button(action: {
                         currentQuestion = self.QuestionState
                         if (currentQuestion == "What type of meal do you think you would like?") {
-                            update()
+                            self.update()
                         }
-                        self.QuestionState = getNextQuestion(self.AnswerState[1])
+                        self.QuestionState = getNextQuestion(self.AnswerState[1], &self.resultList)
                         self.AnswerState = getNextAnswers
                         if (resultFlag == 1) {
                             self.QuestionButtonBackColor = .white
@@ -107,9 +105,9 @@ struct Questions: View {
                     Button(action: {
                         currentQuestion = self.QuestionState
                         if (currentQuestion == "What type of meal do you think you would like?") {
-                            update()
+                            self.update()
                         }
-                        self.QuestionState = getNextQuestion(self.AnswerState[2])
+                        self.QuestionState = getNextQuestion(self.AnswerState[2], &self.resultList)
                         self.AnswerState = getNextAnswers
                         if (resultFlag == 1) {
                             self.QuestionButtonBackColor = .white
@@ -133,9 +131,9 @@ struct Questions: View {
                     Button(action: {
                         currentQuestion = self.QuestionState
                         if (currentQuestion == "What type of meal do you think you would like?") {
-                            update()
+                            self.update()
                         }
-                        self.QuestionState = getNextQuestion(self.AnswerState[3])
+                        self.QuestionState = getNextQuestion(self.AnswerState[3], &self.resultList)
                         self.AnswerState = getNextAnswers
                         if (resultFlag == 1) {
                             self.QuestionButtonBackColor = .white
