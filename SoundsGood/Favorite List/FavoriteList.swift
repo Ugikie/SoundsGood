@@ -28,7 +28,7 @@ struct FavoriteList: View {
                 
             .navigationBarTitle(Text("My Favorite Meals"))
             .navigationBarItems(trailing: NavigationLink(
-                destination: FoodSearch(foodNames: fList.listData.sorted()))
+                destination: FoodSearch(foodNames: fList.listData.sorted(), title: "Search Favorites"))
                 {
                     Text("Search")
                     Image(systemName: "magnifyingglass.circle.fill")

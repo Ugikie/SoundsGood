@@ -12,6 +12,7 @@ import SwiftUI
 
 struct FoodSearch: View {
     var foodNames = getFoodNames().sorted()
+    var title = "Search Food"
     @State private var searchText = ""
     @State private var showCancelButton: Bool = false
     @State private var isPresented = false
@@ -66,7 +67,7 @@ struct FoodSearch: View {
                     }
                 }
                 .buttonStyle(BorderlessButtonStyle())
-                .navigationBarTitle(Text("Search Food"))
+                .navigationBarTitle(Text(self.title))
             }
         }
     }
