@@ -8,38 +8,47 @@
 import SwiftUI
 
 struct ContentView: View {
-
     @State var isActive = false
+    let qView = QuestionView("vegan")
     
     var body: some View {
-        
         // Layers of images
-        
         NavigationView {
-
-        ZStack {
-            
-           // Background Here
-            Rectangle().foregroundColor(Color.white).edgesIgnoringSafeArea(.all)
-            VStack {
-               
-               // Sounds good logo
-                Image("sglogo").resizable().aspectRatio(contentMode:.fit)
+            ZStack {
+                // Background Here
+                Rectangle().foregroundColor(Color.white).edgesIgnoringSafeArea(.all)
+                VStack {
+                    // Sounds good logo
+                    Image("sglogo").resizable().aspectRatio(contentMode:.fit)
                 
                     // divides (creates space between images)
                     Spacer().frame(height: 100)
                 
-               // fast food background image
-                Image("burger").resizable().aspectRatio(contentMode:.fit)
+                    // fast food background image
+                    Image("burger").resizable().aspectRatio(contentMode:.fit)
                     
                     Spacer().frame(height: 100)
                 
-                 //Main button!
+                    //Main button!
                 
-                   NavigationLink(
-                    destination: Questions())
-                    {
-                        Text("LET'S GO").font(.title).fontWeight(.semibold).bold().foregroundColor(.white).padding(.all,20).padding([.leading, .trailing], 20).background(Color.green).cornerRadius(50) }
+                    NavigationLink(destination: qView, isActive: self.$isActive) {
+                        EmptyView()
+                    }
+                    
+                    Button(action: {
+                        self.qView.reset()
+                        self.isActive = true
+                    }) {
+                        Text("LET'S GO")
+                            .font(.title)
+                            .fontWeight(.semibold)
+                            .bold()
+                            .foregroundColor(.white)
+                            .padding(.all,20)
+                            .padding([.leading, .trailing], 20)
+                            .background(Color.green)
+                            .cornerRadius(50)
+                    }
                 }
             }
         }

@@ -24,6 +24,18 @@ let foodName = Expression<String?>("food")
 var listOfFoodTags = getColumnNames()
 var listOfFoodNames = getFoodNames()
 //var favoriteFoods = getFavoriteFoods()
+
+let tag_questions = Table("tag_questions")
+let tags = Expression<String>("tags")
+let qCol = Expression<String>("question")
+let a0Col = Expression<String?>("ans0")
+let a1Col = Expression<String?>("ans1")
+let a2Col = Expression<String?>("ans2")
+let a3Col = Expression<String?>("ans3")
+let a4Col = Expression<String?>("ans4")
+let a5Col = Expression<String?>("ans5")
+let ansCols = [a0Col, a1Col, a2Col, a3Col, a4Col, a5Col]
+
 var favoriteFoods = FavoriteListViewModel()
 
 class FavoriteListViewModel: ObservableObject {
@@ -273,30 +285,40 @@ func isDBFavorite(_ fName: String) -> Bool {
     return false
 }
 
-func tagQuery(_ tagsStates: [String: TagState]) -> [String] {
-    let queryStart: String = "SELECT food FROM food_info"
-    
-    var conditional: String = ""
+func buildWhereClause(_ tagsStates: [String: TagState]) -> String {
+    var andClause: String = ""
     for (tag, state) in tagsStates {
-        switch(state) {
-        case .exclude:
-            if(conditional.count != 0) {
-                conditional += " AND "
+        if(state != .ignore) {
+            if(andClause.count != 0) {
+                andClause += " AND "
             }
-            conditional += "\"\(tag)\" == 0"
-        case .include:
-            if(conditional.count != 0) {
-                conditional += " AND "
-            }
-            conditional += "\"\(tag)\" == 1"
-        case .ignore:
-            continue
+            andClause += "\"\(tag)\" == " + String(state.rawValue)
         }
     }
     
-    let query = queryStart
-        + (conditional.count > 0 ? " WHERE " + conditional : "")
-        + " ORDER BY food"
+    if(andClause.count == 0) {
+        return ""
+    }
+    
+    return "WHERE " + andClause
+}
+
+func buildSumClause(_ sumTags: [String]) -> String {
+    var sum: String = ""
+    for tag in sumTags {
+        if(sum.count != 0) {
+            sum += ", "
+        }
+        sum += "SUM(" + "\"" + tag + "\")"
+    }
+    return sum
+}
+
+func tagQuery(_ tagsStates: [String: TagState]) -> [String] {
+    let queryStart: String = "SELECT food FROM food_info "
+    let whereClause = buildWhereClause(tagsStates)
+    let query = queryStart + whereClause + " ORDER BY food"
+    
     //print(query)
     var results: [String] = []
     do {

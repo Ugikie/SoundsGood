@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4972C4A8245B901F00FF0FD6 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4972C4A7245B901F00FF0FD6 /* QuestionView.swift */; };
+		4972C4AC245BB4E700FF0FD6 /* QInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4972C4AB245BB4E700FF0FD6 /* QInfo.swift */; };
 		8416DA9823EA046900F638BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8416DA9723EA046900F638BF /* AppDelegate.swift */; };
 		8416DA9A23EA046900F638BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8416DA9923EA046900F638BF /* SceneDelegate.swift */; };
 		8416DA9C23EA046900F638BF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8416DA9B23EA046900F638BF /* ContentView.swift */; };
@@ -29,15 +31,15 @@
 		D7CB42102458B63500975208 /* FoodSearchTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CB420F2458B63500975208 /* FoodSearchTab.swift */; };
 		D7CE1FFC2429F5E700C4142E /* PrintTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CE1FFB2429F5E700C4142E /* PrintTags.swift */; };
 		D7CE200A242A7A2B00C4142E /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CE2009242A7A2B00C4142E /* Results.swift */; };
-		D7D7667E240ED97800E321BA /* QuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D7667D240ED97700E321BA /* QuestionController.swift */; };
 		D7D76680240EEB8300E321BA /* pizza.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D7D7667F240EEB8300E321BA /* pizza.jpg */; };
-		D7D766822412244A00E321BA /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D766812412244A00E321BA /* Questions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		02136AE9812668264640BDD3 /* Pods-SoundsGood.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoundsGood.debug.xcconfig"; path = "Target Support Files/Pods-SoundsGood/Pods-SoundsGood.debug.xcconfig"; sourceTree = "<group>"; };
 		0676E2061A5501C0B2486C04 /* libPods-SoundsGood.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SoundsGood.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		350460BB416C04E03FCB3903 /* Pods-SoundsGood.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoundsGood.release.xcconfig"; path = "Target Support Files/Pods-SoundsGood/Pods-SoundsGood.release.xcconfig"; sourceTree = "<group>"; };
+		4972C4A7245B901F00FF0FD6 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
+		4972C4AB245BB4E700FF0FD6 /* QInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QInfo.swift; sourceTree = "<group>"; };
 		8416DA9423EA046900F638BF /* SoundsGood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundsGood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8416DA9723EA046900F638BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8416DA9923EA046900F638BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,9 +63,7 @@
 		D7CB420F2458B63500975208 /* FoodSearchTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSearchTab.swift; sourceTree = "<group>"; };
 		D7CE1FFB2429F5E700C4142E /* PrintTags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintTags.swift; sourceTree = "<group>"; };
 		D7CE2009242A7A2B00C4142E /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
-		D7D7667D240ED97700E321BA /* QuestionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionController.swift; sourceTree = "<group>"; };
 		D7D7667F240EEB8300E321BA /* pizza.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pizza.jpg; sourceTree = "<group>"; };
-		D7D766812412244A00E321BA /* Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +115,7 @@
 				8416DA9923EA046900F638BF /* SceneDelegate.swift */,
 				D72FE0DF2404B6870083002A /* AppView.swift */,
 				8416DA9B23EA046900F638BF /* ContentView.swift */,
-				D7D766812412244A00E321BA /* Questions.swift */,
+				4972C4A7245B901F00FF0FD6 /* QuestionView.swift */,
 				D7CE2009242A7A2B00C4142E /* Results.swift */,
 				D7CB42132458BDEA00975208 /* Search */,
 				D7CB420E2458B26B00975208 /* Tags */,
@@ -149,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				846FC5AA2415A91900AAF497 /* DBData.swift */,
+				4972C4AB245BB4E700FF0FD6 /* QInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -196,7 +197,6 @@
 		D7D7667C240ED97700E321BA /* System */ = {
 			isa = PBXGroup;
 			children = (
-				D7D7667D240ED97700E321BA /* QuestionController.swift */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -306,14 +306,14 @@
 				D71AAAC4244F639B00D6A25E /* TagButton.swift in Sources */,
 				D72FE0E02404B6870083002A /* AppView.swift in Sources */,
 				D7CB42102458B63500975208 /* FoodSearchTab.swift in Sources */,
+				4972C4AC245BB4E700FF0FD6 /* QInfo.swift in Sources */,
 				846FC5F42419FDF900AAF497 /* TagsChoose.swift in Sources */,
 				8416DA9823EA046900F638BF /* AppDelegate.swift in Sources */,
 				8416DA9A23EA046900F638BF /* SceneDelegate.swift in Sources */,
 				D7CE200A242A7A2B00C4142E /* Results.swift in Sources */,
 				D7CE1FFC2429F5E700C4142E /* PrintTags.swift in Sources */,
-				D7D7667E240ED97800E321BA /* QuestionController.swift in Sources */,
-				D7D766822412244A00E321BA /* Questions.swift in Sources */,
 				846FC5AB2415A91900AAF497 /* DBData.swift in Sources */,
+				4972C4A8245B901F00FF0FD6 /* QuestionView.swift in Sources */,
 				D7680CCF242452CF00C023B7 /* HeartButton.swift in Sources */,
 				8416DA9C23EA046900F638BF /* ContentView.swift in Sources */,
 				D74120202407670C0087E1F3 /* FoodRow.swift in Sources */,

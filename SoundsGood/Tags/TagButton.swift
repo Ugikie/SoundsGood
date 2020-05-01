@@ -9,9 +9,9 @@
 import SwiftUI
 
 
-enum TagState {
+enum TagState: Int {
+    case exclude = 0
     case include
-    case exclude
     case ignore
 }
 
