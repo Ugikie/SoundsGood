@@ -6,7 +6,7 @@ struct Results: View {
     
     var body: some View {
             List(self.foods, id:\.self) { foodName in
-                 NavigationLink(destination: FoodDetail(foodName: foodName)) {
+                 NavigationLink(destination: FoodDetail(foodName)) {
                     FoodRow(foodName: foodName)
             }
             .buttonStyle(BorderlessButtonStyle())

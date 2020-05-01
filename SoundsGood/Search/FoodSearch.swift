@@ -56,7 +56,7 @@ struct FoodSearch: View {
                     // Filtered list of names
                     ForEach(foodNames.filter{$0.hasPrefix(searchText) || searchText == ""}, id:\.self) {
                         searchText in
-                        NavigationLink(destination: FoodDetail(foodName: searchText)) {
+                        NavigationLink(destination: FoodDetail(searchText)) {
                             // prints picture and name in foodRow file
                             FoodRow(foodName: searchText)
                             

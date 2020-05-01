@@ -18,7 +18,7 @@ struct FavoriteList: View {
         NavigationView {
             
             List(fList.listData.sorted(), id:\.self) { foodName in
-                 NavigationLink(destination: FoodDetail(foodName: foodName)) {
+                 NavigationLink(destination: FoodDetail(foodName)) {
                     FoodRow(foodName: foodName)
                 }
             }

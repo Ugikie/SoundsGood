@@ -9,6 +9,11 @@ import SwiftUI
 struct FoodDetail: View {
     var foodName: String
     
+    init(_ food: String) {
+        self.foodName = food
+        getID(food)
+    }
+    
     var body: some View {
         VStack(alignment: .center) {
             Spacer(minLength: 10)
@@ -39,13 +44,6 @@ struct FoodDetail: View {
             
             
         }.navigationBarTitle(Text(foodName), displayMode: .inline)
-    }
-}
-
-
-struct FoodDetail_Previews: PreviewProvider {
-    static var previews: some View {
-        FoodDetail(foodName: "Chicken Nuggets")
     }
 }
 
