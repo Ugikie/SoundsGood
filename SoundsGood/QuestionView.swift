@@ -86,25 +86,29 @@ struct QuestionView: View {
                     Spacer(minLength: 3)
                 }
                     
-                Spacer(minLength: 75)
+                Spacer(minLength: 100)
                 
                 ForEach(self.qInfo.answers, id: \.self) { ans in
                     Group {
-                        Spacer(minLength: 25)
-                        Button(action: {
-                            self.selectAnswer(ans)
-                        }) {
-                            VStack {
+                        ZStack {
+                            Text("")
+                                .padding(.all, 20)
+                                .padding([.leading, .trailing], 100)
+                                .background(Color.green)
+                                .cornerRadius(30)
+                            Button(action: {
+                                self.selectAnswer(ans)
+                            }) {
                                 Text(ans)
-                                    .font(.title)
-                                    .bold().foregroundColor(.white)
-                                    .padding(.all, 10)
-                                    .padding([.leading, .trailing], 10)
-                                    .background(Color.green)
-                                    .cornerRadius(50)
-                                    .frame(alignment: .leading)
+                                    .font(.headline)
+                                    .foregroundColor(.white)
+                                    .padding(.all, 20)
+                                    .padding([.leading, .trailing], 100)
+                                    //.frame(height: 20)
                             }
                         }
+                        
+                        Spacer(minLength: 20)
                     }
                 }
                 

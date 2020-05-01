@@ -17,15 +17,9 @@ struct Restaurants: View {
     @ObservedObject var obs = observer()
     
     var body: some View {
-        
-        NavigationView {
-            
-            List(obs.datas){i in
-                
-                Card(name: i.name, address: i.address, weburl: i.webUrl, rating: i.rating)
-                
-            }.navigationBarTitle("Near By Restaurants")
-        }
+        List(obs.datas) { i in
+            Card(name: i.name, address: i.address, weburl: i.webUrl, rating: i.rating)
+        }.navigationBarTitle("Near By Restaurants")
     }
 }
 
