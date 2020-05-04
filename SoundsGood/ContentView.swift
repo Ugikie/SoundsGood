@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State var isActive = false
-    let qView = QuestionView("vegan")
+    let qView = QuestionView(FIRST_Q)
     
     var body: some View {
         // Layers of images

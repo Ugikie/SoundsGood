@@ -21,9 +21,7 @@ let food_info = Table("food_info")
 let food_imgs = Table("food_imgs")
 let id = Expression<Int64>("id")
 let foodName = Expression<String?>("food")
-var listOfFoodTags = getColumnNames()
-var listOfFoodNames = getFoodNames()
-//var favoriteFoods = getFavoriteFoods()
+var listOfFoodTags = getTags()
 
 let tag_questions = Table("tag_questions")
 let tags = Expression<String>("tags")
@@ -111,10 +109,6 @@ func getTagValuesForFood(_ foodNameToCheck: String) -> [String] {
     
     // just in case update globalID here as well
     getID(foodNameToCheck)
-    
-    print(globalID)
-    print("WTF")
-    
     var posTags: [String] = []
 
 
@@ -122,24 +116,13 @@ func getTagValuesForFood(_ foodNameToCheck: String) -> [String] {
     let query = food_info.filter(foodName == foodNameToCheck)
     
     do {
-        for tag in try db.prepare(query) {
+        for row in try db.prepare(query) {
             
             for tagName in listOfFoodTags {
+                let tagToCheck = Expression<Int64>(tagName)
                 
-                if (tagName == "food" || tagName == "origin") {
-                    
-                    //let tagToCheck = Expression<String?>(tagName)
-                    //print("\(tagName): \(tag[tagToCheck]!)")
-                    
-                } else {
-                    
-                    let tagToCheck = Expression<Int64>(tagName)
-                    
-                    if (tag[tagToCheck] != 0 && (tagName != "id" )) {
-                        
-                        //print("\(tagName): \(tag[tagToCheck])")
-                        posTags.append(tagName)
-                    }
+                if (row[tagToCheck] != 0) {
+                    posTags.append(tagName)
                 }
             }
         }
@@ -150,13 +133,17 @@ func getTagValuesForFood(_ foodNameToCheck: String) -> [String] {
 }
 
 
-func getColumnNames() -> [String] {
+func getTags() -> [String] {
     var listOfTags: [String] = []
     
     let tableInfo = try! db.prepare("PRAGMA table_info(food_info)")
     for line in tableInfo {
         let tagName = line[1] as! String
-        if (tagName != "food" && tagName != "id" && tagName != "origin") {
+        let tagNameLower  = tagName.lowercased()
+        if (tagNameLower != "food" &&
+            tagNameLower != "id" &&
+            tagNameLower != "origin" &&
+            tagNameLower != "isfavorite") {
             listOfTags.append(tagName)
         }
     }
@@ -258,13 +245,6 @@ func setFavorite(_ valueToSet : Int, _ foodNameToFavorite: String ) {
     
     print("Result: ")
     print(isDBFavorite(foodNameToFavorite))
-}
-
-func getTags() -> [String] {
-    var tags = getColumnNames()
-    tags.removeFirst()
-    tags.removeLast()
-    return tags
 }
 
 func isFavorite(_ fName: String) -> Bool {

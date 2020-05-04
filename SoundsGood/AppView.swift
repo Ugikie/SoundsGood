@@ -13,35 +13,37 @@
 import SwiftUI
 
 struct AppView: View {
+    let tagFilter = Tags()
+    
     var body: some View {
         TabView {
-                  ContentView()
-                      .tabItem {
-                        Image(systemName: "house.fill")
-                        Text("Main")
-                      }
+            ContentView()
+                .tabItem {
+                    Image(systemName: "house.fill")
+                    Text("Main")
+                }
 
-                  FavoriteList()
-                        .tabItem {
-                            Image(systemName: "heart.fill")
-                            Text("Favorites")
-                  }
+            FavoriteList()
+                .tabItem {
+                    Image(systemName: "heart.fill")
+                    Text("Favorites")
+                }
 
-                Tags()
-                      .tabItem {
-                          Image(systemName: "circle.grid.2x2.fill")
-                          Text("Choose Tags")
+            tagFilter
+                .onAppear { self.tagFilter.reset() }
+                .tabItem {
+                    Image(systemName: "circle.grid.2x2.fill")
+                    Text("Choose Tags")
                 }
             
             
-                  FoodSearchTab()
-                        .tabItem {
-                            Image(systemName: "magnifyingglass.circle.fill")
-                            Text("Search")
-                  }
-            
-            
-              }
+            FoodSearchTab()
+                .tabItem {
+                    Image(systemName: "magnifyingglass.circle.fill")
+                    Text("Search")
+                    
+                }
+        }
         .font(.headline)
     }
 }
