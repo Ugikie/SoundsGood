@@ -111,6 +111,8 @@ struct Tags: View {
                         .cornerRadius(50)
                         .frame(alignment: .leading)
                 }
+
+                Spacer().frame(height: 75)
             }.navigationBarTitle(Text("Tag Filter"), displayMode: .inline)
         }
     }
