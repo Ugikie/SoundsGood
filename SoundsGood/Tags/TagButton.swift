@@ -59,11 +59,11 @@ struct TagButton: View {
             }
         }) {
             Text(self.data.tag)
-                .font(.subheadline)
+                .font(.system(size: 14))
                 .fontWeight(.semibold)
                 .bold()
                 .frame(width: 90, height: 50)
-                .foregroundColor(.white)
+                .foregroundColor(.white).multilineTextAlignment(.center)
         }.buttonStyle(CircleButtonStyle(self))
     }
     

@@ -46,7 +46,7 @@ class observer : ObservableObject{
         case 7:
              url_search = "Egg%20Rolls"
         case 8:
-             url_search = "Dumplings"
+             url_search = "Asian"
         case 9:
              url_search = "Sushi"
         case 10:

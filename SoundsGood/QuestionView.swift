@@ -109,7 +109,7 @@ struct QuestionView: View {
                             }
                         }
                         
-                        Spacer(minLength: 20)
+                        Spacer(minLength: 5)
                     }
                 }
                 

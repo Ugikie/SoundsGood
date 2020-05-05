@@ -19,27 +19,27 @@ struct AppView: View {
         TabView {
             ContentView()
                 .tabItem {
-                    Image(systemName: "house.fill")
+                    Image(systemName: "house.fill").font(.system(size: 25))
                     Text("Main")
                 }
 
             FavoriteList()
                 .tabItem {
-                    Image(systemName: "heart.fill")
+                    Image(systemName: "heart.fill").font(.system(size: 25))
                     Text("Favorites")
                 }
 
             tagFilter
                 .onAppear { self.tagFilter.reset() }
                 .tabItem {
-                    Image(systemName: "circle.grid.2x2.fill")
+                    Image(systemName: "circle.grid.2x2.fill").font(.system(size: 25))
                     Text("Choose Tags")
                 }
             
             
             FoodSearchTab()
                 .tabItem {
-                    Image(systemName: "magnifyingglass.circle.fill")
+                    Image(systemName: "magnifyingglass.circle.fill").font(.system(size: 25))
                     Text("Search")
                     
                 }
