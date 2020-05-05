@@ -56,7 +56,7 @@ struct PrintTags: View {
                 .alignmentGuide(.leading, computeValue: { d in
                     if (abs(width - d.width) > g.size.width) {
                         width = -50
-                        height -= (d.height + 10)
+                        height -= (d.height + 5)
                     }
                         
                     let result = width

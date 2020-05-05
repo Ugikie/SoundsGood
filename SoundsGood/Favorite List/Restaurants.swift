@@ -54,7 +54,7 @@ class observer : ObservableObject{
         case 11:
              url_search = "Tacos"
         case 12:
-             url_search = "Burritos"
+             url_search = "Mexican"
         case 13:
              url_search = "Nachos"
         case 14:
@@ -76,7 +76,7 @@ class observer : ObservableObject{
         case 22:
              url_search = "French%20Toast"
         case 23:
-             url_search = "Cereal"
+             url_search = "grocery"
         case 24:
              url_search = "Oatmeal"
         case 25:
@@ -92,15 +92,15 @@ class observer : ObservableObject{
         case 30:
              url_search = "Crackers"
         case 31:
-             url_search = "Cake"
+             url_search = "bakery"
         case 32:
-             url_search = "Cookies"
+             url_search = "bakery"
         case 33:
-             url_search = "Brownies"
+             url_search = "bakery"
         case 34:
              url_search = "Doughnut"
         case 35:
-             url_search = "Candy"
+             url_search = "sweet"
         case 36:
              url_search = "Burgers"
         case 37:
@@ -140,11 +140,11 @@ class observer : ObservableObject{
         case 54:
              url_search = "Kung%20Pao%20Chicken"
         case 55:
-             url_search = "Orange%20Chicken"
+             url_search = "chinese"
         case 56:
              url_search = "Wontons"
         case 57:
-             url_search = "Egg%20Drop%20Soup"
+             url_search = "Egg%20Soup"
         case 58:
              url_search = "Beef%20and%20Broccoli"
         case 59:
@@ -162,7 +162,7 @@ class observer : ObservableObject{
         case 65:
              url_search = "Shrimp%20Cocktail"
         case 66:
-             url_search = "Quiche"
+             url_search = "French"
         case 67:
              url_search = "Ratatouille"
         case 68:
@@ -172,7 +172,7 @@ class observer : ObservableObject{
         case 70:
              url_search = "Creme%20Brulee"
         case 71:
-             url_search = "Pad%20Thai"
+             url_search = "Thai"
         case 72:
              url_search = "Paella"
         case 73:
@@ -180,17 +180,17 @@ class observer : ObservableObject{
         case 74:
              url_search = "Naan"
         case 75:
-             url_search = "Tandoori%20Chicken"
+             url_search = "Chicken"
         case 76:
              url_search = "Hummus"
         case 77:
              url_search = "Salad"
         case 78:
-             url_search = "Falafel"
+             url_search = "veggie"
         case 79:
              url_search = "String%20Cheese"
         case 80:
-             url_search = "Pizza%20Rolls"
+             url_search = "Pizza"
         case 81:
              url_search = "Rice%20Krispies"
         case 82:
@@ -202,43 +202,43 @@ class observer : ObservableObject{
         case 85:
              url_search = "Licorice"
         case 86:
-             url_search = "Chocolate%20Bar"
+             url_search = "Chocolate"
         case 87:
-             url_search = "Oreos"
+             url_search = "grocery"
         case 88:
-             url_search = "Jelly%20Beans"
+             url_search = "candy"
         case 89:
-             url_search = "Skittles"
+             url_search = "grocery"
         case 90:
              url_search = "Sour%20Patch%20Kids"
         case 91:
-             url_search = "Chips%20Ahoy"
+             url_search = "grocery"
         case 92:
-             url_search = "Beef%20Jerky"
+             url_search = "grocery"
         case 93:
-             url_search = "Doritios"
+             url_search = "grocery"
         case 94:
              url_search = "Cinnamon%20Rolls"
         case 95:
-             url_search = "Eclair"
+             url_search = "sweets"
         case 96:
-             url_search = "Danish"
+             url_search = "pastries"
         case 97:
-             url_search = "Cannolis"
+             url_search = "pastries"
         case 98:
-             url_search = "Churros"
+             url_search = "pastries"
         case 99:
-             url_search = "Pecan%20Pie"
+             url_search = "Pie"
         case 100:
              url_search = "Pie"
         case 101:
              url_search = "Pie"
         case 102:
-             url_search = "Banana%20Bread"
+             url_search = "Bakery"
         case 103:
              url_search = "Fruit%20Tart"
         case 104:
-             url_search = "Pumpkin%20Pie"
+             url_search = "Pie"
         case 105:
              url_search = "Chicken%20Noodle%20Soup"
         case 106:
@@ -246,7 +246,7 @@ class observer : ObservableObject{
         case 107:
              url_search = "Clam%20Chowder"
         case 108:
-             url_search = "Spicy%20Tortilla%20Soup"
+             url_search = "Tortilla%20Soup"
         case 109:
              url_search = "Kabob"
         default:
