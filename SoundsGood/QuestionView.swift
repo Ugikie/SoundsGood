@@ -8,8 +8,11 @@
 
 import SwiftUI
 
+let FIRST_Q = "Vegan"
+let SECOND_Q = "Breakfast"
+
 struct QuestionView: View {
-    @State var qInfo: QInfo = QInfo("vegan")
+    @State var qInfo: QInfo = QInfo(FIRST_Q)
     static var firstID: UUID = UUID()
     
     @State var lastResults: [String] = []
@@ -23,12 +26,11 @@ struct QuestionView: View {
     
     func reset() {
         QInfo.resetSelection()
-        qInfo = QInfo("vegan")
+        qInfo = QInfo(FIRST_Q)
         QuestionView.firstID = self.qInfo.id
     }
     
     func selectAnswer(_ answer: String) {
-        print("Answer: \(answer)")
         var ansIndex: Int? = nil
         for (index, str) in qInfo.answers.enumerated() {
             if(str == answer) {
@@ -44,7 +46,7 @@ struct QuestionView: View {
                 self.qInfo.updateAnswer(index)
                 QInfo.updateResults()
                 self.lastResults = QInfo.getResults()
-                qInfo = QInfo("breakfast")
+                qInfo = QInfo(SECOND_Q)
             }
             else {
                 let nextQ = self.qInfo.getNextQuestion(index)
@@ -104,7 +106,6 @@ struct QuestionView: View {
                                     .foregroundColor(.white)
                                     .padding(.all, 20)
                                     .padding([.leading, .trailing], 100)
-                                    //.frame(height: 20)
                             }
                         }
                         

@@ -27,7 +27,7 @@ class ButtonData: ObservableObject {
 
 struct TagButton: View {
     @State private var curState: TagState = .ignore
-    var data: ButtonData
+    @ObservedObject var data: ButtonData
     
     init(_ data: ButtonData) {
         self.data = data

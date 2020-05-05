@@ -51,7 +51,7 @@ class Cell: Identifiable, ObservableObject {
 }
 
 struct Tags: View {
-    var rows = Row.buildRows()
+    @State var rows = Row.buildRows()
     var tagDict: [String: TagButton] = [:]
     @State var foods: [String] = []
     @State var isActive: Bool = false
@@ -65,7 +65,15 @@ struct Tags: View {
         }
         
         self.foods = tagQuery(tagStates)
-        print("Foods: \(self.foods.count)")
+    }
+    
+    func reset() {
+        for row in rows {
+            for cell in row.cells {
+                cell.bData.state = .ignore
+            }
+        }
+        self.isActive = false
     }
     
     var body: some View {
@@ -85,7 +93,8 @@ struct Tags: View {
                     
                 Spacer().frame(height: 60)
                     
-                NavigationLink(destination: Results(title: "Tag Results", foods: self.$foods),
+                NavigationLink(destination:
+                               Results(title: "Tag Results", foods: self.$foods),
                                isActive: self.$isActive) { EmptyView() }
                     
                 Button(action: {
