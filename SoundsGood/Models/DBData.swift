@@ -10,7 +10,7 @@ import Foundation
 import SQLite
 import SwiftUI
 
-let DB_DIR = "/Users/andrew/Desktop/SoundsGood/SoundsGood/Resorces/food_db.db"
+let DB_DIR = "/Users/Max717/Documents/food_db.db"
 
 //let urlPath = Bundle.main.path(forResource: "food_db", ofType: "db")
 //let db = try! Connection(urlPath!)
